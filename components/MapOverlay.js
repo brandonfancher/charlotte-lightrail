@@ -1,10 +1,20 @@
 import React from 'react';
-import { Alert, Image, SegmentedControlIOS, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import userDefaults from 'react-native-user-defaults';
 import LocationButton from './LocationButton';
 import StationSlider from './StationDetail/StationSlider';
 import { COLORS } from '../assets/styles/constants';
+
+// OS-specific imports
+const ModeSwitcher = Platform.select({
+  ios: () => require('react-native').SegmentedControlIOS,
+  android: () => require('react-native').Switch,
+})();
+
+const userDefaults = Platform.select({
+  ios: require('react-native-user-defaults').default,
+  android: null,
+});
 
 
 export default class MapOverlay extends React.Component {
@@ -35,10 +45,41 @@ export default class MapOverlay extends React.Component {
     }
   }
 
+  renderModeSelector = () => {
+    const { fetchNearest, mode } = this.props;
+
+    if (Platform.OS === 'android') {
+      return (
+        <ModeSwitcher
+          onValueChange={(value) => {
+            let switchMode = 'walking';
+            if (value) {
+              switchMode = 'driving';
+            }
+            fetchNearest(switchMode);
+          }}
+          value={mode === 'driving'}
+        />
+      );
+    }
+    return (
+      <ModeSwitcher
+        values={['Driving', 'Walking']}
+        selectedIndex={mode === 'driving' ? 0 : 1}
+        onValueChange={(value) => {
+          userDefaults.set('SavedDirectionsChoice', value.toLowerCase()).catch(err => console.log(err));
+          fetchNearest(value.toLowerCase());
+        }}
+        tintColor="white"
+        style={styles.modeSelector}
+      />
+    );
+  }
+
   render() {
     // console.log('MapOverlay rendered')
     const { displaySchedule } = this.state;
-    const { connected, error, fetchNearest, loading, locationDenied, mode, seeAllStations } = this.props;
+    const { connected, error, loading, locationDenied, seeAllStations } = this.props;
 
     const failText = locationDenied ? 'Location Disabled - Enable' : 'Offline Mode - Try Again';
 
@@ -57,16 +98,7 @@ export default class MapOverlay extends React.Component {
               </TouchableOpacity>
               {connected && !locationDenied
                 ?
-                  <SegmentedControlIOS
-                    values={['Driving', 'Walking']}
-                    selectedIndex={mode === 'driving' ? 0 : 1}
-                    onValueChange={(value) => {
-                      userDefaults.set('SavedDirectionsChoice', value.toLowerCase()).catch(err => console.log(err));
-                      fetchNearest(value.toLowerCase());
-                    }}
-                    tintColor="white"
-                    style={styles.modeSelector}
-                  />
+                  this.renderModeSelector()
                 :
                   <TouchableOpacity style={styles.offlineButton} onPress={() => this.handleZeroState()}>
                     <Text allowFontScaling={false} style={styles.offlineText}>{failText}</Text>

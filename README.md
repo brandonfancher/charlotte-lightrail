@@ -72,7 +72,3 @@ We'll need to play with this a bit. In dev, it still has a white screen after th
 * **Username:** [REDACTED]
 * **Password:** [REDACTED]
 * **Styles builder:** https://www.mapbox.com/studio/
-
-### CodePush Keys
-* **Production:** [CODEPUSH_PROD_API_KEY]
-* **Staging:** [CODEPUSH_STAGING_API_KEY]

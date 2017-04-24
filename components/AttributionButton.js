@@ -1,7 +1,11 @@
 import React from 'react';
-import { ActionSheetIOS, Alert, Image, TouchableOpacity } from 'react-native';
-import userDefaults from 'react-native-user-defaults';
+import { ActionSheetIOS, Alert, Image, Platform, TouchableOpacity } from 'react-native';
 import { displayLink } from '../helpers/config';
+
+const userDefaults = Platform.select({
+  ios: require('react-native-user-defaults').default,
+  android: null,
+});
 
 export default class AttributionButton extends React.Component {
 

@@ -9,7 +9,7 @@ export const getAnnotations = () =>
     title: stop.mapLabel,
     annotationImage: {
       source: {
-        uri: 'blueMarker',
+        uri: 'bluemarker',
       },
       height: 32,
       width: 32,

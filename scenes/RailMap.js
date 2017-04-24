@@ -1,15 +1,24 @@
 import React from 'react';
-import { AppState, NetInfo, StatusBar, StyleSheet, View, DeviceEventEmitter } from 'react-native';
-import QuickActions from 'react-native-quick-actions';
+import { AppState, NetInfo, Platform, StatusBar, StyleSheet, View, DeviceEventEmitter } from 'react-native';
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 import moment from 'moment';
-import userDefaults from 'react-native-user-defaults';
 import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from '../helpers/config';
 import { identifyDevice } from '../helpers/helpers';
 import { distanceTimeConverter, getNextTrainTime } from '../helpers/scheduleCalcs';
 import { blueLine, getAnnotations, getStopCallouts } from '../helpers/mapSetup';
 import { mapboxDistanceAPI } from '../helpers/mapboxDistanceAPI';
 import MapOverlay from '../components/MapOverlay';
+
+// OS-specific imports
+let QuickActions;
+if (Platform.OS === 'ios') {
+  QuickActions = require('react-native-quick-actions');
+}
+
+const userDefaults = Platform.select({
+  ios: require('react-native-user-defaults').default,
+  android: null,
+});
 
 Mapbox.setAccessToken(mapboxApiKey);
 
@@ -56,7 +65,11 @@ export default class RailMap extends React.Component {
   componentDidMount() {
     this.interval = setInterval(this.keepTime, timeInterval);
 
-    this.setDefaultDirections();
+    if (Platform.OS === 'android') {
+      this.fetchDistances('walking');
+    } else {
+      this.setDefaultDirections();
+    }
 
     // Managing App State (active, background, inactive, etc.)
     AppState.addEventListener('change', (appState) => {
@@ -196,7 +209,7 @@ export default class RailMap extends React.Component {
               title: blueStops[newNearestIndex].mapLabel,
               annotationImage: {
                 source: {
-                  uri: 'greenMarker',
+                  uri: 'greenmarker',
                 },
                 height: 32,
                 width: 32,
@@ -216,7 +229,9 @@ export default class RailMap extends React.Component {
               type: 'point',
               title: blueStops[oldNearestIndex].mapLabel,
               annotationImage: {
-                url: 'image!blueMarker',
+                source: {
+                  uri: 'bluemarker',
+                },
                 height: 32,
                 width: 32,
               },

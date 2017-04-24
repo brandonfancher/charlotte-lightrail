@@ -5,7 +5,7 @@ export const displayLink = url => Linking.openURL(url).catch(err => console.erro
 
 // secrets that we'll want to secure later
 export const googleApiKey = '[GOOGLE_API_KEY]';
-export const mapboxApiKey = '[MAPBOX_API_KEY]';
+export const mapboxApiKey = '[GOOGLE_MAPBOX_KEY]';
 
 // setting for simulating a disconnected state
 export const SIMULATE_DISCONNECTED = false;
