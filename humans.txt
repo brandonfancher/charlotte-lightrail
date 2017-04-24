@@ -1,0 +1,1 @@
+Charlotte Light Rail App helps you get around Charlotte on the Light Rail. You can find the closest station, get directions, and see the train schedule. Made by Team Luna.
