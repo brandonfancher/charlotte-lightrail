@@ -1,0 +1,104 @@
+import React, { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import codePush from 'react-native-code-push'
+import { Actions, Scene, Router, Reducer } from 'react-native-router-flux'
+import Orientation from 'react-native-orientation'
+import { COLORS } from './assets/styles/constants'
+import Home from './scenes/Home'
+import { RailMap } from './scenes/RailMap'
+import StationDetail from './scenes/StationDetail'
+import ScheduleInfo from './scenes/ScheduleInfo'
+import About from './scenes/About'
+
+const reducerCreate = params => {
+  const defaultReducer = Reducer(params)
+  return (state, action) => {
+    // console.log(('ACTION'), action)
+    return defaultReducer(state, action)
+  }
+}
+
+export default class lightrail extends React.Component {
+
+  componentDidMount () {
+    Orientation.lockToPortrait()
+    // Uncomment out this line to enable codePush syncing
+    codePush.sync()
+  }
+
+  // This is the router. We're currently using react-native-router-flux, but it's been a little confusing to me. If it
+  // becomes a problem, we can also look at @jcgertig's rn-router. If we do a rewrite, I'd like to try it.
+
+  // Props can be passed to Scene components here, but once this component mounts, you can't really change the props.
+  // Changes in props won't update the children at all. So that's of limited use.
+
+  // Props can also be passed directly to scenes by including them with your Actions.sceneName() scene transition.
+  // To change scenes from anywhere in the app, you can call Actions.sceneName (Actions.home, for example) to change to that scene.
+  // To include props, you can do onPress={() => Actions.home({ coolDude: 'Brandon' })}, and the scene you're switching to gets this.props.coolDude
+  // But again, because it's passed onPress, that prop won't update in the Scene if it changes in the originating component.
+  // Now you can call Actions.refresh({ key: '0_home', coolDude: 'Tim' }) from anywhere too. Stuff to play with.
+  // Where possible, I tried to maintain normal react parent/child relationships so I could pass props down and manipulate state the normal react way.
+
+  renderBackButton () {
+    return (
+      <TouchableOpacity
+        style={{
+          width: 80,
+          height: 48,
+          position: 'absolute',
+          bottom: 0,
+          left: 14,
+          justifyContent: 'center'
+        }}
+        onPress={Actions.pop}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={[styles.arrow, styles.arrowLeft]} />
+          <Text style={[ styles.titleStyle, { fontSize: 16 } ]}>Back</Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
+  render () {
+    return (
+      <Router createReducer={reducerCreate}>
+        <Scene key='root' navigationBarStyle={styles.navBarStyle} titleStyle={styles.titleStyle}>
+          <Scene key='railMap' component={RailMap} title='Charlotte Light Rail'>
+            <Scene key='home' component={Home} initial={true} sceneStyle={{ height: 0, width: 0 }} />
+          </Scene>
+          <Scene key='about' component={About} title='Help' renderBackButton={this.renderBackButton} />
+          <Scene key='stationDetail' component={StationDetail} renderBackButton={this.renderBackButton} title='Station Info' />
+          <Scene key='stationSchedule' component={ScheduleInfo} renderBackButton={this.renderBackButton} title='Station Schedules' sceneStyle={{ backgroundColor: COLORS.backgroundColor }} />
+        </Scene>
+      </Router>
+    )
+  }
+}
+
+AppRegistry.registerComponent('lightrail', () => lightrail)
+
+const styles = StyleSheet.create({
+  arrow: {
+    borderStyle: 'solid',
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 0,
+    borderLeftWidth: 0,
+    borderColor: COLORS.primaryTextColor,
+    marginRight: 6,
+    height: 16,
+    width: 16
+  },
+  arrowLeft: {
+    transform: [{ rotate: '-135deg' }]
+  },
+  navBarStyle: {
+    backgroundColor: 'rgba(1, 42, 60, 0.97)',
+    borderBottomWidth: 0,
+    height: 65
+  },
+  titleStyle: {
+    color: COLORS.primaryTextColor,
+    fontWeight: 'normal'
+  }
+})

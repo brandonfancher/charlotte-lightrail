@@ -1,0 +1,29 @@
+{
+  "name": "CodePush",
+  "version": "1.10.6",
+  "summary": "React Native module for the CodePush service",
+  "authors": "Microsoft Corporation",
+  "license": "MIT",
+  "homepage": "http://microsoft.github.io/code-push/",
+  "source": {
+    "git": "https://github.com/Microsoft/react-native-code-push.git",
+    "tag": "v1.10.6-beta"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": [
+    "ios/CodePush/*.{h,m}",
+    "ios/CodePush/SSZipArchive/*.{h,m}",
+    "ios/CodePush/SSZipArchive/aes/*.{h,c}",
+    "ios/CodePush/SSZipArchive/minizip/*.{h,c}"
+  ],
+  "public_header_files": "ios/CodePush/CodePush.h",
+  "preserve_paths": "*.js",
+  "libraries": "z",
+  "dependencies": {
+    "React": [
+
+    ]
+  }
+}

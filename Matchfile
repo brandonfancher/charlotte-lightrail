@@ -1,0 +1,9 @@
+git_url "https://github.com/brandonfancher/clt-lightrail-certs"
+
+type "development" # The default type, can be: appstore, adhoc or development
+
+app_identifier "co.TeamLuna.CharlotteLightRail" 
+username "brandonfancher@gmail.com" # Your Apple Developer Portal username
+
+# For all available options run `match --help`
+# Remove the # in the beginning of the line to enable the other options
