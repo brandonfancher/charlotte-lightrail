@@ -6,15 +6,13 @@ export const mapboxDistanceAPI = {
     coordinates.unshift(origin);
 
     const endpoint = `distances/v1/mapbox/${mode}`;
+    const new_endpoint = `directions-matrix/v1/mapbox/${mode}`;
     const url = `https://api.mapbox.com/${endpoint}?access_token=${mapboxApiKey}`;
-    return fetch(url, { // eslint-disable-line no-undef
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        coordinates,
-      }),
-    }).then(res => res.json());
+    coordinates_string = coordinates.map(coordinate => {
+      return coordinate.toString();
+    });
+    coordinates_query = coordinates_string.join(';');
+    const new_url = `https://api.mapbox.com/${new_endpoint}/${coordinates_query}?access_token=${mapboxApiKey}`;
+    return fetch(new_url).then(res => res.json());
   },
 };

@@ -4,8 +4,8 @@ import schedules from './schedules.json';
 export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
 
 // secrets that we'll want to secure later
-export const googleApiKey = '[GOOGLE_API_KEY]';
-export const mapboxApiKey = '[MAPBOX_API_KEY]';
+export const googleApiKey = 'AIzaSyAg7qZ4wvokYy3XEvgCAxvgmYp9X91_0Kk';
+export const mapboxApiKey = 'pk.eyJ1IjoibWR3YWduZXIiLCJhIjoiY2ozcW52cjJ3MDAxMjMzbzJ5bXowcjBrYiJ9.1vwLNAL46LbkJh8gj1IUIg';
 
 // setting for simulating a disconnected state
 export const SIMULATE_DISCONNECTED = false;
