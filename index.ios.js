@@ -1,7 +1,8 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // import codePush from 'react-native-code-push'
-import { Actions, Scene, Router, Reducer } from 'react-native-router-flux';
+// import { Actions, Scene, Router, Reducer } from 'react-native-router-flux';
+import { StackNavigator } from 'react-navigation';
 import { COLORS } from './assets/styles/constants';
 import RailMap from './scenes/RailMap';
 import StationDetail from './scenes/StationDetail';
@@ -12,6 +13,41 @@ const reducerCreate = (params) => {
   const defaultReducer = Reducer(params); // eslint-disable-line
   return (state, action) => defaultReducer(state, action);
 };
+
+const AppNavigator = StackNavigator({
+  Main: {
+    screen: RailMap,
+    navigationOptions: {
+      title: 'Charlotte Light Rail'
+    }
+  },
+  Faq: {
+    screen: Faq,
+    navigationOptions: {
+      title: 'Help'
+    }
+  },
+  StationDetail: {
+    screen: StationDetail,
+    navigationOptions: {
+      title: 'Station Info'
+    }
+  },
+  StationSchedule: {
+    screen: ScheduleInfo,
+    navigationOptions: {
+      title: 'Station Schedules'
+    }
+  }
+}, {
+  initialRouteName: 'Main',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: COLORS.backgroundColorDark
+    },
+    headerTintColor: COLORS.primaryTextColor
+  }
+});
 
 export default class lightrail extends React.Component {
 
@@ -33,35 +69,17 @@ export default class lightrail extends React.Component {
   // Now you can call Actions.refresh({ key: '0_home', coolDude: 'Tim' }) from anywhere too. Stuff to play with.
   // Where possible, I tried to maintain normal react parent/child relationships so I could pass props down and manipulate state the normal react way.
 
-  renderBackButton = () => (
-    <TouchableOpacity
-      style={{
-        width: 80,
-        height: 48,
-        position: 'absolute',
-        bottom: -8,
-        left: 14,
-        justifyContent: 'center',
-      }}
-      onPress={Actions.pop}
-    >
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <View style={[styles.arrow, styles.arrowLeft]} />
-        <Text style={[styles.titleStyle, { fontSize: 16 }]}>Back</Text>
-      </View>
-    </TouchableOpacity>
-  );
-
   render() {
     return (
-      <Router createReducer={reducerCreate}>
-        <Scene key="root" navigationBarStyle={styles.navBarStyle} titleStyle={styles.titleStyle}>
-          <Scene key="railMap" component={RailMap} initial title="Charlotte Light Rail" />
-          <Scene key="about" component={Faq} title="Help" renderBackButton={this.renderBackButton} />
-          <Scene key="stationDetail" component={StationDetail} renderBackButton={this.renderBackButton} title="Station Info" />
-          <Scene key="stationSchedule" component={ScheduleInfo} renderBackButton={this.renderBackButton} title="Station Schedules" sceneStyle={{ backgroundColor: COLORS.backgroundColor }} />
-        </Scene>
-      </Router>
+      // <Router createReducer={reducerCreate}>
+      //   <Scene key="root" navigationBarStyle={styles.navBarStyle} titleStyle={styles.titleStyle}>
+      //     <Scene key="railMap" component={RailMap} initial title="Charlotte Light Rail" />
+      //     <Scene key="about" component={Faq} title="Help" renderBackButton={this.renderBackButton} />
+      //     <Scene key="stationDetail" component={StationDetail} renderBackButton={this.renderBackButton} title="Station Info" />
+      //     <Scene key="stationSchedule" component={ScheduleInfo} renderBackButton={this.renderBackButton} title="Station Schedules" sceneStyle={{ backgroundColor: COLORS.backgroundColor }} />
+      //   </Scene>
+      // </Router>
+      <AppNavigator />
     );
   }
 }

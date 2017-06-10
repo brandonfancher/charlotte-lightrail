@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Image, SegmentedControlIOS, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import userDefaults from 'react-native-user-defaults';
 import LocationButton from './LocationButton';
 import StationSlider from './StationDetail/StationSlider';
@@ -39,6 +39,7 @@ export default class MapOverlay extends React.Component {
     // console.log('MapOverlay rendered')
     const { displaySchedule } = this.state;
     const { connected, error, fetchNearest, loading, locationDenied, mode, seeAllStations } = this.props;
+    const { navigate } = this.props.navigation;
 
     const failText = locationDenied ? 'Location Disabled - Enable' : 'Offline Mode - Try Again';
 
@@ -47,7 +48,8 @@ export default class MapOverlay extends React.Component {
         {!displaySchedule &&
           <View pointerEvents="box-none" style={styles.header}>
             <View style={styles.headerContainer}>
-              <TouchableOpacity onPress={Actions.about} style={styles.about}>
+              {/*<TouchableOpacity onPress={Actions.about} style={styles.about}>*/}
+              <TouchableOpacity onPress={() => navigate('Faq')} style={styles.about}>
                 <View style={styles.help}>
                   <Image
                     // eslint-disable-next-line
@@ -107,7 +109,9 @@ const styles = StyleSheet.create({
   },
   container: {
     position: 'absolute',
-    top: 65,
+    // Need this so buttons go underneath screen title
+    // top: 65, <-- react-native-router-flux
+    top: 0, // <-- react-navigation
     right: 0,
     bottom: 0,
     left: 0,

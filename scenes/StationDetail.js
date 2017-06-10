@@ -6,12 +6,18 @@ import { COLORS } from '../assets/styles/constants';
 export default class StationDetail extends React.Component {
 
   static propTypes = {
-    activeCallout: React.PropTypes.object.isRequired,
-    stop: React.PropTypes.object.isRequired,
+    navigation: React.PropTypes.shape({
+      state: React.PropTypes.shape({
+        params: React.PropTypes.shape({
+          activeCallout: React.PropTypes.object.isRequired,
+          stop: React.PropTypes.object.isRequired,
+        })
+      })
+    }),
   }
 
   renderStationFeatures = () => {
-    const { stop } = this.props;
+    const { stop } = this.props.navigation.state.params;
     return (
       <ScrollView style={styles.featuresWrapper}>
 
@@ -31,7 +37,7 @@ export default class StationDetail extends React.Component {
   }
 
   render() {
-    const { activeCallout, stop } = this.props;
+    const { activeCallout, stop } = this.props.navigation.state.params;
     const nextInboundTime = activeCallout.inbound.time;
     const nextInboundDelta = activeCallout.inbound.delta;
     const nextOutboundTime = activeCallout.outbound.time;
@@ -63,7 +69,7 @@ export default class StationDetail extends React.Component {
 const styles = StyleSheet.create({
   tabView: {
     flex: 1,
-    marginTop: 65,
+    marginTop: 0,
     backgroundColor: COLORS.backgroundColor,
   },
   iconImage: {
