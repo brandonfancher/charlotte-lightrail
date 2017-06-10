@@ -100,7 +100,7 @@ export default class ScheduleInfo extends React.Component {
     const days = this.state.scheduleValue;
     return (
       <ScrollView ref={(c) => { this.scheduleScrollView = c; }}>
-        <View style={styles.table}>
+        <View style={styles.table}> {/* CHECK HERE: Look here for incorrect color in Inbound and Outbound */}
           <View ref={(c) => { this.inboundWrapper = c; }} style={[styles.tableCol, styles.tableColInbound]}>
             {this.getTrainTimes('inbound', days)}
           </View>
@@ -169,7 +169,6 @@ const circleWidth = 40;
 const styles = StyleSheet.create({
   wrap: {
     position: 'absolute',
-    // top: 65,
     top: 0,
     right: 0,
     bottom: 0,

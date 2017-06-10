@@ -1,6 +1,5 @@
 import React from 'react';
 import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-// import { Actions } from 'react-native-router-flux';
 import { blueStops } from '../../helpers/config';
 import { identifyDevice, startNavigation } from '../../helpers/helpers';
 import { COLORS } from '../../assets/styles/constants';
@@ -17,6 +16,9 @@ export default class StationCard extends React.Component {
     stationDistances: React.PropTypes.array,
     stationIndex: React.PropTypes.number,
     stopCallout: React.PropTypes.object,
+    navigation: React.PropTypes.shape({
+      navigate: React.PropTypes.func.isRequired
+    })
   }
 
   renderDistanceText = () => {
@@ -84,14 +86,12 @@ export default class StationCard extends React.Component {
 
           <View style={styles.buttonContainer}>
             <View style={styles.buttons}>
-              {/*<TouchableOpacity onPress={() => Actions.stationDetail({ activeCallout: stopCallout, stop })} style={styles.bubble}>*/}
               <TouchableOpacity onPress={() => navigate('StationDetail', { activeCallout: stopCallout, stop })} style={styles.bubble}>
                 <Image
                   // eslint-disable-next-line
                   source={require('../../assets/icons/info/ic_info_white_36pt.png')}
                 />
               </TouchableOpacity>
-              {/*<TouchableOpacity onPress={() => Actions.stationSchedule({ activeStationIndex: stationIndex, loading, stopCallout })} style={styles.bubble}>*/}
               <TouchableOpacity onPress={() => navigate('StationSchedule', { activeStationIndex: stationIndex, loading, stopCallout })} style={styles.bubble}>
                 <Image
                   // eslint-disable-next-line

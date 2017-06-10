@@ -17,6 +17,7 @@ export default class StationSlider extends React.Component {
     nearestStationIndex: React.PropTypes.number,
     showCallout: React.PropTypes.func.isRequired,
     stationDistances: React.PropTypes.array,
+    navigation: React.PropTypes.object.isRequired
   }
 
   state = {
