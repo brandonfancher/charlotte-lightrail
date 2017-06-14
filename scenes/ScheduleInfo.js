@@ -99,8 +99,8 @@ export default class ScheduleInfo extends React.Component {
   getSchedule = () => {
     const days = this.state.scheduleValue;
     return (
-      <ScrollView ref={(c) => { this.scheduleScrollView = c; }}>
-        <View style={styles.table}> {/* CHECK HERE: Look here for incorrect color in Inbound and Outbound */}
+      <ScrollView style={styles.tableColScrollView} ref={(c) => { this.scheduleScrollView = c; }}>
+        <View style={styles.table}>
           <View ref={(c) => { this.inboundWrapper = c; }} style={[styles.tableCol, styles.tableColInbound]}>
             {this.getTrainTimes('inbound', days)}
           </View>
@@ -211,6 +211,9 @@ const styles = StyleSheet.create({
     borderLeftColor: COLORS.transparent,
     borderRightColor: COLORS.verticalDividerLine,
     borderStyle: 'solid',
+  },
+  tableColScrollView: {
+    backgroundColor: COLORS.backgroundColor
   },
 
   // Table cells
