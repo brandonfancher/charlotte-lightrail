@@ -2,7 +2,7 @@ import React from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
 // import codePush from 'react-native-code-push'
 import { StackNavigator } from 'react-navigation';
-import { COLORS } from './assets/styles/constants';
+import { COLORS } from './src/assets/styles/constants';
 import { Faq, RailMap, StationDetail, ScheduleInfo } from './src/scenes';
 
 const AppNavigator = StackNavigator({
