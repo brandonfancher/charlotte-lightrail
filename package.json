@@ -14,7 +14,6 @@
     "react-native-collapsible": "git+https://git@github.com/brandonfancher/react-native-collapsible.git",
     "react-native-mapbox-gl": "5.0.0",
     "react-native-quick-actions": "0.1.5",
-    "react-native-router-flux": "3.36.0",
     "react-native-user-defaults": "0.1.4",
     "react-navigation": "^1.0.0-beta.11"
   },
