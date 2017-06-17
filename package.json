@@ -18,7 +18,13 @@
     "react-navigation": "^1.0.0-beta.11"
   },
   "jest": {
-    "preset": "jest-react-native"
+    "preset": "jest-react-native",
+    "globals": {
+      "__DEV__": true
+    },
+    "preprocessorIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation|react-clone-referenced-element)"
+    ]
   },
   "devDependencies": {
     "babel-jest": "16.0.0",
