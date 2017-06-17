@@ -1,0 +1,12 @@
+language: node_js
+before_install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install
+  - node --version
+install:
+  - npm install -g react-native-cli
+  - yarn
+before_script:
+  - bash build_keys.sh
+script:
+  - yarn test
