@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mdwagner/charlotte-lightrail.svg?branch=styled-comp)](https://travis-ci.org/mdwagner/charlotte-lightrail)
 # Charlotte Light Rail
 
 ## Branches

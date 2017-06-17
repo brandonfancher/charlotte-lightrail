@@ -6,3 +6,5 @@ before_script:
   - bash build_keys.sh
 script:
   - yarn test
+notifications:
+  email: false
