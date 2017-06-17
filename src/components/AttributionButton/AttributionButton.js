@@ -60,7 +60,7 @@ export default class AttributionButton extends React.Component {
       <TouchableOpacity onPress={this.showActionSheet}>
         <Image
           // eslint-disable-next-line
-          source={require('../assets/icons/info/info_circle.png')}
+          source={require('../../assets/icons/info/info_circle.png')}
         />
       </TouchableOpacity>
     );

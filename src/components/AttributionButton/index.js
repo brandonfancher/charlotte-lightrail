@@ -1,1 +1,1 @@
-export { default as AttributionButton } from './AttributionButton';
+export { default } from './AttributionButton';

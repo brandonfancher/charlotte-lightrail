@@ -27,7 +27,7 @@
       "__DEV__": true
     },
     "preprocessorIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation|react-clone-referenced-element)"
+      "node_modules/(?!react-native|react-navigation)"
     ]
   },
   "devDependencies": {
