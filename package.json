@@ -7,6 +7,9 @@
     "test": "jest",
     "ios": "react-native run-ios"
   },
+  "engines": {
+    "node": "^6.9.2"
+  },
   "dependencies": {
     "moment": "2.15.2",
     "react": "15.3.2",
