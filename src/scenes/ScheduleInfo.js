@@ -54,7 +54,7 @@ export default class ScheduleInfo extends React.Component {
   }
 
   getTrainTimes = (direction, days) => {
-    const { activeStationIndex, stopCallout } = this.props;
+    const { activeStationIndex, stopCallout } = this.props.navigation.state.params;
     const currentDay = getScheduleDay().day;
     const stop = blueStops[activeStationIndex];
     const schedule = `${direction}${days}`;
@@ -99,7 +99,7 @@ export default class ScheduleInfo extends React.Component {
   getSchedule = () => {
     const days = this.state.scheduleValue;
     return (
-      <ScrollView ref={(c) => { this.scheduleScrollView = c; }}>
+      <ScrollView style={styles.tableColScrollView} ref={(c) => { this.scheduleScrollView = c; }}>
         <View style={styles.table}>
           <View ref={(c) => { this.inboundWrapper = c; }} style={[styles.tableCol, styles.tableColInbound]}>
             {this.getTrainTimes('inbound', days)}
@@ -120,7 +120,7 @@ export default class ScheduleInfo extends React.Component {
   render() {
     // console.log('ScheduleInfo rendered')
     const { scheduleIndex } = this.state;
-    const { activeStationIndex, loading, stopCallout } = this.props;
+    const { activeStationIndex, loading, stopCallout } = this.props.navigation.state.params;
 
     if (activeStationIndex !== null && stopCallout && !loading) {
       return (
@@ -169,7 +169,7 @@ const circleWidth = 40;
 const styles = StyleSheet.create({
   wrap: {
     position: 'absolute',
-    top: 65,
+    top: 0,
     right: 0,
     bottom: 0,
     left: 0,
@@ -211,6 +211,9 @@ const styles = StyleSheet.create({
     borderLeftColor: COLORS.transparent,
     borderRightColor: COLORS.verticalDividerLine,
     borderStyle: 'solid',
+  },
+  tableColScrollView: {
+    backgroundColor: COLORS.backgroundColor
   },
 
   // Table cells
@@ -304,7 +307,13 @@ const styles = StyleSheet.create({
 });
 
 ScheduleInfo.propTypes = {
-  activeStationIndex: React.PropTypes.number,
-  loading: React.PropTypes.bool.isRequired,
-  stopCallout: React.PropTypes.object,
+  navigation: React.PropTypes.shape({
+    state: React.PropTypes.shape({
+      params: React.PropTypes.shape({
+        activeStationIndex: React.PropTypes.number,
+        loading: React.PropTypes.bool.isRequired,
+        stopCallout: React.PropTypes.object,
+      })
+    })
+  }),
 };

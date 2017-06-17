@@ -2,6 +2,14 @@
 #
 .DS_Store
 
+# Vim
+#
+*.swp
+
+# Editors
+#
+.vscode/
+
 # Xcode
 #
 build/

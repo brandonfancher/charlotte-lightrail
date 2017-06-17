@@ -3,7 +3,7 @@ import { COLORS } from './constants';
 export const aboutStyles = {
   viewContainer: {
     position: 'absolute',
-    top: 64,
+    top: 0,
     right: 0,
     bottom: 0,
     left: 0,

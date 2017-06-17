@@ -17,6 +17,7 @@ export default class StationSlider extends React.Component {
     nearestStationIndex: React.PropTypes.number,
     showCallout: React.PropTypes.func.isRequired,
     stationDistances: React.PropTypes.array,
+    navigation: React.PropTypes.object.isRequired
   }
 
   state = {
@@ -83,7 +84,7 @@ export default class StationSlider extends React.Component {
 
   render() {
     // console.log('StationSlider rendered')
-    const { connected, loading, mode, nearestStationIndex, stationDistances } = this.props;
+    const { connected, loading, mode, nearestStationIndex, stationDistances, navigation } = this.props;
     return (
       <View style={styles.bottomSection}>
         <View style={styles.calloutSection}>
@@ -105,6 +106,7 @@ export default class StationSlider extends React.Component {
                 panToStation={this.panToStation}
                 stationDistances={stationDistances}
                 stopCallout={this.props[`stopCallout${index}`]}
+                navigation={navigation}
               />
             ))}
           </ScrollView>
