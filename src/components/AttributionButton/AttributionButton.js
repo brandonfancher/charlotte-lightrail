@@ -1,13 +1,10 @@
 import React from 'react';
-import { ActionSheetIOS, Alert, Image, TouchableOpacity } from 'react-native';
+import { ActionSheetIOS, Alert } from 'react-native';
 import userDefaults from 'react-native-user-defaults';
-import { displayLink } from '../helpers/config';
+import { TouchableOpacity, Image } from './AttributionButtonCss';
+import { displayLink } from '../../helpers/config';
 
 export default class AttributionButton extends React.Component {
-
-  static propTypes = {
-    styles: React.PropTypes.object.isRequired,
-  }
 
   showActionSheet = () => {
     const options = [
@@ -59,13 +56,11 @@ export default class AttributionButton extends React.Component {
   }
 
   render() {
-    const { styles } = this.props;
     return (
-      <TouchableOpacity onPress={this.showActionSheet} style={styles.attribution}>
+      <TouchableOpacity onPress={this.showActionSheet}>
         <Image
           // eslint-disable-next-line
           source={require('../assets/icons/info/info_circle.png')}
-          style={styles.attributionIcon}
         />
       </TouchableOpacity>
     );

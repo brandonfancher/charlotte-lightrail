@@ -116,7 +116,7 @@ export default class StationSlider extends React.Component {
             <Image source={{ uri: mapboxIcon }} style={styles.mapboxIcon} />
           </View>
           <View style={{ flex: 1 }} />
-          <AttributionButton styles={styles} />
+          <AttributionButton />
         </View>
       </View>
     );

@@ -25,10 +25,13 @@ exports[`<AttributionButton /> renders correctly 1`] = `
   <Image
     source={1}
     style={
-      Object {
-        "height": 20,
-        "width": 20,
-      }
+      Array [
+        Object {
+          "height": 20,
+          "width": 20,
+        },
+        undefined,
+      ]
     } />
 </View>
 `;
