@@ -14,3 +14,4 @@ else
 fi
 
 printf "export const GOOGLE_API_KEY = '${_GOOGLE_API_KEY}';\nexport const MAPBOX_API_KEY = '${_MAPBOX_API_KEY}';" > env.js
+echo "Successfully built API keys => env.js"
