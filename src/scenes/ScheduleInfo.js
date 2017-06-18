@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimensions, InteractionManager, Text, ScrollView, StyleSheet, View } from 'react-native';
 import moment from 'moment';
 import ScheduleInfoHeader from '../components/StationDetail/ScheduleInfoHeader';
@@ -307,12 +308,12 @@ const styles = StyleSheet.create({
 });
 
 ScheduleInfo.propTypes = {
-  navigation: React.PropTypes.shape({
-    state: React.PropTypes.shape({
-      params: React.PropTypes.shape({
-        activeStationIndex: React.PropTypes.number,
-        loading: React.PropTypes.bool.isRequired,
-        stopCallout: React.PropTypes.object,
+  navigation: PropTypes.shape({
+    state: PropTypes.shape({
+      params: PropTypes.shape({
+        activeStationIndex: PropTypes.number,
+        loading: PropTypes.bool.isRequired,
+        stopCallout: PropTypes.object,
       })
     })
   }),

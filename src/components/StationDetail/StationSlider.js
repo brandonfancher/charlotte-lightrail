@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimensions, Image, ScrollView, StyleSheet, View } from 'react-native';
 import StationCard from './StationCard';
 import AttributionButton from '../AttributionButton';
@@ -10,14 +11,14 @@ const mapboxIcon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAAAoCAMAAA
 export default class StationSlider extends React.Component {
 
   static propTypes = {
-    activeStationIndex: React.PropTypes.number,
-    connected: React.PropTypes.bool.isRequired,
-    loading: React.PropTypes.bool.isRequired,
-    mode: React.PropTypes.string.isRequired,
-    nearestStationIndex: React.PropTypes.number,
-    showCallout: React.PropTypes.func.isRequired,
-    stationDistances: React.PropTypes.array,
-    navigation: React.PropTypes.object.isRequired
+    activeStationIndex: PropTypes.number,
+    connected: PropTypes.bool.isRequired,
+    loading: PropTypes.bool.isRequired,
+    mode: PropTypes.string.isRequired,
+    nearestStationIndex: PropTypes.number,
+    showCallout: PropTypes.func.isRequired,
+    stationDistances: PropTypes.array,
+    navigation: PropTypes.object.isRequired
   }
 
   state = {

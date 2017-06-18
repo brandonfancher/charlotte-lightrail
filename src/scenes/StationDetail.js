@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { COLORS } from '../assets/styles/constants';
 
 export default class StationDetail extends React.Component {
 
   static propTypes = {
-    navigation: React.PropTypes.shape({
-      state: React.PropTypes.shape({
-        params: React.PropTypes.shape({
-          activeCallout: React.PropTypes.object.isRequired,
-          stop: React.PropTypes.object.isRequired,
+    navigation: PropTypes.shape({
+      state: PropTypes.shape({
+        params: PropTypes.shape({
+          activeCallout: PropTypes.object.isRequired,
+          stop: PropTypes.object.isRequired,
         })
       })
     }),

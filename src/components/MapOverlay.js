@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Alert, Image, SegmentedControlIOS, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import userDefaults from 'react-native-user-defaults';
 import LocationButton from './LocationButton';
@@ -9,16 +10,16 @@ import { COLORS } from '../assets/styles/constants';
 export default class MapOverlay extends React.Component {
 
   static propTypes = {
-    connected: React.PropTypes.bool.isRequired,
-    error: React.PropTypes.string,
-    fetchNearest: React.PropTypes.func.isRequired,
-    loading: React.PropTypes.bool.isRequired,
-    locationDenied: React.PropTypes.bool.isRequired,
-    mode: React.PropTypes.string.isRequired,
-    nearestStationIndex: React.PropTypes.number, // eslint-disable-line
-    seeAllStations: React.PropTypes.func.isRequired,
-    showCallout: React.PropTypes.func.isRequired, // eslint-disable-line
-    stationDistances: React.PropTypes.array, // eslint-disable-line
+    connected: PropTypes.bool.isRequired,
+    error: PropTypes.string,
+    fetchNearest: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    locationDenied: PropTypes.bool.isRequired,
+    mode: PropTypes.string.isRequired,
+    nearestStationIndex: PropTypes.number, // eslint-disable-line
+    seeAllStations: PropTypes.func.isRequired,
+    showCallout: PropTypes.func.isRequired, // eslint-disable-line
+    stationDistances: PropTypes.array, // eslint-disable-line
   }
 
   state = {

@@ -1,14 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Image, TouchableOpacity } from 'react-native';
-
 
 export default class LocationButton extends React.Component {
 
   static propTypes = {
-    error: React.PropTypes.string,
-    loading: React.PropTypes.bool.isRequired,
-    seeAllStations: React.PropTypes.func.isRequired,
-    styles: React.PropTypes.object.isRequired,
+    error: PropTypes.string,
+    loading: PropTypes.bool.isRequired,
+    seeAllStations: PropTypes.func.isRequired,
+    styles: PropTypes.object.isRequired,
   }
 
   getLocationImage() {

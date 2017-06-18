@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 
 const UnorderedList = ({ content, styles }) => (
@@ -17,8 +18,8 @@ const UnorderedList = ({ content, styles }) => (
 );
 
 UnorderedList.propTypes = {
-  content: React.PropTypes.array.isRequired,
-  styles: React.PropTypes.object.isRequired,
+  content: PropTypes.array.isRequired,
+  styles: PropTypes.object.isRequired,
 };
 
 export default UnorderedList;

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "moment": "2.15.2",
+    "prop-types": "^15.5.10",
     "react": "15.3.2",
     "react-native": "0.36.1",
     "react-native-collapsible": "git+https://git@github.com/brandonfancher/react-native-collapsible.git",

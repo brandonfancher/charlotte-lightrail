@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimensions, Text, SegmentedControlIOS, StyleSheet, View } from 'react-native';
 import { getScheduleDay } from '../../helpers/scheduleCalcs';
 import { COLORS } from '../../assets/styles/constants';
@@ -9,9 +10,9 @@ const deviceScreen = Dimensions.get('window');
 export default class ScheduleInfoHeader extends React.Component {
 
   static propTypes = {
-    scheduleIndex: React.PropTypes.number.isRequired,
-    scheduleValueHandler: React.PropTypes.func.isRequired,
-    stationName: React.PropTypes.string.isRequired,
+    scheduleIndex: PropTypes.number.isRequired,
+    scheduleValueHandler: PropTypes.func.isRequired,
+    stationName: PropTypes.string.isRequired,
   }
 
   state = {

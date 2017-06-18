@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TouchableOpacity, Image } from './DirectionsButtonCss';
 
 export default class DirectionsButton extends React.Component {
 
   static propTypes = {
-    onPress: React.PropTypes.func.isRequired,
+    onPress: PropTypes.func.isRequired,
   }
 
   render() {

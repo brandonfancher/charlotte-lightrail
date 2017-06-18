@@ -1,7 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Image, TouchableOpacity } from 'react-native'
 
 export default class ModeButton extends React.Component {
+
+  static propTypes = {
+    currentMode: PropTypes.string.isRequired,
+    desiredMode: PropTypes.string.isRequired,
+    onPress: PropTypes.func.isRequired,
+    styles: PropTypes.object.isRequired
+  }
 
   getIcon () {
     if (this.props.desiredMode === 'walking') {
@@ -22,11 +30,4 @@ export default class ModeButton extends React.Component {
       </TouchableOpacity>
     )
   }
-}
-
-ModeButton.propTypes = {
-  currentMode: React.PropTypes.string.isRequired,
-  desiredMode: React.PropTypes.string.isRequired,
-  onPress: React.PropTypes.func.isRequired,
-  styles: React.PropTypes.object.isRequired
 }

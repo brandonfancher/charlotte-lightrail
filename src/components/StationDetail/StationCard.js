@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { blueStops } from '../../helpers/config';
 import { identifyDevice, startNavigation } from '../../helpers/helpers';
@@ -8,16 +9,16 @@ import DirectionsButton from '../DirectionsButton';
 export default class StationCard extends React.Component {
 
   static propTypes = {
-    connected: React.PropTypes.bool.isRequired,
-    loading: React.PropTypes.bool.isRequired,
-    mode: React.PropTypes.string.isRequired,
-    nearestStationIndex: React.PropTypes.number,
-    panToStation: React.PropTypes.func.isRequired,
-    stationDistances: React.PropTypes.array,
-    stationIndex: React.PropTypes.number,
-    stopCallout: React.PropTypes.object,
-    navigation: React.PropTypes.shape({
-      navigate: React.PropTypes.func.isRequired
+    connected: PropTypes.bool.isRequired,
+    loading: PropTypes.bool.isRequired,
+    mode: PropTypes.string.isRequired,
+    nearestStationIndex: PropTypes.number,
+    panToStation: PropTypes.func.isRequired,
+    stationDistances: PropTypes.array,
+    stationIndex: PropTypes.number,
+    stopCallout: PropTypes.object,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired
     })
   }
 
