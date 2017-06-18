@@ -1,0 +1,118 @@
+exports[`<LocationButton /> renders correctly with an error 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "flexBasis": 0,
+      "flexGrow": 0.8,
+      "flexShrink": 1,
+      "opacity": 1,
+      "paddingRight": 14,
+      "paddingTop": 1,
+    }
+  }
+  testID={undefined}>
+  <Image
+    inactiveIcon={true}
+    source={1}
+    style={
+      Array [
+        Object {
+          "opacity": 1,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;
+
+exports[`<LocationButton /> renders correctly with no error and loading 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "flexBasis": 0,
+      "flexGrow": 0.8,
+      "flexShrink": 1,
+      "opacity": 1,
+      "paddingRight": 14,
+      "paddingTop": 1,
+    }
+  }
+  testID={undefined}>
+  <Image
+    inactiveIcon={true}
+    source={1}
+    style={
+      Array [
+        Object {
+          "opacity": 1,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;
+
+exports[`<LocationButton /> renders correctly with no error and not loading 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "flexBasis": 0,
+      "flexGrow": 0.8,
+      "flexShrink": 1,
+      "opacity": 1,
+      "paddingRight": 14,
+      "paddingTop": 1,
+    }
+  }
+  testID={undefined}>
+  <Image
+    source={1}
+    style={
+      Array [
+        Object {
+          "opacity": 1,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;

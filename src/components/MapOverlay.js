@@ -72,7 +72,7 @@ export default class MapOverlay extends React.Component {
                     <Text allowFontScaling={false} style={styles.offlineText}>{failText}</Text>
                   </TouchableOpacity>
               }
-              <LocationButton styles={styles} seeAllStations={seeAllStations} error={error} loading={loading} />
+              <LocationButton seeAllStations={seeAllStations} error={error} loading={loading} />
             </View>
           </View>
         }
