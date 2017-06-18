@@ -30,7 +30,7 @@ exports[`<LocationButton /> renders correctly with an error 1`] = `
     style={
       Array [
         Object {
-          "opacity": 1,
+          "opacity": 0.4,
         },
         undefined,
       ]
@@ -70,7 +70,7 @@ exports[`<LocationButton /> renders correctly with no error and loading 1`] = `
     style={
       Array [
         Object {
-          "opacity": 1,
+          "opacity": 0.4,
         },
         undefined,
       ]

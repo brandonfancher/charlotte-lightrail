@@ -8,5 +8,5 @@ export const TouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image`
-  opacity: ${props => props.inactive ? 0.4 : 1}
+  opacity: ${props => props.inactiveIcon ? 0.4 : 1}
 `;
