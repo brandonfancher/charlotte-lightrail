@@ -1,0 +1,42 @@
+exports[`<DirectionsButton /> renders correctly 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#009ada",
+      "borderRadius": 50,
+      "borderWidth": 0,
+      "height": 50,
+      "marginHorizontal": 6,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+      "width": 50,
+    }
+  }
+  testID={undefined}>
+  <Image
+    source={1}
+    style={
+      Array [
+        Object {
+          "opacity": 1,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;

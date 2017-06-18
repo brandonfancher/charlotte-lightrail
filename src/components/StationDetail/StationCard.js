@@ -98,7 +98,7 @@ export default class StationCard extends React.Component {
                   source={require('../../assets/icons/schedule/ic_schedule_white_36pt.png')}
                 />
               </TouchableOpacity>
-              <DirectionsButton onPress={() => startNavigation(mode, stop.latlng)} styles={styles} />
+              <DirectionsButton onPress={() => startNavigation(mode, stop.latlng)} />
             </View>
           </View>
         </View>
