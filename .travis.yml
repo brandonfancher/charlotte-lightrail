@@ -5,6 +5,9 @@ install:
 before_script:
   - bash build_keys.sh
 script:
-  - yarn test
+  - yarn test:coverage
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info
 notifications:
   email: false
