@@ -38,5 +38,5 @@ coverage:
 
 comment:
   layout: "header, diff, files"
-  behavior: new
+  behavior: default
   # "header, diff, changes, sunburst, suggestions, tree"
