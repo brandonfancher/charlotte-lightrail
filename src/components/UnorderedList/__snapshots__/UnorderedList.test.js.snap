@@ -1,0 +1,335 @@
+exports[`<UnorderedList /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }>
+  <View
+    bulletWrapper={true}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }>
+    <View
+      bullet={true}
+      style={
+        Array [
+          Object {
+            "width": 13,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        ●
+      </Text>
+    </View>
+    <View
+      bulletContent={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 1,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        Find the closest station
+      </Text>
+    </View>
+  </View>
+  <View
+    bulletWrapper={true}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }>
+    <View
+      bullet={true}
+      style={
+        Array [
+          Object {
+            "width": 13,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        ●
+      </Text>
+    </View>
+    <View
+      bulletContent={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 1,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        Get directions, on foot, or by car
+      </Text>
+    </View>
+  </View>
+  <View
+    bulletWrapper={true}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }>
+    <View
+      bullet={true}
+      style={
+        Array [
+          Object {
+            "width": 13,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        ●
+      </Text>
+    </View>
+    <View
+      bulletContent={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 1,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        See when the next train is coming
+      </Text>
+    </View>
+  </View>
+  <View
+    bulletWrapper={true}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }>
+    <View
+      bullet={true}
+      style={
+        Array [
+          Object {
+            "width": 13,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        ●
+      </Text>
+    </View>
+    <View
+      bulletContent={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 1,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        See the full rail schedule
+      </Text>
+    </View>
+  </View>
+  <View
+    bulletWrapper={true}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        undefined,
+      ]
+    }>
+    <View
+      bullet={true}
+      style={
+        Array [
+          Object {
+            "width": 13,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        ●
+      </Text>
+    </View>
+    <View
+      bulletContent={true}
+      style={
+        Array [
+          Object {
+            "flexBasis": 1,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#ffffff",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }>
+        See these FAQs about riding the rails
+      </Text>
+    </View>
+  </View>
+</View>
+`;
