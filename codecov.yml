@@ -31,7 +31,6 @@ coverage:
     - "ios/**/*"
     - "node_modules/**/*"
     - "yarn.lock"
-    - "build_keys.sh"
     - "package.json"
     - ".gitignore"
     - ".git/**/*"
