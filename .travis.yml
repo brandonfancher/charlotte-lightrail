@@ -2,8 +2,6 @@ language: node_js
 install:
   - npm install -g react-native-cli
   - yarn
-before_script:
-  - bash build_keys.sh
 script:
   - yarn test:coverage
 after_success:

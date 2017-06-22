@@ -1,11 +1,29 @@
 import { Linking } from 'react-native';
 import schedules from './schedules.json';
-import { GOOGLE_API_KEY, MAPBOX_API_KEY } from '../../env';
+import {
+  GOOGLE_API_KEY as GOOGLE_API_KEY_FILE,
+  MAPBOX_API_KEY as MAPBOX_API_KEY_FILE
+} from '../../env';
 
-export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
+let GOOGLE_API_KEY;
+let MAPBOX_API_KEY;
+
+if (process.env.GOOGLE_API_KEY) {
+  GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+} else {
+  GOOGLE_API_KEY = GOOGLE_API_KEY_FILE;
+}
+
+if (process.env.MAPBOX_API_KEY) {
+  MAPBOX_API_KEY = process.env.MAPBOX_API_KEY;
+} else {
+  MAPBOX_API_KEY = MAPBOX_API_KEY_FILE;
+}
 
 export const googleApiKey = GOOGLE_API_KEY;
 export const mapboxApiKey = MAPBOX_API_KEY;
+
+export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
 
 // setting for simulating a disconnected state
 export const SIMULATE_DISCONNECTED = false;
