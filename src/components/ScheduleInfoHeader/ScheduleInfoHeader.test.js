@@ -7,12 +7,6 @@ import renderer from 'react-test-renderer';
 describe('<ScheduleInfoHeader />', () => {
   let props;
 
-// static propTypes = {
-//     scheduleIndex: PropTypes.number.isRequired,
-//     scheduleValueHandler: PropTypes.func.isRequired,
-//     stationName: PropTypes.string.isRequired,
-//   }
-
   beforeAll(() => {
     props = {
       scheduleIndex: 1,
