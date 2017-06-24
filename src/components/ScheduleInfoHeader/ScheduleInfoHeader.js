@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, Text, SegmentedControlIOS, StyleSheet, View } from 'react-native';
+import { Dimensions, SegmentedControlIOS } from 'react-native';
+import { WrapView, TitleText, ScheduleSelectorView } from './ScheduleInfoHeaderCss';
 import { getScheduleDay } from '../../helpers/scheduleCalcs';
-import { COLORS } from '../../assets/styles/constants';
 
 const deviceScreen = Dimensions.get('window');
-
 
 export default class ScheduleInfoHeader extends React.Component {
 
@@ -23,9 +22,9 @@ export default class ScheduleInfoHeader extends React.Component {
   render() {
     const { scheduleIndex, scheduleValueHandler, stationName } = this.props;
     return (
-      <View style={styles.wrap}>
-        <Text allowFontScaling={false} style={styles.title}>{stationName}</Text>
-        <View style={styles.scheduleSelector}>
+      <WrapView width={deviceScreen.width}>
+        <TitleText allowFontScaling={false}>{stationName}</TitleText>
+        <ScheduleSelectorView>
           <SegmentedControlIOS
             values={['Weekday', 'Saturday', 'Sunday']}
             selectedIndex={scheduleIndex}
@@ -33,30 +32,8 @@ export default class ScheduleInfoHeader extends React.Component {
             onValueChange={value => scheduleValueHandler(value)}
             tintColor="white"
           />
-        </View>
-      </View>
+        </ScheduleSelectorView>
+      </WrapView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrap: {
-    backgroundColor: COLORS.verticalDividerLine,
-    flex: 1,
-    height: 74,
-    width: deviceScreen.width,
-  },
-  title: {
-    alignSelf: 'center',
-    fontSize: 16,
-    marginTop: 9,
-    marginBottom: 3,
-    color: COLORS.primaryTextColor,
-  },
-  scheduleSelector: {
-    width: 240,
-    alignSelf: 'center',
-    marginTop: 4,
-    marginBottom: 12,
-  },
-});

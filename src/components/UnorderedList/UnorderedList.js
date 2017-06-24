@@ -1,6 +1,7 @@
 import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { Text, View } from './UnorderedListCss';
+import { Text, BulletContentView, BulletView, BulletWrapperView } from './UnorderedListCss';
 
 export default class UnorderedList extends React.Component {
 
@@ -13,14 +14,14 @@ export default class UnorderedList extends React.Component {
     return (
       <View>
         {content.map((text, index) => (
-          <View bulletWrapper key={`bullet-${index}`}>
-            <View bullet>
+          <BulletWrapperView key={`bullet-${index}`}>
+            <BulletView>
               <Text allowFontScaling={false}>&#9679;</Text>
-            </View>
-            <View bulletContent>
+            </BulletView>
+            <BulletContentView>
               <Text allowFontScaling={false}>{text}</Text>
-            </View>
-          </View>
+            </BulletContentView>
+          </BulletWrapperView>
         ))}
       </View>
     );
