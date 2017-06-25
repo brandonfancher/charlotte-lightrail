@@ -5,6 +5,7 @@ import { blueStops } from '../../helpers/config';
 import { identifyDevice, startNavigation } from '../../helpers/helpers';
 import { COLORS } from '../../assets/styles/constants';
 import DirectionsButton from '../DirectionsButton';
+// import * as CSS from './StationCardCss';
 
 export default class StationCard extends React.Component {
 
@@ -37,36 +38,37 @@ export default class StationCard extends React.Component {
     const onNearestStation = stationIndex === nearestStationIndex;
     if (stopCallout && stopCallout.inbound && !loading) {
       return (
-        <View key={`nearestContainer-${stationIndex}`} style={styles.nearestContainer}>
-          <View style={styles.triangle} />
-          <View style={styles.infoContainer}>
+        <NearestContainerView key={`nearestContainer-${stationIndex}`}>
+          <TriangleView />
+          <InfoContainerView>
             {stationIndex > 0
               ?
-                <TouchableOpacity style={styles.arrowWrapper} onPress={() => panToStation(-1)}>
-                  <View style={[styles.arrow, styles.arrowLeft]} />
-                </TouchableOpacity>
+                <ArrowWrapperTouchableOpacity onPress={() => panToStation(-1)}>
+                  <ArrowView left />
+                </ArrowWrapperTouchableOpacity>
               :
-                <View style={styles.arrowWrapper}>
-                  <View style={[styles.arrow, styles.arrowLeft, styles.arrowDisabled]} />
-                </View>
+                <ArrowWrapperView>
+                  <ArrowView left disabled />
+                </ArrowWrapperView>
             }
-            <View style={styles.stationLabelContainer}>
-              <Text allowFontScaling={false} style={styles.stationLabel}>{stop.mapLabel}</Text>
-              {connected && <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>
+            <StationLabelContainerView>
+              <StationLabelText allowFontScaling={false}>{stop.mapLabel}</StationLabelText>
+              {connected && <SmallGrayText allowFontScaling={false}>
+                {/* check here: deviceVariableSizes should be moved out? */}
                 {onNearestStation && deviceVariableSizes.nearestStationText}{this.renderDistanceText()}
-              </Text>}
-            </View>
+              </SmallGrayText>}
+            </StationLabelContainerView>
             {stationIndex < blueStops.length - 1
               ?
-                <TouchableOpacity style={styles.arrowWrapper} onPress={() => panToStation(1)}>
-                  <View style={[styles.arrow, styles.arrowRight]} />
-                </TouchableOpacity>
+                <ArrowWrapperTouchableOpacity onPress={() => panToStation(1)}>
+                  <ArrowView />
+                </ArrowWrapperTouchableOpacity>
               :
-                <View style={styles.arrowWrapper}>
-                  <View style={[styles.arrow, styles.arrowRight, styles.arrowDisabled]} />
-                </View>
+                <ArrowWrapperView>
+                  <ArrowView disabled />
+                </ArrowWrapperView>
             }
-          </View>
+          </InfoContainerView>
           <View style={styles.timesContainer}>
             <View style={styles.nextBlock}>
               <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>Next Inbound</Text>
@@ -102,7 +104,7 @@ export default class StationCard extends React.Component {
               <DirectionsButton onPress={() => startNavigation(mode, stop.latlng)} />
             </View>
           </View>
-        </View>
+        </NearestContainerView>
       );
     }
 
