@@ -2,9 +2,9 @@ import React from 'react';
 import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
-import faqContent from '../components/About/faqContent';
-import { COLORS } from '../assets/styles/constants';
-import { aboutStyles } from '../assets/styles/aboutStyles';
+import faqContent from 'components/About/faqContent';
+import { COLORS } from 'assets/styles/constants';
+import { aboutStyles } from 'assets/styles/aboutStyles';
 
 
 const styles = StyleSheet.create(aboutStyles);

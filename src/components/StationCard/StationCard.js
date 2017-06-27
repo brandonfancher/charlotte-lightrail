@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, Image } from 'react-native';
-import { blueStops } from '../../helpers/config';
-import { startNavigation } from '../../helpers/helpers';
-import { COLORS } from '../../assets/styles/constants';
-import { deviceProps } from '../../helpers/device';
+import { blueStops } from 'helpers/config';
+import { startNavigation } from 'helpers/helpers';
+import { COLORS } from 'assets/styles/constants';
+import { deviceProps } from 'helpers/device';
 import DirectionsButton from '../DirectionsButton';
 import {
   NearestContainerView, TriangleView, InfoContainerView,
@@ -100,13 +100,13 @@ export default class StationCard extends React.Component {
               <BubbleTouchableOpacity onPress={() => navigate('StationDetail', { activeCallout: stopCallout, stop })}>
                 <Image
                   // eslint-disable-next-line
-                  source={require('../../assets/icons/info/ic_info_white_36pt.png')}
+                  source={require('assets/icons/info/ic_info_white_36pt.png')}
                 />
               </BubbleTouchableOpacity>
               <BubbleTouchableOpacity onPress={() => navigate('StationSchedule', { activeStationIndex: stationIndex, loading, stopCallout })}>
                 <Image
                   // eslint-disable-next-line
-                  source={require('../../assets/icons/schedule/ic_schedule_white_36pt.png')}
+                  source={require('assets/icons/schedule/ic_schedule_white_36pt.png')}
                 />
               </BubbleTouchableOpacity>
               <DirectionsButton onPress={() => startNavigation(mode, stop.latlng)} />

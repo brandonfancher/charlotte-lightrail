@@ -3,6 +3,13 @@
     "react-native"
   ],
   "plugins": [
-    "transform-inline-environment-variables"
+    "transform-inline-environment-variables",
+    ["module-resolver", {
+      "alias": {
+        "assets": "./src/assets",
+        "helpers": "./src/helpers",
+        "components": "./src/components"
+      }
+    }]
   ]
 }

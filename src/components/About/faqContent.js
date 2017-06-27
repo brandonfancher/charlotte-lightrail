@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import UnorderedList from '../UnorderedList';
-import { displayLink } from '../../helpers/config';
+import { displayLink } from 'helpers/config';
 
 const faqContent = styles => [
   {

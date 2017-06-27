@@ -15,7 +15,7 @@ export default class DirectionsButton extends React.Component {
       <BubbleTouchableOpacity onPress={onPress}>
         <ActiveIconImage
           // eslint-disable-next-line
-          source={require('../../assets/icons/directions/ic_directions_white_36pt.png')}
+          source={require('assets/icons/directions/ic_directions_white_36pt.png')}
         />
       </BubbleTouchableOpacity>
     );

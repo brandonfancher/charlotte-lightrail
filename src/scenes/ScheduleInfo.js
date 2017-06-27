@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dimensions, InteractionManager, Text, ScrollView, StyleSheet, View } from 'react-native';
 import moment from 'moment';
-import ScheduleInfoHeader from '../components/StationDetail/ScheduleInfoHeader';
-import { blueStops } from '../helpers/config';
-import { getScheduleDay } from '../helpers/scheduleCalcs';
-import { COLORS } from '../assets/styles/constants';
+import ScheduleInfoHeader from 'components/StationDetail/ScheduleInfoHeader';
+import { blueStops } from 'helpers/config';
+import { getScheduleDay } from 'helpers/scheduleCalcs';
+import { COLORS } from 'assets/styles/constants';
 
 const deviceScreen = Dimensions.get('window');
 

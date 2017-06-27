@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { COLORS } from '../../assets/styles/constants';
+import { COLORS } from 'assets/styles/constants';
 
 export const BubbleTouchableOpacity = styled.TouchableOpacity`
   backgroundColor: ${COLORS.backgroundColorButton};

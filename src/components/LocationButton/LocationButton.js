@@ -17,7 +17,7 @@ export default class LocationButton extends React.Component {
         <IconImage
           inactiveIcon
           // eslint-disable-next-line
-          source={require('../../assets/icons/location/ic_location_disabled_white.png')}
+          source={require('assets/icons/location/ic_location_disabled_white.png')}
         />
       );
     } else if (loading) {
@@ -25,14 +25,14 @@ export default class LocationButton extends React.Component {
         <IconImage
           inactiveIcon
           // eslint-disable-next-line
-          source={require('../../assets/icons/location/ic_location_searching_white.png')}
+          source={require('assets/icons/location/ic_location_searching_white.png')}
         />
       );
     }
     return (
       <IconImage
         // eslint-disable-next-line
-        source={require('../../assets/icons/location/ic_my_location_white.png')}
+        source={require('assets/icons/location/ic_my_location_white.png')}
       />
     );
   }

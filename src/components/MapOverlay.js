@@ -4,7 +4,7 @@ import { Alert, Image, SegmentedControlIOS, StyleSheet, Text, TouchableOpacity, 
 import userDefaults from 'react-native-user-defaults';
 import LocationButton from './LocationButton';
 import StationSlider from './StationDetail/StationSlider';
-import { COLORS } from '../assets/styles/constants';
+import { COLORS } from 'assets/styles/constants';
 
 
 export default class MapOverlay extends React.Component {

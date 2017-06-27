@@ -4,12 +4,12 @@ import QuickActions from 'react-native-quick-actions';
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 import moment from 'moment';
 import userDefaults from 'react-native-user-defaults';
-import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from '../helpers/config';
-import { identifyDevice } from '../helpers/helpers';
-import { distanceTimeConverter, getNextTrainTime } from '../helpers/scheduleCalcs';
-import { blueLine, getAnnotations, getStopCallouts } from '../helpers/mapSetup';
-import { mapboxDistanceAPI } from '../helpers/mapboxDistanceAPI';
-import MapOverlay from '../components/MapOverlay';
+import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from 'helpers/config';
+import { identifyDevice } from 'helpers/helpers';
+import { distanceTimeConverter, getNextTrainTime } from 'helpers/scheduleCalcs';
+import { blueLine, getAnnotations, getStopCallouts } from 'helpers/mapSetup';
+import { mapboxDistanceAPI } from 'helpers/mapboxDistanceAPI';
+import MapOverlay from 'components/MapOverlay';
 
 Mapbox.setAccessToken(mapboxApiKey);
 
