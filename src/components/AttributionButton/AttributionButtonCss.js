@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
 
-export const TouchableOpacity = styled.TouchableOpacity`
+export const AttributionTouchableOpacity = styled.TouchableOpacity`
   marginHorizontal: 4;
   position: relative;
   height: 20;
   width: 20;
 `;
 
-export const Image = styled.Image`
+export const AttributionIconImage = styled.Image`
   height: 20;
   width: 20;
 `;

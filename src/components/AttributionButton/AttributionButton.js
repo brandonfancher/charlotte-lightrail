@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActionSheetIOS, Alert } from 'react-native';
 import userDefaults from 'react-native-user-defaults';
-import { TouchableOpacity, Image } from './AttributionButtonCss';
+import { AttributionTouchableOpacity, AttributionIconImage } from './AttributionButtonCss';
 import { displayLink } from '../../helpers/config';
 
 export default class AttributionButton extends React.Component {
@@ -57,12 +57,12 @@ export default class AttributionButton extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={this.showActionSheet}>
-        <Image
+      <AttributionTouchableOpacity onPress={this.showActionSheet}>
+        <AttributionIconImage
           // eslint-disable-next-line
           source={require('../../assets/icons/info/info_circle.png')}
         />
-      </TouchableOpacity>
+      </AttributionTouchableOpacity>
     );
   }
 }

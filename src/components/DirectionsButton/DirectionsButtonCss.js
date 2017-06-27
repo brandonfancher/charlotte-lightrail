@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { COLORS } from '../../assets/styles/constants';
 
-export const TouchableOpacity = styled.TouchableOpacity`
+export const BubbleTouchableOpacity = styled.TouchableOpacity`
   backgroundColor: ${COLORS.backgroundColorButton};
   borderRadius: 50;
   borderWidth: 0;
@@ -11,6 +11,6 @@ export const TouchableOpacity = styled.TouchableOpacity`
   height: 50;
 `;
 
-export const Image = styled.Image`
+export const ActiveIconImage = styled.Image`
   opacity: 1;
 `;

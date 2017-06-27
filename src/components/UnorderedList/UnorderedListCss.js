@@ -13,7 +13,7 @@ export const BulletContentView = styled.View`
   flex: 1px;
 `;
 
-export const Text = styled.Text`
+export const ContentText = styled.Text`
   fontSize: 14px;
   color: ${COLORS.primaryTextColor};
 `;
