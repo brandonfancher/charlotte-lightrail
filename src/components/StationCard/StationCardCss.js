@@ -1,38 +1,10 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
 import { COLORS } from '../../assets/styles/constants';
-import { identifyDevice } from '../../helpers/helpers';
-
-const device = identifyDevice();
-const deviceScreen = Dimensions.get('window');
-let deviceVariableSizes = {};
-if (device === 'iPhone 6+') {
-  deviceVariableSizes.calloutHeight = 300;
-  deviceVariableSizes.nextTimeFontSize = 40;
-  deviceVariableSizes.stationLabelFontSize = 36;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 4;
-  deviceVariableSizes.nearestStationText = 'Nearest Station - ';
-} else if (device === 'iPhone 6') {
-  deviceVariableSizes.calloutHeight = 279;
-  deviceVariableSizes.nextTimeFontSize = 36;
-  deviceVariableSizes.stationLabelFontSize = 30;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 1;
-  deviceVariableSizes.nearestStationText = 'Nearest Station - ';
-} else {
-  deviceVariableSizes.calloutHeight = 279;
-  deviceVariableSizes.nextTimeFontSize = 33;
-  deviceVariableSizes.stationLabelFontSize = 22;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 1;
-  deviceVariableSizes.nearestStationText = 'Nearest - ';
-}
-
-const calloutBoxHeight = deviceVariableSizes.calloutHeight - 25; // excludes triangle
-const blueBoxHeight = calloutBoxHeight * 0.45; // 45% of calloutBoxHeight
-const blackBoxHeight = calloutBoxHeight * 0.55; // 55% of calloutBoxHeight
+import { deviceProps } from '../../helpers/device';
 
 export const NearestContainerView = styled.View`
-  height: ${deviceVariableSizes.calloutHeight}px;
-  width: ${deviceScreen.width}px;
+  height: ${deviceProps.deviceVariableSizes['calloutHeight']}px;
+  width: ${deviceProps.deviceScreen.width}px;
 `;
 
 export const TriangleView = styled.View`
@@ -51,7 +23,7 @@ export const TriangleView = styled.View`
 `;
 
 export const InfoContainerView = styled.View`
-  height: ${blueBoxHeight};
+  height: ${deviceProps.blueBoxHeight};
   flexDirection: row;
   backgroundColor: ${COLORS.backgroundColorTrans};
   paddingHorizontal: 12px;
@@ -68,7 +40,7 @@ export const ArrowWrapperView = styled.View`
   padding: 6px;
 `;
 
-export const ArrowView = styled.View`
+const ArrowView = styled.View`
   borderStyle: solid;
   borderTopWidth: 1px;
   borderRightWidth: 1px;
@@ -78,7 +50,14 @@ export const ArrowView = styled.View`
   margin: 10px;
   height: 30px;
   width: 30px;
-  transform: ${props => props.left ? [{ rotate: '-135deg' }] : [{ rotate: '45deg' }]};
+`;
+
+export const LeftArrowView = ArrowView.extend`
+  transform: rotate(-135deg);
+`;
+
+export const RightArrowView = ArrowView.extend`
+  transform: rotate(45deg);
 `;
 
 export const StationLabelContainerView = styled.View`
@@ -88,11 +67,70 @@ export const StationLabelContainerView = styled.View`
 `;
 
 export const StationLabelText = styled.Text`
-  fontSize: ${deviceVariableSizes.stationLabelFontSize}px;
+  fontSize: ${deviceProps.deviceVariableSizes['stationLabelFontSize']}px;
   color: ${COLORS.primaryTextColor};
 `;
 
 export const SmallGrayText = styled.Text`
   color: ${COLORS.grayText};
   fontSize: 13px;
+`;
+
+export const TimesContainerView = styled.View`
+  height: ${deviceProps.blackBoxHeight}px;
+  flexDirection: row;
+  alignItems: center;
+  paddingHorizontal: 12px;
+  backgroundColor: ${COLORS.backgroundColorDark};
+`;
+
+export const NextBlockView = styled.View`
+  alignItems: center;
+  flex: 1px;
+`;
+
+export const NextTimeWrapView = styled.View`
+  paddingVertical: ${deviceProps.deviceVariableSizes['nextTimeWrapPaddingVertical']}px;
+`;
+
+export const NextTimeText = styled.Text`
+  fontSize: ${deviceProps.deviceVariableSizes['nextTimeFontSize']}px;
+  color: ${COLORS.primaryTextColor};
+`;
+
+//left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
+export const ButtonContainerView = styled.View`
+  position: absolute;
+  height: 50px;
+  bottom: ${deviceProps.blackBoxHeight - (50 / 2)}px;
+  left: ${(deviceProps.deviceScreen['width'] / 2) - (((50 + 12) * 3) / 2)}px;
+`;
+
+export const ButtonsView = styled.View`
+  flex: 1px;
+  flexDirection: row;
+  alignSelf: center;
+`;
+
+export const BubbleTouchableOpacity = styled.TouchableOpacity`
+  backgroundColor: ${COLORS.backgroundColorButton};
+  borderRadius: 50px;
+  borderWidth: 0px;
+  marginHorizontal: 6px;
+  padding: 7px;
+  width: 50px;
+  height: 50px;
+`;
+
+export const LoadingWrapperView = styled.View`
+  backgroundColor: ${COLORS.backgroundColorTrans};
+  height: ${deviceProps.calloutBoxHeight}px;
+  justifyContent: center;
+`;
+
+export const LoadingText = styled.Text`
+  textAlign: center;
+  fontSize: 16px;
+  paddingVertical: 10px;
+  color: ${COLORS.grayText};
 `;

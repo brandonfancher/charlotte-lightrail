@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Image } from 'react-native';
 import { blueStops } from '../../helpers/config';
-import { identifyDevice, startNavigation } from '../../helpers/helpers';
+import { startNavigation } from '../../helpers/helpers';
 import { COLORS } from '../../assets/styles/constants';
+import { deviceProps } from '../../helpers/device';
 import DirectionsButton from '../DirectionsButton';
-// import * as CSS from './StationCardCss';
+import {
+  NearestContainerView, TriangleView, InfoContainerView,
+  ArrowWrapperTouchableOpacity, ArrowWrapperView,
+  LeftArrowView, RightArrowView, StationLabelContainerView,
+  StationLabelText, SmallGrayText, TimesContainerView,
+  NextBlockView, NextTimeText, ButtonContainerView, ButtonsView,
+  BubbleTouchableOpacity, LoadingWrapperView, LoadingText,
+  NextTimeWrapView
+} from './StationCardCss';
 
 export default class StationCard extends React.Component {
 
@@ -44,234 +53,79 @@ export default class StationCard extends React.Component {
             {stationIndex > 0
               ?
                 <ArrowWrapperTouchableOpacity onPress={() => panToStation(-1)}>
-                  <ArrowView left />
+                  <LeftArrowView />
                 </ArrowWrapperTouchableOpacity>
               :
                 <ArrowWrapperView>
-                  <ArrowView left disabled />
+                  <LeftArrowView disabled />
                 </ArrowWrapperView>
             }
             <StationLabelContainerView>
               <StationLabelText allowFontScaling={false}>{stop.mapLabel}</StationLabelText>
               {connected && <SmallGrayText allowFontScaling={false}>
-                {/* check here: deviceVariableSizes should be moved out? */}
-                {onNearestStation && deviceVariableSizes.nearestStationText}{this.renderDistanceText()}
+                {onNearestStation && deviceProps.deviceVariableSizes['nearestStationText']}{this.renderDistanceText()}
               </SmallGrayText>}
             </StationLabelContainerView>
             {stationIndex < blueStops.length - 1
               ?
                 <ArrowWrapperTouchableOpacity onPress={() => panToStation(1)}>
-                  <ArrowView />
+                  <RightArrowView />
                 </ArrowWrapperTouchableOpacity>
               :
                 <ArrowWrapperView>
-                  <ArrowView disabled />
+                  <RightArrowView disabled />
                 </ArrowWrapperView>
             }
           </InfoContainerView>
-          <View style={styles.timesContainer}>
-            <View style={styles.nextBlock}>
-              <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>Next Inbound</Text>
-              <View style={styles.nextTimeWrap}>
-                <Text allowFontScaling={false} style={styles.nextTime}>{stopCallout.inbound.time}</Text>
-              </View>
-              <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>{stopCallout.inbound.delta}</Text>
-            </View>
+          <TimesContainerView>
+            <NextBlockView>
+              <SmallGrayText allowFontScaling={false}>Next Inbound</SmallGrayText>
+              <NextTimeWrapView>
+                <NextTimeText allowFontScaling={false}>{stopCallout.inbound.time}</NextTimeText>
+              </NextTimeWrapView>
+              <SmallGrayText allowFontScaling={false}>{stopCallout.inbound.delta}</SmallGrayText>
+            </NextBlockView>
 
-            <View style={styles.nextBlock}>
-              <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>Next Outbound</Text>
-              <View style={styles.nextTimeWrap}>
-                <Text allowFontScaling={false} style={styles.nextTime}>{stopCallout.outbound.time}</Text>
-              </View>
-              <Text allowFontScaling={false} style={[styles.grayText, styles.smallText]}>{stopCallout.outbound.delta}</Text>
-            </View>
-          </View>
+            <NextBlockView>
+              <SmallGrayText allowFontScaling={false}>Next Outbound</SmallGrayText>
+              <NextTimeWrapView>
+                <NextTimeText allowFontScaling={false}>{stopCallout.outbound.time}</NextTimeText>
+              </NextTimeWrapView>
+              <SmallGrayText allowFontScaling={false}>{stopCallout.outbound.delta}</SmallGrayText>
+            </NextBlockView>
+          </TimesContainerView>
 
-          <View style={styles.buttonContainer}>
-            <View style={styles.buttons}>
-              <TouchableOpacity onPress={() => navigate('StationDetail', { activeCallout: stopCallout, stop })} style={styles.bubble}>
+          <ButtonContainerView>
+            <ButtonsView>
+              <BubbleTouchableOpacity onPress={() => navigate('StationDetail', { activeCallout: stopCallout, stop })}>
                 <Image
                   // eslint-disable-next-line
                   source={require('../../assets/icons/info/ic_info_white_36pt.png')}
                 />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigate('StationSchedule', { activeStationIndex: stationIndex, loading, stopCallout })} style={styles.bubble}>
+              </BubbleTouchableOpacity>
+              <BubbleTouchableOpacity onPress={() => navigate('StationSchedule', { activeStationIndex: stationIndex, loading, stopCallout })}>
                 <Image
                   // eslint-disable-next-line
                   source={require('../../assets/icons/schedule/ic_schedule_white_36pt.png')}
                 />
-              </TouchableOpacity>
+              </BubbleTouchableOpacity>
               <DirectionsButton onPress={() => startNavigation(mode, stop.latlng)} />
-            </View>
-          </View>
+            </ButtonsView>
+          </ButtonContainerView>
         </NearestContainerView>
       );
     }
 
     return (
-      <View style={styles.nearestContainer}>
-        <View style={styles.triangle} />
-        <View style={styles.loadingWrapper}>
+      <NearestContainerView>
+        <TriangleView />
+        <LoadingWrapperView>
           <ActivityIndicator size="large" />
-          <Text allowFontScaling={false} style={[styles.grayText, styles.loadingText]}>
+          <LoadingText allowFontScaling={false}>
             {connected ? 'Finding nearest station...' : 'Loading...'}
-          </Text>
-        </View>
-      </View>
+          </LoadingText>
+        </LoadingWrapperView>
+      </NearestContainerView>
     );
   }
 }
-
-// Setup Device-Specific Variables
-const device = identifyDevice();
-const deviceScreen = Dimensions.get('window');
-let deviceVariableSizes = {};
-if (device === 'iPhone 6+') {
-  deviceVariableSizes.calloutHeight = 300;
-  deviceVariableSizes.nextTimeFontSize = 40;
-  deviceVariableSizes.stationLabelFontSize = 36;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 4;
-  deviceVariableSizes.nearestStationText = 'Nearest Station - ';
-} else if (device === 'iPhone 6') {
-  deviceVariableSizes.calloutHeight = 279;
-  deviceVariableSizes.nextTimeFontSize = 36;
-  deviceVariableSizes.stationLabelFontSize = 30;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 1;
-  deviceVariableSizes.nearestStationText = 'Nearest Station - ';
-} else {
-  deviceVariableSizes.calloutHeight = 279;
-  deviceVariableSizes.nextTimeFontSize = 33;
-  deviceVariableSizes.stationLabelFontSize = 22;
-  deviceVariableSizes.nextTimeWrapPaddingVertical = 1;
-  deviceVariableSizes.nearestStationText = 'Nearest - ';
-}
-
-const calloutBoxHeight = deviceVariableSizes.calloutHeight - 25; // excludes triangle
-const blueBoxHeight = calloutBoxHeight * 0.45; // 45% of calloutBoxHeight
-const blackBoxHeight = calloutBoxHeight * 0.55; // 55% of calloutBoxHeight
-
-// Declare StyleSheet
-const styles = StyleSheet.create({
-  nearestContainer: {
-    height: deviceVariableSizes.calloutHeight,
-    width: deviceScreen.width,
-  },
-  triangle: {
-    flexDirection: 'row',
-    alignSelf: 'center',
-    width: 0,
-    height: 0,
-    backgroundColor: COLORS.transparent,
-    borderStyle: 'solid',
-    borderLeftWidth: 25,
-    borderRightWidth: 25,
-    borderBottomWidth: 25,
-    borderLeftColor: COLORS.transparent,
-    borderRightColor: COLORS.transparent,
-    borderBottomColor: COLORS.backgroundColorTrans,
-  },
-
-  // infoContainer
-  infoContainer: {
-    height: blueBoxHeight,
-    flexDirection: 'row',
-    backgroundColor: COLORS.backgroundColorTrans,
-    paddingHorizontal: 12,
-    paddingVertical: 0,
-  },
-  arrowWrapper: {
-    justifyContent: 'center',
-    padding: 6,
-  },
-  arrow: {
-    borderStyle: 'solid',
-    borderTopWidth: 1,
-    borderRightWidth: 1,
-    borderBottomWidth: 0,
-    borderLeftWidth: 0,
-    borderColor: COLORS.primaryTextColor,
-    margin: 10,
-    height: 30,
-    width: 30,
-  },
-  arrowLeft: {
-    transform: [{ rotate: '-135deg' }],
-  },
-  arrowRight: {
-    transform: [{ rotate: '45deg' }],
-  },
-  arrowDisabled: {
-    borderColor: COLORS.disabledArrow,
-  },
-  stationLabelContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-  stationLabel: {
-    fontSize: deviceVariableSizes.stationLabelFontSize,
-    color: COLORS.primaryTextColor,
-  },
-
-  // timesContainer
-  timesContainer: {
-    height: blackBoxHeight,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    backgroundColor: COLORS.backgroundColorDark,
-  },
-  nextBlock: {
-    alignItems: 'center',
-    flex: 1,
-  },
-  nextTimeWrap: {
-    paddingVertical: deviceVariableSizes.nextTimeWrapPaddingVertical,
-  },
-  nextTime: {
-    fontSize: deviceVariableSizes.nextTimeFontSize,
-    color: COLORS.primaryTextColor,
-  },
-
-  // buttonContainer
-  buttonContainer: {
-    position: 'absolute',
-    height: 50,
-    bottom: blackBoxHeight - (50 / 2),
-    left: (deviceScreen.width / 2) - (((50 + 12) * 3) / 2), // Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
-  },
-  buttons: {
-    flex: 1,
-    flexDirection: 'row',
-    alignSelf: 'center',
-  },
-  bubble: {
-    backgroundColor: COLORS.backgroundColorButton,
-    borderRadius: 50,
-    borderWidth: 0,
-    marginHorizontal: 6,
-    padding: 7,
-    width: 50,
-    height: 50,
-  },
-
-  // loadingWrapper
-  loadingWrapper: {
-    backgroundColor: COLORS.backgroundColorTrans,
-    height: calloutBoxHeight,
-    justifyContent: 'center',
-  },
-  loadingText: {
-    textAlign: 'center',
-    fontSize: 16,
-    paddingVertical: 10,
-  },
-
-  // Miscellaneous
-  grayText: {
-    color: COLORS.grayText,
-  },
-  smallText: {
-    fontSize: 13,
-  },
-});
