@@ -1,13 +1,8 @@
 import React from 'react';
 import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
-
-import faqContent from 'components/About/faqContent';
+import { faqContent } from 'components/FaqContent';
 import { COLORS } from 'assets/styles/constants';
-import { aboutStyles } from 'assets/styles/aboutStyles';
-
-
-const styles = StyleSheet.create(aboutStyles);
 
 export default class Faq extends React.Component {
 
@@ -15,8 +10,8 @@ export default class Faq extends React.Component {
     super(props);
     // Set initial animation values for each accordion section...
     const arrowAnimationValues = {};
-    const faqSections = faqContent(styles);
-    faqSections.forEach((sec, index) => {
+    // const faqSections = faqContent(styles);
+    faqContent.forEach((sec, index) => {
       arrowAnimationValues[`arrowBounce${index}`] = new Animated.Value(45);
     });
     arrowAnimationValues.arrowBounce0 = new Animated.Value(135);
@@ -75,7 +70,7 @@ export default class Faq extends React.Component {
               onChange={this.toggleArrow}
               renderHeader={this.renderHeader}
               renderContent={this.renderContent}
-              sections={faqContent(styles)}
+              sections={faqContent}
               underlayColor={COLORS.backgroundColorTrans}
             />
           </View>
