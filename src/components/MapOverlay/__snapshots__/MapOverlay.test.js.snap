@@ -1,0 +1,1207 @@
+exports[`<MapOverlay /> renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      undefined,
+    ]
+  }>
+  <View
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgba(1, 42, 60, 0.97)",
+          "height": 40,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        undefined,
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          },
+          undefined,
+        ]
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flexBasis": 0.8,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "opacity": 1,
+            "paddingLeft": 14,
+            "paddingTop": 1,
+          }
+        }
+        testID={undefined}>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flexBasis": 0,
+            "flexGrow": 0.8,
+            "flexShrink": 1,
+            "opacity": 1,
+            "paddingRight": 14,
+            "paddingTop": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "opacity": 1,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+        },
+        undefined,
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "width": 375,
+          },
+          undefined,
+        ]
+      }>
+      <ScrollView
+        automaticallyAdjustContentInsets={false}
+        horizontal={true}
+        onMomentumScrollEnd={[Function]}
+        pagingEnabled={true}>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 279,
+                "width": 375,
+              },
+              undefined,
+            ]
+          }>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "backgroundColor": "transparent",
+                  "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+                  "borderBottomWidth": 25,
+                  "borderLeftColor": "transparent",
+                  "borderLeftWidth": 25,
+                  "borderRightColor": "transparent",
+                  "borderRightWidth": 25,
+                  "borderStyle": "solid",
+                  "flexDirection": "row",
+                  "height": 0,
+                  "width": 0,
+                },
+                undefined,
+              ]
+            } />
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(0, 20, 30, 0.8)",
+                  "height": 254,
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }>
+            <ActivityIndicator
+              animating={true}
+              color="#999999"
+              hidesWhenStopped={true}
+              size="large" />
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#CCC",
+                    "fontSize": 16,
+                    "paddingVertical": 10,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }>
+              Finding nearest station...
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "bottom": 258,
+            "flexDirection": "row",
+            "position": "absolute",
+            "width": 375,
+          },
+          undefined,
+        ]
+      }>
+      <View
+        style={
+          Array [
+            Object {
+              "height": 20,
+              "width": 20,
+            },
+            undefined,
+          ]
+        }>
+        <Image
+          source={
+            Object {
+              "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAAAoCAMAAAAFWtJHAAAAwFBMVEUAAAAAAAAAAABtbW0AAAAAAAAAAAAAAAAAAAAAAAClpaUAAADp6ekAAAD5+fna2toAAAAMDAzv7+/Nzc0AAAA2Njb8/Pz9/f3T09MAAAAAAAD7+/sAAAArKyuxsbH39/fs7OwbGxuIiIjz8/N8fHyenp7u7u74+PgAAAC8vLxWVlbx8fF1dXXl5eVcXFyUlJTQ0NDFxcVCQkLAwMC4uLj19fXo6OjW1tarq6ve3t77+/vi4uL6+vrKysrNzc3///8w7gSSAAAAP3RSTlMAOQNdPSYBPywKexLLGPCxNEHXnzFL+v2nGwf1IEiE6dBFad9jd9PuLo1V2mDDV3Cjl06SiuXIq4C3973ym6BQMVUPAAAEXElEQVR4Ae2WCVP6OBiH05L0l1IqrVbkKHJ54I0oHn+PfP9vtUle0z/YdhbH2XVnd58ZnRJIeHiPJOx//mH4vQSAN+8FjAhFxgHIaPvJeZ99hxwEElon5iAQbj85Y98g8ODwjEOMAvGFyeE3FEKgodTBqj0BJGN9DhyNd5Ta3ean9QEopfaA+LsKhnEKRExqg4FSP6Og7oEkAjBWnxSCgBX4xF+kcLoPcOBQrSv0e5kH7s1j37jECQieCTPiFGxL5VHw2zQWCeeJiPt6kjRQw0XSkIdVChf67xGa4alSnZlT6HEQ8CK9ANbhvXUF9xlDkBfTuHDWScgC9+z5FQpPI12TlwC6+sV7ixR8CUMKiwjm2GQeOQWHMGuHGdbnObJAwCEqFJpNU5H6uaPUaEIKiQfg+PHk1+u4OwW9PlWW2ctbA4BHCtp+cNK+H8Jos4gDmC5ar4Nx9waaG/2B13NgDqS7+vm2RgEtEws82P+kwIHhs/pgkQKcFIhfd7CogtGNjYMHTLpurD0ERbYFw4JaD3GlQuNAL/JEsSAF4HqlCnaHACk4WhOn4OgCkMD5hSpYNYDJTD8Y46n+jsE1kPhVCuR6QBXhFK7MUOu9O6b1SWF3b+/9ZVWMGOlu93E8UDaAhgc7bfH+0DHqKXCkHzoNDFfU+zxiVQrUC9QXTuHYtKpN59OA3IxCG4b7jh6ZFuVockaNTW09mkJzOaPU49a6mE9cAchZpQJNpUWcwgV9r6FJswsFKrITp2B5pMBMdnS0z2HZNy2+BNKxSZxZfglkrFYBJxQnpzA5sN/HheR2aFQoZBLAi149dQoyAYYjW0hHlHguBAdMcR0DuDZ5omevX6+AI8qcU7ikKT3GBHCnXwydgmCC0tRwCnGQ2Wp6Be71yNIWfQSkOl9vAI1SBCNWrwC01RROgX7BuT2HI4r7tFAw086p/NwZEdOEa7R1uAFuNmQPuKAEAjYNQ0CyeoUEWHYBnpQVQgpvc0Ph+gsKlAnKg1+vEHsw5LKciLKCAJobiWBzYFGbCKpHqkZZrxBFHEASyFI59vJPCskcwNVGOWZAOqsrR+pKbaNeAMT1CixMEtlnsqopNxUMzVJT3tY35aXZm6a6Y9QhwMN6BUJWbE1lhbMO1WehkO7poO0sK7em9MJGxp1XSbC1gtugzzSLQmGsX7VntJGSwsPZ2d2z3bIPKzdoOp3Wzqt8G4XyMVUoFIxLx1S7+piaHtCvR3FeRVsq0GFdp9C5TbGpcNqsPqyHKxcfd14h21KhuLKUFU4f3osrC7F6uV3WXFnadL7wyAPeKDXw2RoJCO5GY4DouYvb/gepVXheLoewzPseQG9N/vzilrMIjoStE3++zvle4eSurw7XEe76ynI4aq+v7lEyt1x5awiFlFLQbHKIpabnM3eJLym4Szzzc/du7SU+zOXv9UNpECH7IoH/gecURPlN9vdQpeD47yhIFNX0U0QgvID9nENm+yxk/xb+AGAjNfRZuk9qAAAAAElFTkSuQmCC",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "flexBasis": 1,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 20,
+                "resizeMode": "contain",
+                "width": 50,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        } />
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 20,
+            "marginHorizontal": 4,
+            "opacity": 1,
+            "position": "relative",
+            "width": 20,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "height": 20,
+                "width": 20,
+              },
+              undefined,
+            ]
+          } />
+      </View>
+    </View>
+  </View>
+</View>
+`;
