@@ -25,21 +25,12 @@ export default class Faq extends React.Component {
   renderHeader = (section, index) => {
     const bounce = this.state[`arrowBounce${index}`];
     return (
-      <View style={styles.accordionHeader}>
+      <AccordionHeaderView>
         <View style={{ flex: 1 }}>
-          <Text allowFontScaling={false} style={styles.bold}>{section.title}</Text>
+          <BoldText allowFontScaling={false}>{section.title}</BoldText>
         </View>
-        <Animated.View
-          style={[styles.arrow, {
-            transform: [{
-              rotate: bounce.interpolate({
-                inputRange: [0, 360],
-                outputRange: ['0deg', '360deg'],
-              }),
-            }],
-          }]}
-        />
-      </View>
+        <AnimatedArrowsView style={{ bounce }} />
+      </AccordionHeaderView>
     );
   }
 
