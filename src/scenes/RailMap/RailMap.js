@@ -4,29 +4,17 @@ import QuickActions from 'react-native-quick-actions';
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 import moment from 'moment';
 import userDefaults from 'react-native-user-defaults';
+import {
+  containerStyle, ContainerView, VisibleView
+} from './RailMapCss';
 import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from 'helpers/config';
-import { identifyDevice } from 'helpers/helpers';
 import { distanceTimeConverter, getNextTrainTime } from 'helpers/scheduleCalcs';
 import { blueLine, getAnnotations, getStopCallouts } from 'helpers/mapSetup';
 import { mapboxDistanceAPI } from 'helpers/mapboxDistanceAPI';
+import { deviceProps } from '../../helpers/device';
 import MapOverlay from 'components/MapOverlay';
 
 Mapbox.setAccessToken(mapboxApiKey);
-
-// Set default map center and zoom coordinates
-const device = identifyDevice();
-let defaultCenter;
-let defaultZoom;
-if (device === 'iPhone 6+') {
-  defaultCenter = { latitude: 35.12848262558094, longitude: -80.84703007335676 };
-  defaultZoom = 10.35016331854935;
-} else if (device === 'iPhone 5') {
-  defaultCenter = { latitude: 35.09018630471958, longitude: -80.84307324707783 };
-  defaultZoom = 9.228717656576594;
-} else {
-  defaultCenter = { latitude: 35.12642689061146, longitude: -80.8549019571087 };
-  defaultZoom = 10.10400032344327;
-}
 
 export default class RailMap extends React.Component {
   state = {
@@ -38,7 +26,7 @@ export default class RailMap extends React.Component {
       strokeAlpha: 0.9,
       id: 'foobar',
     }],
-    center: defaultCenter,
+    center: deviceProps.defaultCenter,
     connected: true,
     error: null,
     lastAppUpdate: null,
@@ -50,7 +38,7 @@ export default class RailMap extends React.Component {
     connectionDetected: true,
     stationDistances: null,
     ...getStopCallouts(), // inject stop callouts generated above into initial state object
-    zoom: defaultZoom,
+    zoom: deviceProps.defaultZoom,
   }
 
   componentDidMount() {
@@ -164,7 +152,7 @@ export default class RailMap extends React.Component {
   }
 
   seeAllStations = () => {
-    this.mapRef.setCenterCoordinateZoomLevel(defaultCenter.latitude, defaultCenter.longitude, defaultZoom);
+    this.mapRef.setCenterCoordinateZoomLevel(deviceProps.defaultCenter.latitude,deviceProps.defaultCenter.longitude, deviceProps.defaultZoom);
   }
 
   showCallout = (stopNum, stationDistances = this.state.stationDistances) => {
@@ -173,7 +161,7 @@ export default class RailMap extends React.Component {
     if (!this.state.loading) {
       const stopInfo = blueStops[stopNum];
       const { latitude, longitude } = stopInfo.latlng;
-      const zoomLatitude = device === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
+      const zoomLatitude = deviceProps.deviceName === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
       const doZoom = () => this.mapRef.setCenterCoordinateZoomLevel(zoomLatitude, longitude, 13.1857257019792);
       const station = stationDistances[stopNum];
       this.getCalloutTrainTime(station, doZoom);
@@ -366,9 +354,9 @@ export default class RailMap extends React.Component {
     const navigation = this.props.navigation;
 
     return (
-      <View style={styles.container}>
+      <ContainerView>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <View style={styles.visible}>
+        <VisibleView>
           <MapView
             annotations={annotations}
             annotationsAreImmutable
@@ -379,18 +367,18 @@ export default class RailMap extends React.Component {
             logoIsHidden
             onOpenAnnotation={this.onOpenAnnotation}
             onRegionDidChange={this.onRegionChange} // onRegionWillChange?
-            onRightAnnotationTapped={this.onRightAnnotationTapped}
+            //onRightAnnotationTapped={this.onRightAnnotationTapped}
             ref={map => this.mapRef = map}
             rotateEnabled={false}
             scrollEnabled
             showsUserLocation={!locationError}
-            style={styles.container}
+            style={containerStyle.container}
             styleURL={Mapbox.mapStyles.streets}
             userTrackingMode={Mapbox.userTrackingMode.none}
             zoomEnabled
             initialZoomLevel={zoom}
           />
-        </View>
+        </VisibleView>
         <MapOverlay
           activeStationIndex={activeStationIndex}
           connected={connected}
@@ -420,21 +408,7 @@ export default class RailMap extends React.Component {
           stopCallout14={this.state.stopCallout14}
           navigation={navigation}
         />
-      </View>
+      </ContainerView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  visible: {
-    opacity: 1,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  },
-});
