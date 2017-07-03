@@ -1,8 +1,12 @@
 import React from 'react';
-import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Animated, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import { faqContent } from 'components/FaqContent';
 import { COLORS } from 'assets/styles/constants';
+import {
+  AccordionContentView, AccordionHeaderView, AccordionWrapperView,
+  AnimatedArrowsView, BoldText, ScrollViewView, ViewContainerView
+} from './FAQCss';
 
 export default class Faq extends React.Component {
 
@@ -35,9 +39,9 @@ export default class Faq extends React.Component {
   }
 
   renderContent = section => (
-    <View style={styles.accordionContent}>
+    <AccordionContentView>
       {section.contents}
-    </View>
+    </AccordionContentView>
   );
 
   toggleArrow = (openIndex) => {
@@ -53,9 +57,9 @@ export default class Faq extends React.Component {
 
   render() {
     return (
-      <View style={styles.viewContainer}>
-        <ScrollView style={styles.scrollView}>
-          <View style={styles.accordionWrapper}>
+      <ViewContainerView>
+        <ScrollViewView>
+          <AccordionWrapperView>
             <Accordion
               initiallyActiveSection={0}
               onChange={this.toggleArrow}
@@ -64,9 +68,9 @@ export default class Faq extends React.Component {
               sections={faqContent}
               underlayColor={COLORS.backgroundColorTrans}
             />
-          </View>
-        </ScrollView>
-      </View>
+          </AccordionWrapperView>
+        </ScrollViewView>
+      </ViewContainerView>
     );
   }
 }
