@@ -11,8 +11,12 @@ import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from 'he
 import { distanceTimeConverter, getNextTrainTime } from 'helpers/scheduleCalcs';
 import { blueLine, getAnnotations, getStopCallouts } from 'helpers/mapSetup';
 import { mapboxDistanceAPI } from 'helpers/mapboxDistanceAPI';
-import { deviceProps } from '../../helpers/device';
+import { deviceProps } from 'helpers/device';
 import MapOverlay from 'components/MapOverlay';
+
+const {
+  defaultCenter, defaultZoom, deviceName
+} = deviceProps;
 
 Mapbox.setAccessToken(mapboxApiKey);
 
@@ -26,7 +30,7 @@ export default class RailMap extends React.Component {
       strokeAlpha: 0.9,
       id: 'foobar',
     }],
-    center: deviceProps.defaultCenter,
+    center: defaultCenter,
     connected: true,
     error: null,
     lastAppUpdate: null,
@@ -38,7 +42,7 @@ export default class RailMap extends React.Component {
     connectionDetected: true,
     stationDistances: null,
     ...getStopCallouts(), // inject stop callouts generated above into initial state object
-    zoom: deviceProps.defaultZoom,
+    zoom: defaultZoom,
   }
 
   componentDidMount() {
@@ -152,7 +156,7 @@ export default class RailMap extends React.Component {
   }
 
   seeAllStations = () => {
-    this.mapRef.setCenterCoordinateZoomLevel(deviceProps.defaultCenter.latitude,deviceProps.defaultCenter.longitude, deviceProps.defaultZoom);
+    this.mapRef.setCenterCoordinateZoomLevel(defaultCenter.latitude, defaultCenter.longitude, defaultZoom);
   }
 
   showCallout = (stopNum, stationDistances = this.state.stationDistances) => {
@@ -161,7 +165,7 @@ export default class RailMap extends React.Component {
     if (!this.state.loading) {
       const stopInfo = blueStops[stopNum];
       const { latitude, longitude } = stopInfo.latlng;
-      const zoomLatitude = deviceProps.deviceName === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
+      const zoomLatitude = deviceName === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
       const doZoom = () => this.mapRef.setCenterCoordinateZoomLevel(zoomLatitude, longitude, 13.1857257019792);
       const station = stationDistances[stopNum];
       this.getCalloutTrainTime(station, doZoom);
