@@ -46,6 +46,10 @@ const calloutBoxHeight = deviceVariableSizes.calloutHeight - 25; // excludes tri
 const blueBoxHeight = calloutBoxHeight * 0.45; // 45% of calloutBoxHeight
 const blackBoxHeight = calloutBoxHeight * 0.55; // 55% of calloutBoxHeight
 
+const insideColPadding = deviceScreen.width * 0.13;
+const circleWrapperHeight = 54;
+const circleWidth = 40;
+
 export const deviceProps = {
   calloutBoxHeight,
   blueBoxHeight,
@@ -54,5 +58,8 @@ export const deviceProps = {
   deviceScreen,
   defaultCenter,
   defaultZoom,
-  deviceName
+  deviceName,
+  insideColPadding,
+  circleWrapperHeight,
+  circleWidth
 };
