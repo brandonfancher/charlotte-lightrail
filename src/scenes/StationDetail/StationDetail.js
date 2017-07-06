@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import { COLORS } from 'assets/styles/constants';
+import { View, Image } from 'react-native';
+import {
+  FeaturesContainerView, FeaturesText, FeaturesTextItemView,
+  FeaturesWrapperScrollView, IconImageView, NextBlockView,
+  NextTimeBoldText, SmallText, SubtitleText, TabView, TimesContainerView
+} from './StationDetailCss';
 
 export default class StationDetail extends React.Component {
 
@@ -19,20 +23,18 @@ export default class StationDetail extends React.Component {
   renderStationFeatures = () => {
     const { stop } = this.props.navigation.state.params;
     return (
-      <ScrollView style={styles.featuresWrapper}>
-
+      <FeaturesWrapperScrollView>
         {stop.stationFeatures.map((feature, index) =>
-          <View key={`feature-${index}`} style={styles.featuresContainer}>
-            <View style={styles.iconImage}>
+          <FeaturesContainerView key={`feature-${index}`}>
+            <IconImageView>
               <Image source={feature.icon} />
-            </View>
-            <View style={styles.featuresTextItem}>
-              <Text allowFontScaling={false} style={styles.featuresText} key={`station-feature-${index}`}>{feature.featureDesc}</Text>
-            </View>
-          </View>
+            </IconImageView>
+            <FeaturesTextItemView>
+              <FeaturesText allowFontScaling={false} key={`station-feature-${index}`}>{feature.featureDesc}</FeaturesText>
+            </FeaturesTextItemView>
+          </FeaturesContainerView>
         )}
-
-      </ScrollView>
+      </FeaturesWrapperScrollView>
     );
   }
 
@@ -44,83 +46,24 @@ export default class StationDetail extends React.Component {
     const nextOutboundDelta = activeCallout.outbound.delta;
 
     return (
-      <View style={styles.tabView}>
-        <View style={styles.timesContainer}>
-          <View style={styles.nextBlock}>
-            <Text allowFontScaling={false} style={styles.smallText}>Next Inbound</Text>
-            <Text allowFontScaling={false} style={[styles.nextTime, styles.bold]}>{nextInboundTime}</Text>
-            <Text allowFontScaling={false} style={styles.smallText}>{nextInboundDelta}</Text>
-          </View>
-          <View style={styles.nextBlock}>
-            <Text allowFontScaling={false} style={styles.smallText}>Next Outbound</Text>
-            <Text allowFontScaling={false} style={[styles.nextTime, styles.bold]}>{nextOutboundTime}</Text>
-            <Text allowFontScaling={false} style={styles.smallText}>{nextOutboundDelta}</Text>
-          </View>
-        </View>
-        {stop.mapLabel && <Text allowFontScaling={false} style={styles.subtitle}>{stop.mapLabel}</Text>}
+      <TabView>
+        <TimesContainerView>
+          <NextBlockView>
+            <SmallText allowFontScaling={false}>Next Inbound</SmallText>
+            <NextTimeBoldText allowFontScaling={false}>{nextInboundTime}</NextTimeBoldText>
+            <SmallText allowFontScaling={false}>{nextInboundDelta}</SmallText>
+          </NextBlockView>
+          <NextBlockView>
+            <SmallText allowFontScaling={false}>Next Outbound</SmallText>
+            <NextTimeBoldText allowFontScaling={false}>{nextOutboundTime}</NextTimeBoldText>
+            <SmallText allowFontScaling={false}>{nextOutboundDelta}</SmallText>
+          </NextBlockView>
+        </TimesContainerView>
+        {stop.mapLabel && <SubtitleText allowFontScaling={false}>{stop.mapLabel}</SubtitleText>}
         <View style={{ flex: 1 }}>
           {this.renderStationFeatures()}
         </View>
-      </View>
+      </TabView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  tabView: {
-    flex: 1,
-    marginTop: 0,
-    backgroundColor: COLORS.backgroundColor,
-  },
-  iconImage: {
-    paddingLeft: 10,
-    paddingRight: 20,
-  },
-  bold: {
-    fontWeight: 'bold',
-    color: COLORS.primaryTextColor,
-  },
-  smallText: {
-    color: COLORS.primaryTextColor,
-    fontSize: 13,
-  },
-  subtitle: {
-    alignSelf: 'center',
-    fontSize: 28,
-    marginTop: 20,
-    marginBottom: 20,
-    color: COLORS.primaryTextColor,
-  },
-  featuresWrapper: {
-    flex: 1,
-  },
-  featuresText: {
-    fontSize: 18,
-    marginBottom: 6,
-    color: COLORS.primaryTextColor,
-  },
-  featuresContainer: {
-    flexDirection: 'row',
-    marginVertical: 10,
-    padding: 6,
-  },
-  featuresTextItem: {
-    flex: 1,
-    alignSelf: 'center',
-  },
-  timesContainer: {
-    flexDirection: 'row',
-    paddingTop: 25,
-    backgroundColor: COLORS.black,
-  },
-  nextTime: {
-    fontSize: 32,
-    color: COLORS.primaryTextColor,
-  },
-  nextBlock: {
-    alignItems: 'center',
-    flex: 1,
-    marginBottom: 25,
-    backgroundColor: COLORS.black,
-  },
-});
