@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, View } from 'react-native';
+import { Animated, View, StyleSheet } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import { faqContent } from 'components/FaqContent';
 import { COLORS } from 'assets/styles/constants';
@@ -28,12 +28,21 @@ export default class Faq extends React.Component {
 
   renderHeader = (section, index) => {
     const bounce = this.state[`arrowBounce${index}`];
+    const animationConfig = {
+      transform: [{
+        rotate: bounce.interpolate({
+          inputRange: [0, 360],
+          outputRange: ['0deg', '360deg']
+        })
+      }]
+    };
+    const { transform } = animationConfig;
     return (
       <AccordionHeaderView>
         <View style={{ flex: 1 }}>
           <BoldText allowFontScaling={false}>{section.title}</BoldText>
         </View>
-        <AnimatedArrowsView style={{ bounce }} />
+        <AnimatedArrowsView style={{ transform }} />
       </AccordionHeaderView>
     );
   }

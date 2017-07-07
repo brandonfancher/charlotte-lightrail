@@ -3,7 +3,7 @@ import { AppRegistry, StyleSheet, Text, TouchableOpacity, View, Platform } from 
 // import codePush from 'react-native-code-push'
 import { StackNavigator } from 'react-navigation';
 import { COLORS } from 'assets/styles/constants';
-import { Faq, RailMap, StationDetail, ScheduleInfo } from 'scenes';
+import { FAQ, RailMap, StationDetail, ScheduleInfo } from 'scenes';
 
 const AppNavigator = StackNavigator({
   Main: {
@@ -13,7 +13,7 @@ const AppNavigator = StackNavigator({
     }
   },
   Faq: {
-    screen: Faq,
+    screen: FAQ,
     navigationOptions: {
       title: 'Help'
     }

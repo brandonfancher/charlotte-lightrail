@@ -1,5 +1,6 @@
+import { Animated } from 'react-native';
 import styled from 'styled-components/native';
-import {COLORS} from 'assets/styles/constants';
+import { COLORS } from 'assets/styles/constants';
 
 export const AccordionHeaderView = styled.View`
   borderTopWidth: 1px;
@@ -13,19 +14,15 @@ export const BoldText = styled.Text`
   color: ${COLORS.primaryTextColor};
 `;
 
-const bounceConfig = {
-  inputRange: [0, 360],
-  outputRange: ['0deg', '360deg']
-};
-
-export const AnimatedArrowsView = styled.View`
+const ArrowsView = styled.View`
   borderTopWidth: 2px;
   borderRightWidth: 2px;
   borderColor: ${COLORS.primaryTextColor};
   height: 14px;
   width: 14px;
-  transform: rotate( ${({bounce}) => bounce.interpolate(bounceConfig)} );
 `;
+
+export const AnimatedArrowsView = Animated.createAnimatedComponent(ArrowsView);
 
 export const AccordionContentView = styled.View`
   padding: 10px;

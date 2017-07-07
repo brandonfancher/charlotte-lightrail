@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { InteractionManager, Text, View } from 'react-native';
 import moment from 'moment';
-import ScheduleInfoHeader from 'components/StationDetail/ScheduleInfoHeader';
+import ScheduleInfoHeader from 'components/ScheduleInfoHeader';
 import { blueStops } from 'helpers/config';
 import { getScheduleDay } from 'helpers/scheduleCalcs';
 import { deviceProps } from 'helpers/device';
@@ -10,7 +10,7 @@ import {
   BoldWhiteText, DescriptionText, GrayText, TableCellView,
   HorizontalLineInsideLeftView, HorizontalLineInsideRightView,
   HorizontalLineOutsideLeftView, HorizontalLineOutsideRightView,
-  NextCircleWrapperVeiw, NextLabelCircleOuterView, NextLabelText,
+  NextCircleWrapperView, NextLabelCircleOuterView, NextLabelText,
   NextLabelCircleView, NextTimeText, TableColHeadView, WrapView,
   TableColInboundView, TableColOutboundView, TableColScrollView,
   TableContainerView, TableHeadView, TableView, VerticalLineView
@@ -30,6 +30,7 @@ export default class ScheduleInfo extends React.Component {
     const currentDay = getScheduleDay().day;
     const setWrapperStyle = (ref, margin) => ref.setNativeProps({ style: { marginTop: margin } });
 
+    console.log("this", this);
     if (this.inboundNext) { // If we have a node for the ref (if we're on the schedule for today)...
       this.inboundNext.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
         const inboundY = py;

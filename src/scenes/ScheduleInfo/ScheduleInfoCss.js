@@ -11,7 +11,7 @@ export const TableCellView = styled.View`
   paddingLeft: 10px;
 `;
 
-export const NextCircleWrapperVeiw = styled.View`
+export const NextCircleWrapperView = styled.View`
   position: relative;
   right: ${insideColPadding + 10 + (circleWidth / 2)}px;
   bottom: ${((circleWrapperHeight - 24) / 2) - 2}px;
