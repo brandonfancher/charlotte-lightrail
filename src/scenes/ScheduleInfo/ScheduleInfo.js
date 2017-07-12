@@ -30,13 +30,12 @@ export default class ScheduleInfo extends React.Component {
     const currentDay = getScheduleDay().day;
     const setWrapperStyle = (ref, margin) => ref.setNativeProps({ style: { marginTop: margin } });
 
-    console.log("this", this);
     if (this.inboundNext) { // If we have a node for the ref (if we're on the schedule for today)...
-      this.inboundNext.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
+      this.inboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
         const inboundY = py;
         let outboundY;
         // eslint-disable-next-line
-        this.outboundNext.measure((ox, oy, width, height, px, py) => { // get the Y offset for the outbound time...
+        this.outboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the outbound time...
           outboundY = py;
           const offset = inboundY - outboundY; // calculate the Y offset)...
           const scrollPosition = Math.max(inboundY, outboundY) - (deviceScreen.height / 2); // calculate scroll positions...
@@ -61,7 +60,7 @@ export default class ScheduleInfo extends React.Component {
 
   // We call this when we want to scroll down programmatically
   performScroll = (y, animated) => {
-    this.scheduleScrollView.scrollTo({ x: 0, y, animated });
+    this.scheduleScrollView.root.scrollTo({ x: 0, y, animated });
   }
 
   getTrainTimes = (direction, days) => {
