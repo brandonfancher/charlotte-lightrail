@@ -9,7 +9,6 @@ import {
   HeaderView, HelpView, ModeSelectorSegmentedControlIOS,
   OfflineButtonTouchableOpacity, OfflineText
 } from './MapOverlayCss';
-import { COLORS } from 'assets/styles/constants';
 
 export default class MapOverlay extends React.Component {
 

@@ -1,5 +1,7 @@
 import 'react-native';
 import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
+import { COLORS } from 'assets/styles/constants';
 import DirectionsButton from './DirectionsButton';
 import renderer from 'react-test-renderer';
 
@@ -14,7 +16,9 @@ describe('<DirectionsButton />', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(
-      <DirectionsButton {...props} />
+      <ThemeProvider theme={COLORS}>
+        <DirectionsButton {...props} />
+      </ThemeProvider>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

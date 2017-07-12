@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 
 export const ContainerView = styled.View`
   position: absolute;
@@ -10,7 +9,7 @@ export const ContainerView = styled.View`
 `;
 
 export const HeaderView = styled.View`
-  backgroundColor: ${COLORS.backgroundColorDark};
+  backgroundColor: ${props => props.theme.backgroundColorDark};
   height: 40px;
   justifyContent: center;
   left: 0px;
@@ -36,7 +35,7 @@ export const ModeSelectorSegmentedControlIOS = styled.SegmentedControlIOS`
 `;
 
 export const OfflineButtonTouchableOpacity = styled.TouchableOpacity`
-  borderColor: ${COLORS.primaryBorderColor};
+  borderColor: ${props => props.theme.primaryBorderColor};
   borderWidth: 1px;
   height: 28px;
   paddingHorizontal: 4px;
@@ -47,7 +46,7 @@ export const OfflineButtonTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const OfflineText = styled.Text`
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
   fontSize: 13px;
 `;
 

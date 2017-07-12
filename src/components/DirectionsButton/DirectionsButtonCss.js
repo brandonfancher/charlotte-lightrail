@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 
 export const BubbleTouchableOpacity = styled.TouchableOpacity`
-  backgroundColor: ${COLORS.backgroundColorButton};
+  backgroundColor: ${props => props.theme.backgroundColorButton};
   borderRadius: 50;
   borderWidth: 0;
   marginHorizontal: 6;

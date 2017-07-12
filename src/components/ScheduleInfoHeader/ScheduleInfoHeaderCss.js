@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 
 export const WrapView = styled.View`
-  backgroundColor: ${COLORS.verticalDividerLine};
+  backgroundColor: ${props => props.theme.verticalDividerLine};
   flex: 1px;
   height: 74px;
   width: ${props => props.width}px;
@@ -20,5 +19,5 @@ export const TitleText = styled.Text`
   fontSize: 16px;
   marginTop: 9px;
   marginBottom: 3px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;

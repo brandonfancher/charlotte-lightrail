@@ -1,5 +1,7 @@
 import 'react-native';
 import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
+import { COLORS } from 'assets/styles/constants';
 import ScheduleInfoHeader from './ScheduleInfoHeader';
 jest.mock('SegmentedControlIOS');
 import renderer from 'react-test-renderer';
@@ -17,7 +19,9 @@ describe('<ScheduleInfoHeader />', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(
-      <ScheduleInfoHeader {...props} />
+      <ThemeProvider theme={COLORS}>
+        <ScheduleInfoHeader {...props} />
+      </ThemeProvider>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

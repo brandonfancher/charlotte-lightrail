@@ -1,5 +1,4 @@
 import { Dimensions } from 'react-native';
-import { COLORS } from 'assets/styles/constants';
 
 // identify iPhone model based on device width
 const identifyDevice = deviceScreenProps => {
