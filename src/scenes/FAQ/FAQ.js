@@ -1,14 +1,14 @@
 import React from 'react';
 import { Animated, View, StyleSheet } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
+import { withTheme } from 'styled-components/native';
 import { faqContent } from 'components/FaqContent';
-import { COLORS } from 'assets/styles/constants';
 import {
   AccordionContentView, AccordionHeaderView, AccordionWrapperView,
   AnimatedArrowsView, BoldText, ScrollViewView, ViewContainerView
 } from './FAQCss';
 
-export default class Faq extends React.Component {
+class Faq extends React.Component {
 
   constructor(props) {
     super(props);
@@ -65,6 +65,7 @@ export default class Faq extends React.Component {
   }
 
   render() {
+    const { theme } = this.props;
     return (
       <ViewContainerView>
         <ScrollViewView>
@@ -75,7 +76,7 @@ export default class Faq extends React.Component {
               renderHeader={this.renderHeader}
               renderContent={this.renderContent}
               sections={faqContent}
-              underlayColor={COLORS.backgroundColorTrans}
+              underlayColor={theme.backgroundColorTrans}
             />
           </AccordionWrapperView>
         </ScrollViewView>
@@ -83,3 +84,5 @@ export default class Faq extends React.Component {
     );
   }
 }
+
+export default withTheme(Faq);

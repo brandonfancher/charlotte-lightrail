@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 import { deviceProps } from 'helpers/device';
 
 const {
@@ -19,7 +18,7 @@ export const NextCircleWrapperView = styled.View`
 
 const HorizontalLineView = styled.View`
   position: relative;
-  borderColor: ${COLORS.highlightTextColor};
+  borderColor: ${props => props.theme.highlightTextColor};
   borderStyle: solid;
   borderBottomWidth: 1px;
   width: ${insideColPadding}px;
@@ -51,14 +50,14 @@ export const HorizontalLineOutsideRightView = HorizontalLineView.extend`
 
 export const NextLabelCircleOuterView = styled.View`
   position: absolute;
-  backgroundColor: ${COLORS.backgroundColor};
+  backgroundColor: ${props => props.theme.backgroundColor};
   height: ${circleWrapperHeight}px;
   paddingVertical: 7px;
 `;
 
 export const NextLabelCircleView = styled.View`
   justifyContent: center;
-  borderColor: ${COLORS.highlightTextColor};
+  borderColor: ${props => props.theme.highlightTextColor};
   borderStyle: solid;
   borderWidth: 1px;
   height: ${circleWidth}px;
@@ -67,29 +66,29 @@ export const NextLabelCircleView = styled.View`
 `;
 
 export const NextLabelText = styled.Text`
-  backgroundColor: ${COLORS.transparent};
-  color: ${COLORS.highlightTextColor};
+  backgroundColor: ${props => props.theme.transparent};
+  color: ${props => props.theme.highlightTextColor};
   fontSize: 10px;
   fontWeight: bold;
   textAlign: center;
 `;
 
 export const NextTimeText = styled.Text`
-  color: ${COLORS.highlightTextColor};
+  color: ${props => props.theme.highlightTextColor};
   fontSize: 20px;
 `;
 
 export const DescriptionText = styled.Text`
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
 
 export const TableColScrollView = styled.ScrollView`
-  backgroundColor: ${COLORS.backgroundColor};
+  backgroundColor: ${props => props.theme.backgroundColor};
 `;
 
 export const TableView = styled.View`
   flexDirection: row;
-  backgroundColor: ${COLORS.transparent};
+  backgroundColor: ${props => props.theme.transparent};
   paddingBottom: 10px;
 `;
 
@@ -120,7 +119,7 @@ export const VerticalLineView = styled.View`
   position: absolute;
   height: ${deviceScreen.height}px;
   left: ${deviceScreen.width / 2}px;
-  borderRightColor: ${COLORS.verticalDividerLine};
+  borderRightColor: ${props => props.theme.verticalDividerLine};
   borderRightWidth: 1px;
   borderStyle: solid;
   width: 1px;
@@ -132,7 +131,7 @@ export const TableContainerView = styled.View`
 
 export const TableHeadView = styled.View`
   flexDirection: row;
-  backgroundColor: ${COLORS.backgroundColor};
+  backgroundColor: ${props => props.theme.backgroundColor};
 `;
 
 export const TableColHeadView = styled.View`
@@ -141,8 +140,8 @@ export const TableColHeadView = styled.View`
   paddingBottom: 16px;
   paddingTop: 12px;
   marginTop: 10px;
-  borderLeftColor: ${COLORS.transparent};
-  borderRightColor: ${COLORS.verticalDividerLine};
+  borderLeftColor: ${props => props.theme.transparent};
+  borderRightColor: ${props => props.theme.verticalDividerLine};
   borderStyle: solid;
   ${props => props.borderRightWidth && 'borderRightWidth: 1px;'}
   ${props => props.borderLeftWidth && 'borderLeftWidth: 1px;'}
@@ -150,11 +149,11 @@ export const TableColHeadView = styled.View`
 
 export const BoldWhiteText = styled.Text`
   fontWeight: bold;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
   fontSize: 15px;
   paddingBottom: 2px;
 `;
 
 export const GrayText = styled.Text`
-  color: ${COLORS.grayText};
+  color: ${props => props.theme.grayText};
 `;

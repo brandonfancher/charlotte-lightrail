@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
 
 export const ContainerView = styled.View`
@@ -13,9 +12,3 @@ export const VisibleView = styled.View`
   bottom: 0px;
   left: 0px;
 `;
-
-export const containerStyle = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});

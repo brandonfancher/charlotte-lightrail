@@ -1,23 +1,22 @@
 import { Animated } from 'react-native';
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 
 export const AccordionHeaderView = styled.View`
   borderTopWidth: 1px;
-  borderTopColor: ${COLORS.grayText};
+  borderTopColor: ${props => props.theme.grayText};
   padding: 10px;
   flexDirection: row;
 `;
 
 export const BoldText = styled.Text`
   fontWeight: bold;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
 
 const ArrowsView = styled.View`
   borderTopWidth: 2px;
   borderRightWidth: 2px;
-  borderColor: ${COLORS.primaryTextColor};
+  borderColor: ${props => props.theme.primaryTextColor};
   height: 14px;
   width: 14px;
 `;
@@ -39,14 +38,14 @@ export const ViewContainerView = styled.View`
 
 export const ScrollViewView = styled.ScrollView`
   flex: 1px;
-  backgroundColor: ${COLORS.backgroundColorDark};
+  backgroundColor: ${props => props.theme.backgroundColorDark};
 `;
 
 export const AccordionWrapperView = styled.View`
   flex: 1px;
   margin: 10px;
-  backgroundColor: ${COLORS.accordionBackground};
+  backgroundColor: ${props => props.theme.accordionBackground};
   borderWidth: 1px;
-  borderColor: ${COLORS.grayText};
+  borderColor: ${props => props.theme.grayText};
   borderTopWidth: 0px;
 `;

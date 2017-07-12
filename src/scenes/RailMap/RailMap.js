@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppState, NetInfo, StatusBar, StyleSheet, View, DeviceEventEmitter } from 'react-native';
+import { AppState, NetInfo, StatusBar, View, DeviceEventEmitter } from 'react-native';
 import QuickActions from 'react-native-quick-actions';
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 import moment from 'moment';
@@ -376,7 +376,7 @@ export default class RailMap extends React.Component {
             rotateEnabled={false}
             scrollEnabled
             showsUserLocation={!locationError}
-            style={containerStyle.container}
+            style={{ flex: 1 }}
             styleURL={Mapbox.mapStyles.streets}
             userTrackingMode={Mapbox.userTrackingMode.none}
             zoomEnabled

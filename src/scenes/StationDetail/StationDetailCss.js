@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {COLORS} from 'assets/styles/constants';
 
 export const FeaturesWrapperScrollView = styled.ScrollView`
   flex: 1px;
@@ -24,36 +23,36 @@ export const FeaturesTextItemView = styled.View`
 export const FeaturesText = styled.Text`
   fontSize: 18px;
   marginBottom: 6px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
 
 export const TabView = styled.View`
   flex: 1px;
   marginTop: 0px;
-  backgroundColor: ${COLORS.backgroundColor};
+  backgroundColor: ${props => props.theme.backgroundColor};
 `;
 
 export const TimesContainerView = styled.View`
   flexDirection: row;
   paddingTop: 25px;
-  backgroundColor: ${COLORS.black};
+  backgroundColor: ${props => props.theme.black};
 `;
 
 export const NextBlockView = styled.View`
   alignItems: center;
   flex: 1px;
   marginBottom: 25px;
-  backgroundColor: ${COLORS.black};
+  backgroundColor: ${props => props.theme.black};
 `;
 
 export const SmallText = styled.Text`
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
   fontSize: 13px;
 `;
 
 export const NextTimeBoldText = styled.Text`
   fontSize: 32px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
   fontWeight: bold;
 `;
 
@@ -62,5 +61,5 @@ export const SubtitleText = styled.Text`
   fontSize: 28px;
   marginTop: 20px;
   marginBottom: 20px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
