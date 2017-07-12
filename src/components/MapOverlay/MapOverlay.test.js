@@ -1,5 +1,7 @@
 import 'react-native';
 import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
+import { COLORS } from '../../assets/styles/constants';
 import MapOverlay from './MapOverlay';
 jest.mock('SegmentedControlIOS');
 import renderer from 'react-test-renderer';
@@ -22,7 +24,9 @@ describe('<MapOverlay />', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(
-      <MapOverlay {...props} />
+      <ThemeProvider theme={COLORS}>
+        <MapOverlay {...props} />
+      </ThemeProvider>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

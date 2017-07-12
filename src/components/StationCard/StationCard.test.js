@@ -1,5 +1,7 @@
 import 'react-native';
 import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
+import { COLORS } from '../../assets/styles/constants';
 import StationCard from './StationCard';
 import renderer from 'react-test-renderer';
 
@@ -18,7 +20,9 @@ describe('<StationCard />', () => {
 
   it('renders correctly', () => {
     const tree = renderer.create(
-      <StationCard {...props} />
+      <ThemeProvider theme={COLORS}>
+        <StationCard {...props} />
+      </ThemeProvider>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

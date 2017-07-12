@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
 import { deviceProps } from 'helpers/device';
 
 export const NearestContainerView = styled.View`
@@ -12,20 +11,20 @@ export const TriangleView = styled.View`
   alignSelf: center;
   width: 0px;
   height: 0px;
-  backgroundColor: ${COLORS.transparent};
+  backgroundColor: ${props => props.theme.transparent};
   borderStyle: solid;
   borderLeftWidth: 25px;
   borderRightWidth: 25px;
   borderBottomWidth: 25px;
-  borderLeftColor: ${COLORS.transparent};
-  borderRightColor: ${COLORS.transparent};
-  borderBottomColor: ${COLORS.backgroundColorTrans};
+  borderLeftColor: ${props => props.theme.transparent};
+  borderRightColor: ${props => props.theme.transparent};
+  borderBottomColor: ${props => props.theme.backgroundColorTrans};
 `;
 
 export const InfoContainerView = styled.View`
   height: ${deviceProps.blueBoxHeight};
   flexDirection: row;
-  backgroundColor: ${COLORS.backgroundColorTrans};
+  backgroundColor: ${props => props.theme.backgroundColorTrans};
   paddingHorizontal: 12px;
   paddingVertical: 0px;
 `;
@@ -46,7 +45,7 @@ const ArrowView = styled.View`
   borderRightWidth: 1px;
   borderBottomWidth: 0px;
   borderLeftWidth: 0px;
-  borderColor: ${props => props.disabled ? COLORS.disabledArrow : COLORS.primaryTextColor};
+  borderColor: ${props => props.disabled ? props.theme.disabledArrow : props.theme.primaryTextColor};
   margin: 10px;
   height: 30px;
   width: 30px;
@@ -68,11 +67,11 @@ export const StationLabelContainerView = styled.View`
 
 export const StationLabelText = styled.Text`
   fontSize: ${deviceProps.deviceVariableSizes['stationLabelFontSize']}px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
 
 export const SmallGrayText = styled.Text`
-  color: ${COLORS.grayText};
+  color: ${props => props.theme.grayText};
   fontSize: 13px;
 `;
 
@@ -81,7 +80,7 @@ export const TimesContainerView = styled.View`
   flexDirection: row;
   alignItems: center;
   paddingHorizontal: 12px;
-  backgroundColor: ${COLORS.backgroundColorDark};
+  backgroundColor: ${props => props.theme.backgroundColorDark};
 `;
 
 export const NextBlockView = styled.View`
@@ -95,7 +94,7 @@ export const NextTimeWrapView = styled.View`
 
 export const NextTimeText = styled.Text`
   fontSize: ${deviceProps.deviceVariableSizes['nextTimeFontSize']}px;
-  color: ${COLORS.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor};
 `;
 
 //left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
@@ -113,7 +112,7 @@ export const ButtonsView = styled.View`
 `;
 
 export const BubbleTouchableOpacity = styled.TouchableOpacity`
-  backgroundColor: ${COLORS.backgroundColorButton};
+  backgroundColor: ${props => props.theme.backgroundColorButton};
   borderRadius: 50px;
   borderWidth: 0px;
   marginHorizontal: 6px;
@@ -123,7 +122,7 @@ export const BubbleTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export const LoadingWrapperView = styled.View`
-  backgroundColor: ${COLORS.backgroundColorTrans};
+  backgroundColor: ${props => props.theme.backgroundColorTrans};
   height: ${deviceProps.calloutBoxHeight}px;
   justifyContent: center;
 `;
@@ -132,5 +131,5 @@ export const LoadingText = styled.Text`
   textAlign: center;
   fontSize: 16px;
   paddingVertical: 10px;
-  color: ${COLORS.grayText};
+  color: ${props => props.theme.grayText};
 `;
