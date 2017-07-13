@@ -3,7 +3,7 @@
 ## Branches
 * `v1.0`: Currently in production on iOS.
 * `master`: The source of current dev truth.
-* `development`: When you fork this project, you should branch off of this branch and work your magic. (Then send us a PR!)
+* `development`: When you fork this project, you should branch off of this branch and work your magic. (Then send us a PR)
 * `android`: Working React Native project on Android! Running, but still some work to do. You may want to work off this one as well.
 
 ## Contributions
