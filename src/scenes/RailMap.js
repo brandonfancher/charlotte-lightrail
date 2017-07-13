@@ -363,6 +363,7 @@ export default class RailMap extends React.Component {
 
   render() {
     const { activeStationIndex, annotations, center, connected, error, loading, locationDenied, locationError, nearestStationIndex, stationDistances, zoom } = this.state;
+    const navigation = this.props.navigation;
 
     return (
       <View style={styles.container}>
@@ -417,6 +418,7 @@ export default class RailMap extends React.Component {
           stopCallout12={this.state.stopCallout12}
           stopCallout13={this.state.stopCallout13}
           stopCallout14={this.state.stopCallout14}
+          navigation={navigation}
         />
       </View>
     );

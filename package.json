@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios": "react-native run-ios"
   },
   "dependencies": {
     "moment": "2.15.2",
@@ -13,11 +14,17 @@
     "react-native-collapsible": "git+https://git@github.com/brandonfancher/react-native-collapsible.git",
     "react-native-mapbox-gl": "5.0.0",
     "react-native-quick-actions": "0.1.5",
-    "react-native-router-flux": "3.36.0",
-    "react-native-user-defaults": "0.1.4"
+    "react-native-user-defaults": "0.1.4",
+    "react-navigation": "^1.0.0-beta.11"
   },
   "jest": {
-    "preset": "jest-react-native"
+    "preset": "jest-react-native",
+    "globals": {
+      "__DEV__": true
+    },
+    "preprocessorIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation|react-clone-referenced-element)"
+    ]
   },
   "devDependencies": {
     "babel-jest": "16.0.0",
