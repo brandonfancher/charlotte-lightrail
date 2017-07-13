@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { Dimensions, SegmentedControlIOS } from 'react-native';
 import { WrapView, TitleText, ScheduleSelectorView } from './ScheduleInfoHeaderCss';
 import { getScheduleDay } from 'helpers/scheduleCalcs';
+import { deviceProps } from 'helpers/device';
 
-const deviceScreen = Dimensions.get('window');
+const { deviceScreen } = deviceProps;
 
 export default class ScheduleInfoHeader extends React.Component {
 
