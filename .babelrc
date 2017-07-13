@@ -9,7 +9,8 @@
         "assets": "./src/assets",
         "helpers": "./src/helpers",
         "components": "./src/components",
-        "scenes": "./src/scenes"
+        "scenes": "./src/scenes",
+        "env": "./env.json"
       }
     }]
   ]
