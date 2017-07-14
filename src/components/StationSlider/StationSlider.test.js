@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotStyledComponent } from 'helpers/helpers';
+import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import StationSlider from './StationSlider';
 import renderer from 'react-test-renderer';
 
