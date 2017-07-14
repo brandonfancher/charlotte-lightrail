@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components/native';
-import { COLORS } from '../../assets/styles/constants';
+import { snapshotStyledComponent } from 'helpers/helpers';
 import MapOverlay from './MapOverlay';
 jest.mock('SegmentedControlIOS');
 import renderer from 'react-test-renderer';
@@ -22,11 +21,8 @@ describe('<MapOverlay />', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <ThemeProvider theme={COLORS}>
-        <MapOverlay {...props} />
-      </ThemeProvider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    snapshotStyledComponent(
+      <MapOverlay {...props} />
+    );
   });
 });

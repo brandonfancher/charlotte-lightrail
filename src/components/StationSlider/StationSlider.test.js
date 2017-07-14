@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
+import { snapshotStyledComponent } from 'helpers/helpers';
 import StationSlider from './StationSlider';
 import renderer from 'react-test-renderer';
 
@@ -18,11 +17,8 @@ describe('<StationSlider />', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <ThemeProvider theme={COLORS}>
-        <StationSlider {...props} />
-      </ThemeProvider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    snapshotStyledComponent(
+      <StationSlider {...props} />
+    );
   });
 });

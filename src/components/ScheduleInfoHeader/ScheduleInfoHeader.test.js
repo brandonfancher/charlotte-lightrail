@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
+import { snapshotStyledComponent } from 'helpers/helpers';
 import ScheduleInfoHeader from './ScheduleInfoHeader';
 jest.mock('SegmentedControlIOS');
 import renderer from 'react-test-renderer';
@@ -17,11 +16,8 @@ describe('<ScheduleInfoHeader />', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <ThemeProvider theme={COLORS}>
-        <ScheduleInfoHeader {...props} />
-      </ThemeProvider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    snapshotStyledComponent(
+      <ScheduleInfoHeader {...props} />
+    );
   });
 });

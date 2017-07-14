@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
+import { snapshotStyledComponent } from 'helpers/helpers';
 import UnorderedList from './UnorderedList';
 import renderer from 'react-test-renderer';
 
@@ -20,11 +19,8 @@ describe('<UnorderedList />', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <ThemeProvider theme={COLORS}>
-        <UnorderedList {...props} />
-      </ThemeProvider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    snapshotStyledComponent(
+      <UnorderedList {...props} />
+    );
   });
 });
