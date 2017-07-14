@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotStyledComponent } from 'helpers/helpers';
+import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import MapOverlay from './MapOverlay';
 jest.mock('SegmentedControlIOS');
 import renderer from 'react-test-renderer';

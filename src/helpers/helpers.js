@@ -1,7 +1,3 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components/native';
-import { COLORS } from 'assets/styles/constants';
-import renderer from 'react-test-renderer';
 import { Linking } from 'react-native';
 
 export const startNavigation = (mode, latlng) => {
@@ -22,13 +18,4 @@ export const startNavigation = (mode, latlng) => {
           .catch(err => console.error('An error occurred: ', err));
       }
     });
-};
-
-export const snapshotStyledComponent = (component) => {
-  const snapshot = renderer.create(
-    <ThemeProvider theme={COLORS}>
-      {component}
-    </ThemeProvider>
-  ).toJSON()
-  expect(snapshot).toMatchSnapshot();
 };
