@@ -1,6 +1,5 @@
 codecov:
-  branch: styled-comp
-  # branch: development
+  branch: development
 
 coverage:
   precision: 1
