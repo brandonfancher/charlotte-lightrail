@@ -1,0 +1,67 @@
+exports[`<StationCard /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 279,
+        "width": 375,
+      },
+      undefined,
+    ]
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "transparent",
+          "borderBottomColor": "rgba(0, 20, 30, 0.8)",
+          "borderBottomWidth": 25,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 25,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 25,
+          "borderStyle": "solid",
+          "flexDirection": "row",
+          "height": 0,
+          "width": 0,
+        },
+        undefined,
+      ]
+    } />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgba(0, 20, 30, 0.8)",
+          "height": 254,
+          "justifyContent": "center",
+        },
+        undefined,
+      ]
+    }>
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="large" />
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#CCC",
+            "fontSize": 16,
+            "paddingVertical": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }>
+      Finding nearest station...
+    </Text>
+  </View>
+</View>
+`;

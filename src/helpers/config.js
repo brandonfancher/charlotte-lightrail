@@ -1,11 +1,11 @@
 import { Linking } from 'react-native';
 import schedules from './schedules.json';
+import { GOOGLE_API_KEY, MAPBOX_API_KEY } from 'env';
+
+export const googleApiKey = process.env.GOOGLE_API_KEY ? process.env.GOOGLE_API_KEY : GOOGLE_API_KEY;
+export const mapboxApiKey = process.env.MAPBOX_API_KEY ? process.env.MAPBOX_API_KEY : MAPBOX_API_KEY;
 
 export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
-
-// secrets that we'll want to secure later
-export const googleApiKey = '[GOOGLE_API_KEY]';
-export const mapboxApiKey = '[MAPBOX_API_KEY]';
 
 // setting for simulating a disconnected state
 export const SIMULATE_DISCONNECTED = false;
@@ -17,62 +17,62 @@ const features = {
   covered: {
     featureDesc: 'Covered waiting area',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png'),
+    icon: require('assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png'),
   },
   tickets: {
     featureDesc: 'Ticket vending machines',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png'),
+    icon: require('assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png'),
   },
   emergency: {
     featureDesc: 'Emergency call box',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png'),
+    icon: require('assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png'),
   },
   lighted: {
     featureDesc: 'Lighted station',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png'),
+    icon: require('assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png'),
   },
   water: {
     featureDesc: 'Water fountain',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png'),
+    icon: require('assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png'),
   },
   seating: {
     featureDesc: 'Seating',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png'),
+    icon: require('assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png'),
   },
   announce: {
     featureDesc: 'Automatic audio announcements',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png'),
+    icon: require('assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png'),
   },
   wheelchair: {
     featureDesc: 'Wheelchair accessible platform',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png'),
+    icon: require('assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png'),
   },
   art: {
     featureDesc: 'Public art',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/public-art/ic_photo_white_48pt.png'),
+    icon: require('assets/icons/station-features/public-art/ic_photo_white_48pt.png'),
   },
   bike: {
     featureDesc: 'Bike racks',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png'),
+    icon: require('assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png'),
   },
   elevators: {
     featureDesc: 'Elevators',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png'),
+    icon: require('assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png'),
   },
   park: {
     featureDesc: 'Park and Ride',
     // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png'),
+    icon: require('assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png'),
   },
 };
 
