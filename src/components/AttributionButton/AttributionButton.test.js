@@ -1,4 +1,3 @@
-import 'react-native';
 import React from 'react';
 import AttributionButton from './AttributionButton';
 import renderer from 'react-test-renderer';
