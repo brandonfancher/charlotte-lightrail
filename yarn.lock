@@ -404,7 +404,7 @@ babel-plugin-jest-hoist@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-16.0.0.tgz#b58ca3f770982a7e7c25b5614b2e57e9dafc6e76"
 
-babel-plugin-module-resolver@^2.7.1:
+babel-plugin-module-resolver@2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-module-resolver/-/babel-plugin-module-resolver-2.7.1.tgz#18be3c42ddf59f7a456c9e0512cd91394f6e4be1"
   dependencies:
@@ -601,7 +601,7 @@ babel-plugin-transform-flow-strip-types@^6.5.0, babel-plugin-transform-flow-stri
     babel-plugin-syntax-flow "^6.18.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-inline-environment-variables@^0.1.1:
+babel-plugin-transform-inline-environment-variables@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-inline-environment-variables/-/babel-plugin-transform-inline-environment-variables-0.1.1.tgz#257ccd8ff6941c55384fa60607c97105bb125664"
 
@@ -4300,7 +4300,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
+prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4488,7 +4488,7 @@ react-native@0.36.1:
     yeoman-environment "1.5.3"
     yeoman-generator "0.21.2"
 
-react-navigation@^1.0.0-beta.11:
+react-navigation@1.0.0-beta.11:
   version "1.0.0-beta.11"
   resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.0.0-beta.11.tgz#4271edb23cdbcc6eb88602f7fde0a77f0ef7a160"
   dependencies:
@@ -5152,7 +5152,7 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-styled-components@^2.1.0:
+styled-components@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.1.0.tgz#425805fca7efa5880aad2171f986bfd8a2f0808f"
   dependencies:

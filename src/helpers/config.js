@@ -1,8 +1,7 @@
 import { Linking } from 'react-native';
 import schedules from './schedules.json';
-import { GOOGLE_API_KEY, MAPBOX_API_KEY } from 'env';
+import { MAPBOX_API_KEY } from 'env';
 
-export const googleApiKey = process.env.GOOGLE_API_KEY ? process.env.GOOGLE_API_KEY : GOOGLE_API_KEY;
 export const mapboxApiKey = process.env.MAPBOX_API_KEY ? process.env.MAPBOX_API_KEY : MAPBOX_API_KEY;
 
 export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
