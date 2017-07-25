@@ -25,7 +25,7 @@ If this is your first time running a React Native project on this machine, follo
 
 ### Keys/Secrets
 
-You will need to get your own Mapbox API Key & Google Maps API Key. Place them in **`env.json`** before you start.
+You will need to get your own [Mapbox API Key](https://www.mapbox.com/help/how-access-tokens-work). Place it in **`env.json`** before you start.
 
 ### Project Setup
 
