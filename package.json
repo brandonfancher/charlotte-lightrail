@@ -9,7 +9,7 @@
     "test:coverage": "jest --coverage",
     "ios": "react-native run-ios",
     "eslint": "eslint .",
-    "eslint:ci": "eslint . --format table"
+    "eslint:ci": "eslint . --format stylish"
   },
   "engines": {
     "node": "^6.9.2"
