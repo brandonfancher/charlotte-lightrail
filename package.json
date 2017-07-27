@@ -8,8 +8,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "ios": "react-native run-ios",
-    "lint": "eslint \"src/**\" index.android.js index.ios.js",
-    "eslint": "eslint"
+    "eslint": "eslint .",
+    "eslint:ci": "eslint . --format table"
   },
   "engines": {
     "node": "^6.9.2"
@@ -19,7 +19,7 @@
     "prop-types": "15.5.10",
     "react": "15.3.2",
     "react-native": "0.36.1",
-    "react-native-collapsible": "git+https://git@github.com/brandonfancher/react-native-collapsible.git",
+    "react-native-collapsible": "brandonfancher/react-native-collapsible",
     "react-native-mapbox-gl": "5.0.0",
     "react-native-quick-actions": "0.1.5",
     "react-native-user-defaults": "0.1.4",

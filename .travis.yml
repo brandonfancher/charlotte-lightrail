@@ -4,6 +4,7 @@ install:
   - yarn
 script:
   - yarn test:coverage
+  - yarn eslint:ci
 after_success:
   - npm install -g codecov
   - codecov
