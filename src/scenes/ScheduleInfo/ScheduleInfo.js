@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InteractionManager, Text, View } from 'react-native';
@@ -22,7 +23,7 @@ export default class ScheduleInfo extends React.Component {
 
   state = {
     scheduleIndex: getScheduleDay().index,
-    scheduleValue: getScheduleDay().day,
+    scheduleValue: getScheduleDay().day
   };
 
   setScheduleAlignment = () => {
@@ -58,11 +59,6 @@ export default class ScheduleInfo extends React.Component {
     }
   }
 
-  // We call this when we want to scroll down programmatically
-  performScroll = (y, animated) => {
-    this.scheduleScrollView.root.scrollTo({ x: 0, y, animated });
-  }
-
   getTrainTimes = (direction, days) => {
     const { activeStationIndex, stopCallout } = this.props.navigation.state.params;
     const currentDay = getScheduleDay().day;
@@ -86,7 +82,7 @@ export default class ScheduleInfo extends React.Component {
         {direction === 'outbound' ?
           <HorizontalLineOutsideRightView />
           :
-          <HorizontalLineOutsideLeftView />
+          <HorizontalLineOutsideLeftView /> // eslint-disable-line react/jsx-indent
         }
         <NextTimeText allowFontScaling={false} key={`${schedule}-${index}-entry-active`} ref={(c) => { this[`${direction}Next`] = c; }}>{time}</NextTimeText>
       </TableCellView>
@@ -124,6 +120,11 @@ export default class ScheduleInfo extends React.Component {
         </TableView>
       </TableColScrollView>
     );
+  }
+
+  // We call this when we want to scroll down programmatically
+  performScroll = (y, animated) => {
+    this.scheduleScrollView.root.scrollTo({ x: 0, y, animated });
   }
 
   scheduleValueHandler = (value) => {
@@ -181,8 +182,8 @@ ScheduleInfo.propTypes = {
       params: PropTypes.shape({
         activeStationIndex: PropTypes.number,
         loading: PropTypes.bool.isRequired,
-        stopCallout: PropTypes.object,
+        stopCallout: PropTypes.object
       })
     })
-  }),
+  })
 };
