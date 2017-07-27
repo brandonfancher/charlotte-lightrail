@@ -1,6 +1,6 @@
+/* eslint-disable max-len */
 import moment from 'moment';
 import { blueStops } from './config';
-
 
 // Get day for purposes of determining which train schedule is in force
 // I chose 3 AM as the cutoff. If DST were to impact this, it would shift one

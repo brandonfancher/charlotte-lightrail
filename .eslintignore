@@ -1,0 +1,17 @@
+[
+  ".babelrc",
+  ".buckconfig",
+  ".flowconfig",
+  ".gitignore",
+  ".node-version",
+  ".nvmrc",
+  ".travis.yml",
+  ".watchmanconfig",
+  "codecov.yml",
+  "yarn.lock",
+  "README.md",
+  "ios/**",
+  "android/**",
+  ".vscode/**",
+  "node_modules/**"
+]

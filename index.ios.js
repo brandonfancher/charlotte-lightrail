@@ -1,11 +1,12 @@
 import React from 'react';
-import { AppRegistry, StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
+import { AppRegistry, Platform } from 'react-native';
 // import codePush from 'react-native-code-push'
 import { StackNavigator } from 'react-navigation';
 import { ThemeProvider } from 'styled-components/native';
 import { COLORS } from 'assets/styles/constants';
 import { FAQ, RailMap, StationDetail, ScheduleInfo } from 'scenes';
 
+// eslint-disable-next-line
 const AppNavigator = StackNavigator({
   Main: {
     screen: RailMap,
@@ -43,7 +44,7 @@ const AppNavigator = StackNavigator({
         android: {
           elevation: 0
         }
-      }),
+      })
     },
     headerTintColor: COLORS.primaryTextColor
   }

@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 
 // identify iPhone model based on device width
-const identifyDevice = deviceScreenProps => {
+const identifyDevice = (deviceScreenProps) => {
   if (deviceScreenProps.width === 414) {
     return 'iPhone 6+';
   } else if (deviceScreenProps.width === 320) {
@@ -12,7 +12,7 @@ const identifyDevice = deviceScreenProps => {
 
 const deviceScreen = Dimensions.get('window');
 const deviceName = identifyDevice(deviceScreen);
-let deviceVariableSizes = {};
+let deviceVariableSizes = {}; // eslint-disable-line
 let defaultCenter;
 let defaultZoom;
 if (deviceName === 'iPhone 6+') {

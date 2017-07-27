@@ -1,7 +1,6 @@
 import React from 'react';
 import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import DirectionsButton from './DirectionsButton';
-import renderer from 'react-test-renderer';
 
 describe('<DirectionsButton />', () => {
   let props;
@@ -9,7 +8,7 @@ describe('<DirectionsButton />', () => {
   beforeAll(() => {
     props = {
       onPress: jest.fn()
-    }
+    };
   });
 
   it('renders correctly', () => {

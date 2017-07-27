@@ -7,7 +7,7 @@ export default class LocationButton extends React.Component {
   static propTypes = {
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    seeAllStations: PropTypes.func.isRequired,
+    seeAllStations: PropTypes.func.isRequired
   }
 
   getLocationImage() {
