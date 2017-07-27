@@ -1,15 +1,16 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ScrollView, View } from 'react-native';
 import { deviceProps } from 'helpers/device';
+import { blueStops } from 'helpers/config';
+import { mapboxIcon } from 'assets/icons/mapbox-icon';
+import StationCard from '../StationCard';
+import AttributionButton from '../AttributionButton';
 import {
   AttributionView, BottomSectionView, CalloutSectionView,
   CreditSectionView, MapboxIconImage
 } from './StationSliderCss';
-import StationCard from '../StationCard';
-import AttributionButton from '../AttributionButton';
-import { blueStops } from 'helpers/config';
-import { mapboxIcon } from 'assets/icons/mapbox-icon';
 
 export default class StationSlider extends React.Component {
 
@@ -25,7 +26,7 @@ export default class StationSlider extends React.Component {
   }
 
   state = {
-    stationIndex: 0,
+    stationIndex: 0
   }
 
   componentWillReceiveProps(nextProps) {
@@ -49,7 +50,7 @@ export default class StationSlider extends React.Component {
       scrollView.scrollTo({
         x: nextProps.activeStationIndex * deviceProps.deviceScreen.width,
         y: 0,
-        animated: true,
+        animated: true
       });
     }
   }
@@ -97,7 +98,7 @@ export default class StationSlider extends React.Component {
             horizontal
             onMomentumScrollEnd={this.zoomToMarker}
             pagingEnabled
-            ref={scrollView => this.stationScrollView = scrollView}
+            ref={scrollView => this.stationScrollView = scrollView} // eslint-disable-line no-return-assign
           >
             {blueStops.map((stop, index) => (
               <StationCard

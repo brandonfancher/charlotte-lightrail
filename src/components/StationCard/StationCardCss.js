@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import styled from 'styled-components/native';
 import { deviceProps } from 'helpers/device';
 
@@ -97,7 +98,7 @@ export const NextTimeText = styled.Text`
   color: ${props => props.theme.primaryTextColor};
 `;
 
-//left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
+// left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
 export const ButtonContainerView = styled.View`
   position: absolute;
   height: 50px;

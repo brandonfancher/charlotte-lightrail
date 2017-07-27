@@ -1,7 +1,6 @@
 import React from 'react';
 import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import UnorderedList from './UnorderedList';
-import renderer from 'react-test-renderer';
 
 describe('<UnorderedList />', () => {
   let props;
@@ -15,7 +14,7 @@ describe('<UnorderedList />', () => {
         'See the full rail schedule',
         'See these FAQs about riding the rails'
       ]
-    }
+    };
   });
 
   it('renders correctly', () => {

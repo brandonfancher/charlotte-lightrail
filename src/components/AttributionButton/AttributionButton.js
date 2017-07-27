@@ -1,4 +1,4 @@
-/* eslint-disable max-len no-console */
+/* eslint-disable */
 import React from 'react';
 import { ActionSheetIOS, Alert } from 'react-native';
 import userDefaults from 'react-native-user-defaults';

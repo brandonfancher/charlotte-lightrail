@@ -1,7 +1,6 @@
 import React from 'react';
 import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import StationSlider from './StationSlider';
-import renderer from 'react-test-renderer';
 
 describe('<StationSlider />', () => {
   let props;
@@ -13,7 +12,7 @@ describe('<StationSlider />', () => {
       mode: 'walking',
       showCallout: jest.fn(),
       navigation: { navigate: jest.fn() }
-    }
+    };
   });
 
   it('renders correctly', () => {

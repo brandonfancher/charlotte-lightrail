@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Image } from 'react-native';
@@ -14,10 +15,10 @@ export default class StationDetail extends React.Component {
       state: PropTypes.shape({
         params: PropTypes.shape({
           activeCallout: PropTypes.object.isRequired,
-          stop: PropTypes.object.isRequired,
+          stop: PropTypes.object.isRequired
         })
       })
-    }),
+    })
   }
 
   renderStationFeatures = () => {

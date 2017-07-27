@@ -1,7 +1,6 @@
 import React from 'react';
 import { snapshotStyledComponent } from 'helpers/snapshotStyledComponent';
 import StationCard from './StationCard';
-import renderer from 'react-test-renderer';
 
 describe('<StationCard />', () => {
   let props;
@@ -13,7 +12,7 @@ describe('<StationCard />', () => {
       mode: 'walking',
       panToStation: jest.fn(),
       navigation: { navigate: jest.fn() }
-    }
+    };
   });
 
   it('renders correctly', () => {

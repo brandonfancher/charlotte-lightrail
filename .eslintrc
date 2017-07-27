@@ -48,7 +48,8 @@
       "exports": "never",
       "functions": "never"
     }],
-    "no-confusing-arrow": 0
+    "no-confusing-arrow": 0,
+    "dot-notation": 0
   },
   "settings": {
     "import/resolver": {

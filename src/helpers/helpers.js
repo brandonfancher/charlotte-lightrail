@@ -1,3 +1,4 @@
+// eslint-disable max-len no-console
 import { Linking } from 'react-native';
 
 export const startNavigation = (mode, latlng) => {
@@ -11,10 +12,12 @@ export const startNavigation = (mode, latlng) => {
       if (supported) {
         Linking
           .openURL(googleMapsURL)
+          // eslint-disable-next-line
           .catch(err => console.error('Either Google Maps is not installed or some other error occurred: ', err));
       } else {
         Linking
           .openURL(appleMapsURL)
+          // eslint-disable-next-line
           .catch(err => console.error('An error occurred: ', err));
       }
     });
