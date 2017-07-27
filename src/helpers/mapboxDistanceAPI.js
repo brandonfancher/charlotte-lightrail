@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 import { mapboxApiKey } from './config';
 
 export const mapboxDistanceAPI = {
@@ -7,11 +8,10 @@ export const mapboxDistanceAPI = {
 
     if (__DEV__) {
       const endpoint = `directions-matrix/v1/mapbox/${mode}`;
-      coordinates_string = coordinates.map(coordinate => {
-        return coordinate.toString();
-      });
-      coordinates_query = coordinates_string.join(';');
-      const url = `https://api.mapbox.com/${endpoint}/${coordinates_query}?access_token=${mapboxApiKey}`;
+      const coordinatesString = coordinates.map(coordinate => coordinate.toString());
+      const coordinatesQuery = coordinatesString.join(';');
+      // eslint-disable-next-line
+      const url = `https://api.mapbox.com/${endpoint}/${coordinatesQuery}?access_token=${mapboxApiKey}`;
       return fetch(url).then(res => res.json());
     } else {
       const endpoint = `distances/v1/mapbox/${mode}`;
@@ -19,12 +19,12 @@ export const mapboxDistanceAPI = {
       return fetch(url, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          coordinates,
-        }),
+          coordinates
+        })
       }).then(res => res.json());
     }
-  },
+  }
 };

@@ -1,18 +1,20 @@
+/* eslint-disable */
 import React from 'react';
-import { AppState, NetInfo, StatusBar, View, DeviceEventEmitter } from 'react-native';
+import PropTypes from 'prop-types';
+import { AppState, NetInfo, StatusBar, DeviceEventEmitter } from 'react-native';
 import QuickActions from 'react-native-quick-actions';
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 import moment from 'moment';
 import userDefaults from 'react-native-user-defaults';
-import {
-  containerStyle, ContainerView, VisibleView
-} from './RailMapCss';
 import { blueStops, mapboxApiKey, timeInterval, SIMULATE_DISCONNECTED } from 'helpers/config';
 import { distanceTimeConverter, getNextTrainTime } from 'helpers/scheduleCalcs';
 import { blueLine, getAnnotations, getStopCallouts } from 'helpers/mapSetup';
 import { mapboxDistanceAPI } from 'helpers/mapboxDistanceAPI';
 import { deviceProps } from 'helpers/device';
 import MapOverlay from 'components/MapOverlay';
+import {
+  ContainerView, VisibleView
+} from './RailMapCss';
 
 const {
   defaultCenter, defaultZoom, deviceName
@@ -21,6 +23,11 @@ const {
 Mapbox.setAccessToken(mapboxApiKey);
 
 export default class RailMap extends React.Component {
+
+  static propTypes = {
+    navigation: PropTypes.object.isRequired
+  };
+
   state = {
     annotations: [...getAnnotations(), {
       coordinates: blueLine,
@@ -28,7 +35,7 @@ export default class RailMap extends React.Component {
       strokeColor: '#009ada',
       strokeWidth: 4,
       strokeAlpha: 0.9,
-      id: 'foobar',
+      id: 'foobar'
     }],
     center: defaultCenter,
     connected: true,
@@ -42,7 +49,7 @@ export default class RailMap extends React.Component {
     connectionDetected: true,
     stationDistances: null,
     ...getStopCallouts(), // inject stop callouts generated above into initial state object
-    zoom: defaultZoom,
+    zoom: defaultZoom
   }
 
   componentDidMount() {
@@ -64,7 +71,7 @@ export default class RailMap extends React.Component {
           this.setState({
             center: { latitude, longitude },
             locationError: true,
-            zoom,
+            zoom
           });
         });
       }
@@ -131,47 +138,6 @@ export default class RailMap extends React.Component {
       });
   }
 
-  keepTime = () => {
-    // NEW FOR ALL STATIONS
-    const stopsRequiringUpdate = {};
-    blueStops.forEach((stop, index) => {
-      const stopCallout = this.state[`stopCallout${index}`];
-      const nextInbound = getNextTrainTime('inbound', index);
-      const nextOutbound = getNextTrainTime('outbound', index);
-      const inboundTimeChanged = stopCallout.inbound.time !== nextInbound.time;
-      const inboundDeltaChanged = stopCallout.inbound.delta !== nextInbound.delta;
-      const outboundTimeChanged = stopCallout.outbound.time !== nextOutbound.time;
-      const outboundDeltaChanged = stopCallout.outbound.delta !== nextOutbound.delta;
-      const shouldUpdate = (inboundTimeChanged || inboundDeltaChanged || outboundTimeChanged || outboundDeltaChanged);
-
-      if (shouldUpdate) {
-        stopsRequiringUpdate[`stopCallout${index}`] = {
-          ...this.state[`stopCallout${index}`],
-          inbound: nextInbound,
-          outbound: nextOutbound,
-        };
-      }
-    });
-    this.setState(stopsRequiringUpdate);
-  }
-
-  seeAllStations = () => {
-    this.mapRef.setCenterCoordinateZoomLevel(defaultCenter.latitude, defaultCenter.longitude, defaultZoom);
-  }
-
-  showCallout = (stopNum, stationDistances = this.state.stationDistances) => {
-    // Swiping to new station while fetching closest station can, under some circumstances, call showCallout()
-    // while stationDistances is null. This if block protects against errors in those cases
-    if (!this.state.loading) {
-      const stopInfo = blueStops[stopNum];
-      const { latitude, longitude } = stopInfo.latlng;
-      const zoomLatitude = deviceName === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
-      const doZoom = () => this.mapRef.setCenterCoordinateZoomLevel(zoomLatitude, longitude, 13.1857257019792);
-      const station = stationDistances[stopNum];
-      this.getCalloutTrainTime(station, doZoom);
-    }
-  }
-
   // Change the color of the nearest station marker so that it sticks out to user
   setNearestMarkerColor = (newNearestIndex) => {
     const oldNearestIndex = this.state.nearestStationIndex;
@@ -188,14 +154,14 @@ export default class RailMap extends React.Component {
               title: blueStops[newNearestIndex].mapLabel,
               annotationImage: {
                 source: {
-                  uri: 'greenMarker',
+                  uri: 'greenMarker'
                 },
                 height: 32,
-                width: 32,
+                width: 32
               },
-              id: `marker-${newNearestIndex}`,
-            },
-          ],
+              id: `marker-${newNearestIndex}`
+            }
+          ]
         });
       }
       // If there was a nearest station already, change its marker color back to blue.
@@ -210,11 +176,11 @@ export default class RailMap extends React.Component {
               annotationImage: {
                 url: 'image!blueMarker',
                 height: 32,
-                width: 32,
+                width: 32
               },
-              id: `marker-${oldNearestIndex}`,
-            },
-          ],
+              id: `marker-${oldNearestIndex}`
+            }
+          ]
         });
       }
     }
@@ -231,7 +197,7 @@ export default class RailMap extends React.Component {
       stopCallouts[`stopCallout${index}`] = {
         durationText: '---',
         inbound: nextInbound,
-        outbound: nextOutbound,
+        outbound: nextOutbound
       };
     });
 
@@ -244,7 +210,7 @@ export default class RailMap extends React.Component {
       mode,
       stationDistances,
       ...stopCallouts,
-      nearestStationIndex: null,
+      nearestStationIndex: null
     });
 
     // Show nearest station callout. We pass stationDistances because sometimes showCallout() gets
@@ -280,7 +246,7 @@ export default class RailMap extends React.Component {
             ...this.state[`stopCallout${index}`],
             durationText: distanceTimeConverter(stationDistances[index].duration),
             inbound: getNextTrainTime('inbound', index),
-            outbound: getNextTrainTime('outbound', index),
+            outbound: getNextTrainTime('outbound', index)
           };
         });
 
@@ -289,7 +255,7 @@ export default class RailMap extends React.Component {
           connected: true,
           loading: false,
           nearestStationIndex: nearestIndex,
-          stationDistances,
+          stationDistances
         });
 
         // Show nearest station callout. We pass stationDistances because sometimes showCallout() gets
@@ -306,7 +272,7 @@ export default class RailMap extends React.Component {
     navigator.geolocation.getCurrentPosition((position) => {
       this.setState({
         locationDenied: false,
-        locationError: false,
+        locationError: false
       }, () => setUpApp && this.setUpConnectedState(position, mode));
     }, (error) => { // second arg to getCurrentPosition() is an error callback
       // Error Code 1: User denied access to location services
@@ -315,12 +281,12 @@ export default class RailMap extends React.Component {
       if (error.code === 1) {
         this.setState({
           locationDenied: true,
-          locationError: true,
+          locationError: true
         }, () => setUpApp && this.setUpDisconnectedState(mode));
       } else {
         this.setState({
           locationDenied: false,
-          locationError: true,
+          locationError: true
         }, () => setUpApp && this.setUpDisconnectedState(mode));
       }
       // this.setState({ error: error.message })
@@ -328,7 +294,7 @@ export default class RailMap extends React.Component {
     }, { // third arg to getCurrentPosition() is the settings for the position
       enableHighAccuracy: true,
       timeout: 20000,
-      maximumAge: 1000,
+      maximumAge: 1000
     });
   }
 
@@ -337,7 +303,7 @@ export default class RailMap extends React.Component {
       lastAppUpdate: moment(),
       loading: true,
       mode,
-      stationDistances: null,
+      stationDistances: null
     });
 
     if (SIMULATE_DISCONNECTED || !this.state.connectionDetected) {
@@ -353,9 +319,50 @@ export default class RailMap extends React.Component {
     );
   }
 
+  showCallout = (stopNum, stationDistances = this.state.stationDistances) => {
+    // Swiping to new station while fetching closest station can, under some circumstances, call showCallout()
+    // while stationDistances is null. This if block protects against errors in those cases
+    if (!this.state.loading) {
+      const stopInfo = blueStops[stopNum];
+      const { latitude, longitude } = stopInfo.latlng;
+      const zoomLatitude = deviceName === 'iPhone 5' ? latitude - 0.001 : latitude; // adjust zoom alignment on iPhone 5s
+      const doZoom = () => this.mapRef.setCenterCoordinateZoomLevel(zoomLatitude, longitude, 13.1857257019792);
+      const station = stationDistances[stopNum];
+      this.getCalloutTrainTime(station, doZoom);
+    }
+  }
+
+  seeAllStations = () => {
+    this.mapRef.setCenterCoordinateZoomLevel(defaultCenter.latitude, defaultCenter.longitude, defaultZoom);
+  }
+
+  keepTime = () => {
+    // NEW FOR ALL STATIONS
+    const stopsRequiringUpdate = {};
+    blueStops.forEach((stop, index) => {
+      const stopCallout = this.state[`stopCallout${index}`];
+      const nextInbound = getNextTrainTime('inbound', index);
+      const nextOutbound = getNextTrainTime('outbound', index);
+      const inboundTimeChanged = stopCallout.inbound.time !== nextInbound.time;
+      const inboundDeltaChanged = stopCallout.inbound.delta !== nextInbound.delta;
+      const outboundTimeChanged = stopCallout.outbound.time !== nextOutbound.time;
+      const outboundDeltaChanged = stopCallout.outbound.delta !== nextOutbound.delta;
+      const shouldUpdate = (inboundTimeChanged || inboundDeltaChanged || outboundTimeChanged || outboundDeltaChanged);
+
+      if (shouldUpdate) {
+        stopsRequiringUpdate[`stopCallout${index}`] = {
+          ...this.state[`stopCallout${index}`],
+          inbound: nextInbound,
+          outbound: nextOutbound
+        };
+      }
+    });
+    this.setState(stopsRequiringUpdate);
+  }
+
   render() {
     const { activeStationIndex, annotations, center, connected, error, loading, locationDenied, locationError, nearestStationIndex, stationDistances, zoom } = this.state;
-    const navigation = this.props.navigation;
+    const { navigation } = this.props;
 
     return (
       <ContainerView>
@@ -371,7 +378,8 @@ export default class RailMap extends React.Component {
             logoIsHidden
             onOpenAnnotation={this.onOpenAnnotation}
             onRegionDidChange={this.onRegionChange} // onRegionWillChange?
-            //onRightAnnotationTapped={this.onRightAnnotationTapped}
+            // onRightAnnotationTapped={this.onRightAnnotationTapped}
+            // eslint-disable-next-line no-return-assign
             ref={map => this.mapRef = map}
             rotateEnabled={false}
             scrollEnabled

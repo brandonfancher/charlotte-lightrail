@@ -10,7 +10,9 @@
     "jest"
   ],
   "globals": {
-    "navigator": true
+    "navigator": true,
+    "__DEV__": true,
+    "fetch": true
   },
   "rules": {
     "global-require": 1,
