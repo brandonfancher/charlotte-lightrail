@@ -31,11 +31,11 @@ export default class ScheduleInfo extends React.Component {
     const setWrapperStyle = (ref, margin) => ref.setNativeProps({ style: { marginTop: margin } });
 
     if (this.inboundNext) { // If we have a node for the ref (if we're on the schedule for today)...
-      this.inboundNext.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
-        const inboundY = py;
+      this.inboundNext.measure((oxOuter, oyOuter, widthOuter, heightOuter, pxOuter, pyOuter) => { // get the Y offset for the inbound time...
+        const inboundY = pyOuter;
         let outboundY;
-        this.outboundNext.measure((ox, oy, width, height, px, py) => { // get the Y offset for the outbound time...
-          outboundY = py;
+        this.outboundNext.measure((oxInner, oyInner, widthInner, heightInner, pxInner, pyInner) => { // get the Y offset for the outbound time...
+          outboundY = pyInner;
           const offset = inboundY - outboundY; // calculate the Y offset)...
           const scrollPosition = Math.max(inboundY, outboundY) - (deviceScreen.height / 2); // calculate scroll positions...
 
@@ -77,11 +77,7 @@ export default class ScheduleInfo extends React.Component {
             </NextLabelCircleOuterView>
           </NextCircleWrapperView>
         }
-        {direction === 'outbound' ?
-          <HorizontalLineOutsideRightView />
-          :
-          <HorizontalLineOutsideLeftView />
-        }
+        {direction === 'outbound' ? <HorizontalLineOutsideRightView /> : <HorizontalLineOutsideLeftView />}
         <NextTimeText allowFontScaling={false} key={`${schedule}-${index}-entry-active`} innerRef={(c) => { this[`${direction}Next`] = c; }}>{time}</NextTimeText>
       </TableCellView>
     );

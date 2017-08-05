@@ -1,6 +1,6 @@
 import { Linking } from 'react-native';
+import { MAPBOX_API_KEY } from 'env'; // eslint-disable-line
 import schedules from './schedules.json';
-import { MAPBOX_API_KEY } from 'env';
 
 export const mapboxApiKey = process.env.MAPBOX_API_KEY ? process.env.MAPBOX_API_KEY : MAPBOX_API_KEY;
 
@@ -15,51 +15,51 @@ export const timeInterval = 15000;
 const features = {
   covered: {
     featureDesc: 'Covered waiting area',
-    icon: require('assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png'),
+    icon: require('assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png')
   },
   tickets: {
     featureDesc: 'Ticket vending machines',
-    icon: require('assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png'),
+    icon: require('assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png')
   },
   emergency: {
     featureDesc: 'Emergency call box',
-    icon: require('assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png'),
+    icon: require('assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png')
   },
   lighted: {
     featureDesc: 'Lighted station',
-    icon: require('assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png'),
+    icon: require('assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png')
   },
   water: {
     featureDesc: 'Water fountain',
-    icon: require('assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png'),
+    icon: require('assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png')
   },
   seating: {
     featureDesc: 'Seating',
-    icon: require('assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png'),
+    icon: require('assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png')
   },
   announce: {
     featureDesc: 'Automatic audio announcements',
-    icon: require('assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png'),
+    icon: require('assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png')
   },
   wheelchair: {
     featureDesc: 'Wheelchair accessible platform',
-    icon: require('assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png'),
+    icon: require('assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png')
   },
   art: {
     featureDesc: 'Public art',
-    icon: require('assets/icons/station-features/public-art/ic_photo_white_48pt.png'),
+    icon: require('assets/icons/station-features/public-art/ic_photo_white_48pt.png')
   },
   bike: {
     featureDesc: 'Bike racks',
-    icon: require('assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png'),
+    icon: require('assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png')
   },
   elevators: {
     featureDesc: 'Elevators',
-    icon: require('assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png'),
+    icon: require('assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png')
   },
   park: {
     featureDesc: 'Park and Ride',
-    icon: require('assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png'),
+    icon: require('assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png')
   }
 };
 

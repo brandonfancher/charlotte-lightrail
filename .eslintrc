@@ -52,7 +52,10 @@
     }],
     "no-confusing-arrow": 0,
     "dot-notation": 0,
-    "new-cap": 0
+    "new-cap": 0,
+    "import/no-extraneous-dependencies": 1,
+    "import/no-unresolved": 1,
+    "react/no-unused-prop-types": 1
   },
   "settings": {
     "import/resolver": {
