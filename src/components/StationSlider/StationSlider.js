@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ScrollView, View } from 'react-native';
@@ -98,7 +97,7 @@ export default class StationSlider extends React.Component {
             horizontal
             onMomentumScrollEnd={this.zoomToMarker}
             pagingEnabled
-            ref={scrollView => this.stationScrollView = scrollView} // eslint-disable-line no-return-assign
+            ref={scrollView => this.stationScrollView = scrollView}
           >
             {blueStops.map((stop, index) => (
               <StationCard

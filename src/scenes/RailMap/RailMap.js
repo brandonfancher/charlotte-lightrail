@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AppState, NetInfo, StatusBar, DeviceEventEmitter } from 'react-native';
@@ -379,7 +378,6 @@ export default class RailMap extends React.Component {
             onOpenAnnotation={this.onOpenAnnotation}
             onRegionDidChange={this.onRegionChange} // onRegionWillChange?
             // onRightAnnotationTapped={this.onRightAnnotationTapped}
-            // eslint-disable-next-line no-return-assign
             ref={map => this.mapRef = map}
             rotateEnabled={false}
             scrollEnabled

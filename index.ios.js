@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components/native';
 import { COLORS } from 'assets/styles/constants';
 import { FAQ, RailMap, StationDetail, ScheduleInfo } from 'scenes';
 
-// eslint-disable-next-line
 const AppNavigator = StackNavigator({
   Main: {
     screen: RailMap,

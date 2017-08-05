@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { displayLink } from 'helpers/config';
 import { ContentText, TeamLunaText } from './FaqContentCss';

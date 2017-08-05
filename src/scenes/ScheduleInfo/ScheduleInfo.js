@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InteractionManager, Text, View } from 'react-native';
@@ -35,7 +34,6 @@ export default class ScheduleInfo extends React.Component {
       this.inboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
         const inboundY = py;
         let outboundY;
-        // eslint-disable-next-line
         this.outboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the outbound time...
           outboundY = py;
           const offset = inboundY - outboundY; // calculate the Y offset)...
@@ -82,7 +80,7 @@ export default class ScheduleInfo extends React.Component {
         {direction === 'outbound' ?
           <HorizontalLineOutsideRightView />
           :
-          <HorizontalLineOutsideLeftView /> // eslint-disable-line react/jsx-indent
+          <HorizontalLineOutsideLeftView />
         }
         <NextTimeText allowFontScaling={false} key={`${schedule}-${index}-entry-active`} ref={(c) => { this[`${direction}Next`] = c; }}>{time}</NextTimeText>
       </TableCellView>

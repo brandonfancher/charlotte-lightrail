@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { ActionSheetIOS, Alert } from 'react-native';
 import userDefaults from 'react-native-user-defaults';
@@ -60,7 +59,6 @@ export default class AttributionButton extends React.Component {
     return (
       <AttributionTouchableOpacity onPress={this.showActionSheet}>
         <AttributionIconImage
-          // eslint-disable-next-line
           source={require('assets/icons/info/info_circle.png')}
         />
       </AttributionTouchableOpacity>

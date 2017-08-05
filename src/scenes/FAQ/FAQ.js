@@ -33,7 +33,6 @@ class Faq extends React.Component {
 
   toggleArrow = (openIndex) => {
     const prevOpenIndex = this.state.openIndex;
-    // eslint-disable-next-line max-len
     // Change previously open toggle arrow back to point right (whether opening new toggle or closing)
     Animated.spring(this.state[`arrowBounce${prevOpenIndex}`], { toValue: 45 }).start();
     if (openIndex !== false) { // If user is not closing a toggle

@@ -12,7 +12,7 @@ const identifyDevice = (deviceScreenProps) => {
 
 const deviceScreen = Dimensions.get('window');
 const deviceName = identifyDevice(deviceScreen);
-let deviceVariableSizes = {}; // eslint-disable-line
+let deviceVariableSizes;
 let defaultCenter;
 let defaultZoom;
 if (deviceName === 'iPhone 6+') {

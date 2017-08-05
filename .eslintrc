@@ -19,9 +19,9 @@
     "no-console": 1,
     "no-alert": 0,
     "no-debugger": 2,
-    "no-return-assign": [2, "always"],
+    "no-return-assign": [1, "always"],
     "max-len": [1, {
-      "code": 100,
+      "code": 150,
       "tabWidth": 2
     }],
     "no-use-before-define": 2,
@@ -51,7 +51,8 @@
       "functions": "never"
     }],
     "no-confusing-arrow": 0,
-    "dot-notation": 0
+    "dot-notation": 0,
+    "new-cap": 0
   },
   "settings": {
     "import/resolver": {

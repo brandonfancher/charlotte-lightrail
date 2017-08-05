@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import moment from 'moment';
 import { blueStops } from './config';
 

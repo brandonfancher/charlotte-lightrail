@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-color-literals */
 import React, { Component } from 'react';
 import {
   AppRegistry,
