@@ -37,12 +37,12 @@ export const ViewContainerView = styled.View`
 `;
 
 export const ScrollViewView = styled.ScrollView`
-  flex: 1px;
+  flex: 1;
   backgroundColor: ${props => props.theme.backgroundColorDark};
 `;
 
 export const AccordionWrapperView = styled.View`
-  flex: 1px;
+  flex: 1;
   margin: 10px;
   backgroundColor: ${props => props.theme.accordionBackground};
   borderWidth: 1px;

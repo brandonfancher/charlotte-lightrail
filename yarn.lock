@@ -2246,7 +2246,7 @@ first-chunk-stream@^2.0.0:
   dependencies:
     readable-stream "^2.0.2"
 
-flat-cache@1.0.10, flat-cache@^1.0.9:
+flat-cache@1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-1.0.10.tgz#73d6df4a28502160a05e059544a6aeeae8b0047a"
   dependencies:
@@ -2255,7 +2255,7 @@ flat-cache@1.0.10, flat-cache@^1.0.9:
     read-json-sync "^1.1.0"
     write "^0.2.1"
 
-flat-cache@^1.2.1:
+flat-cache@^1.0.9, flat-cache@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-1.2.2.tgz#fa86714e72c21db88601761ecf2f555d1abc6b96"
   dependencies:
@@ -4367,9 +4367,9 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
-"react-native-collapsible@git+https://git@github.com/brandonfancher/react-native-collapsible.git":
+react-native-collapsible@brandonfancher/react-native-collapsible:
   version "0.7.0"
-  resolved "git+https://git@github.com/brandonfancher/react-native-collapsible.git#cf7fa02a5cfbcb7a9d382212b2104c97904086fb"
+  resolved "https://codeload.github.com/brandonfancher/react-native-collapsible/tar.gz/cf7fa02a5cfbcb7a9d382212b2104c97904086fb"
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"

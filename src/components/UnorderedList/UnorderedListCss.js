@@ -9,7 +9,7 @@ export const BulletView = styled.View`
 `;
 
 export const BulletContentView = styled.View`
-  flex: 1px;
+  flex: 1;
 `;
 
 export const ContentText = styled.Text`
