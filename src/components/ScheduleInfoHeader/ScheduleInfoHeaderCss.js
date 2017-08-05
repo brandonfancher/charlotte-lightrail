@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const WrapView = styled.View`
   backgroundColor: ${props => props.theme.verticalDividerLine};
-  flex: 1px;
+  flex: 1;
   height: 74px;
   width: ${props => props.width}px;
 `;

@@ -24,13 +24,13 @@ export const HeaderContainerView = styled.View`
 `;
 
 export const AboutTouchableOpacity = styled.TouchableOpacity`
-  flex: 0.8px;
+  flex: 0.8;
   paddingTop: 1px;
   paddingLeft: 14px;
 `;
 
 export const ModeSelectorSegmentedControlIOS = styled.SegmentedControlIOS`
-  flex: 1.5px;
+  flex: 1.5;
   marginBottom: 10px;
 `;
 

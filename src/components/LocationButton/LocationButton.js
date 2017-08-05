@@ -7,7 +7,7 @@ export default class LocationButton extends React.Component {
   static propTypes = {
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    seeAllStations: PropTypes.func.isRequired,
+    seeAllStations: PropTypes.func.isRequired
   }
 
   getLocationImage() {
@@ -16,7 +16,6 @@ export default class LocationButton extends React.Component {
       return (
         <IconImage
           inactiveIcon
-          // eslint-disable-next-line
           source={require('assets/icons/location/ic_location_disabled_white.png')}
         />
       );
@@ -24,14 +23,12 @@ export default class LocationButton extends React.Component {
       return (
         <IconImage
           inactiveIcon
-          // eslint-disable-next-line
           source={require('assets/icons/location/ic_location_searching_white.png')}
         />
       );
     }
     return (
       <IconImage
-        // eslint-disable-next-line
         source={require('assets/icons/location/ic_my_location_white.png')}
       />
     );

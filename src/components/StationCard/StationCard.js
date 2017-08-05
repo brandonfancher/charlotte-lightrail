@@ -98,13 +98,11 @@ export default class StationCard extends React.Component {
             <ButtonsView>
               <BubbleTouchableOpacity onPress={() => navigate('StationDetail', { activeCallout: stopCallout, stop })}>
                 <Image
-                  // eslint-disable-next-line
                   source={require('assets/icons/info/ic_info_white_36pt.png')}
                 />
               </BubbleTouchableOpacity>
               <BubbleTouchableOpacity onPress={() => navigate('StationSchedule', { activeStationIndex: stationIndex, loading, stopCallout })}>
                 <Image
-                  // eslint-disable-next-line
                   source={require('assets/icons/schedule/ic_schedule_white_36pt.png')}
                 />
               </BubbleTouchableOpacity>

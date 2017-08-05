@@ -19,14 +19,17 @@ export default class MapOverlay extends React.Component {
     loading: PropTypes.bool.isRequired,
     locationDenied: PropTypes.bool.isRequired,
     mode: PropTypes.string.isRequired,
-    nearestStationIndex: PropTypes.number, // eslint-disable-line
+    nearestStationIndex: PropTypes.number,
     seeAllStations: PropTypes.func.isRequired,
-    showCallout: PropTypes.func.isRequired, // eslint-disable-line
-    stationDistances: PropTypes.array, // eslint-disable-line
+    showCallout: PropTypes.func.isRequired,
+    stationDistances: PropTypes.array,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func.isRequired
+    })
   }
 
   state = {
-    displaySchedule: false,
+    displaySchedule: false
   }
 
   handleZeroState = () => {
@@ -53,7 +56,6 @@ export default class MapOverlay extends React.Component {
               <AboutTouchableOpacity onPress={() => navigate('Faq')}>
                 <HelpView>
                   <Image
-                    // eslint-disable-next-line
                     source={require('assets/icons/help/ic_help_white.png')}
                   />
                 </HelpView>

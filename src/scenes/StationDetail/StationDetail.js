@@ -14,10 +14,10 @@ export default class StationDetail extends React.Component {
       state: PropTypes.shape({
         params: PropTypes.shape({
           activeCallout: PropTypes.object.isRequired,
-          stop: PropTypes.object.isRequired,
+          stop: PropTypes.object.isRequired
         })
       })
-    }),
+    })
   }
 
   renderStationFeatures = () => {

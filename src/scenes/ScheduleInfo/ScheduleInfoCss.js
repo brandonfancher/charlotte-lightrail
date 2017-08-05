@@ -93,13 +93,16 @@ export const TableView = styled.View`
 `;
 
 const TableColView = styled.View`
-  flex: 1px;
+  flex: 1;
   alignSelf: flex-start;
 `;
 
 export const TableColInboundView = TableColView.extend`
   alignItems: flex-end;
-  paddingRight: ${insideColPadding}px;
+  paddingRight: ${insideColPadding + 1}px;
+  borderRightColor: ${props => props.theme.verticalDividerLine};
+  borderRightWidth: 1px;
+  borderStyle: solid;
 `;
 
 export const TableColOutboundView = TableColView.extend`
@@ -126,7 +129,7 @@ export const VerticalLineView = styled.View`
 `;
 
 export const TableContainerView = styled.View`
-  flex: 1px;
+  flex: 1;
 `;
 
 export const TableHeadView = styled.View`
@@ -136,7 +139,7 @@ export const TableHeadView = styled.View`
 
 export const TableColHeadView = styled.View`
   alignItems: center;
-  flex: 1px;
+  flex: 1;
   paddingBottom: 16px;
   paddingTop: 12px;
   marginTop: 10px;

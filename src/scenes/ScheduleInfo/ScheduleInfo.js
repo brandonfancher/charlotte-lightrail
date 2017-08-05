@@ -22,7 +22,7 @@ export default class ScheduleInfo extends React.Component {
 
   state = {
     scheduleIndex: getScheduleDay().index,
-    scheduleValue: getScheduleDay().day,
+    scheduleValue: getScheduleDay().day
   };
 
   setScheduleAlignment = () => {
@@ -31,12 +31,11 @@ export default class ScheduleInfo extends React.Component {
     const setWrapperStyle = (ref, margin) => ref.setNativeProps({ style: { marginTop: margin } });
 
     if (this.inboundNext) { // If we have a node for the ref (if we're on the schedule for today)...
-      this.inboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the inbound time...
-        const inboundY = py;
+      this.inboundNext.measure((oxOuter, oyOuter, widthOuter, heightOuter, pxOuter, pyOuter) => { // get the Y offset for the inbound time...
+        const inboundY = pyOuter;
         let outboundY;
-        // eslint-disable-next-line
-        this.outboundNext.root.measure((ox, oy, width, height, px, py) => { // get the Y offset for the outbound time...
-          outboundY = py;
+        this.outboundNext.measure((oxInner, oyInner, widthInner, heightInner, pxInner, pyInner) => { // get the Y offset for the outbound time...
+          outboundY = pyInner;
           const offset = inboundY - outboundY; // calculate the Y offset)...
           const scrollPosition = Math.max(inboundY, outboundY) - (deviceScreen.height / 2); // calculate scroll positions...
 
@@ -56,11 +55,6 @@ export default class ScheduleInfo extends React.Component {
       setWrapperStyle(this.outboundWrapper, 0);
       setWrapperStyle(this.inboundWrapper, 0);
     }
-  }
-
-  // We call this when we want to scroll down programmatically
-  performScroll = (y, animated) => {
-    this.scheduleScrollView.root.scrollTo({ x: 0, y, animated });
   }
 
   getTrainTimes = (direction, days) => {
@@ -83,12 +77,8 @@ export default class ScheduleInfo extends React.Component {
             </NextLabelCircleOuterView>
           </NextCircleWrapperView>
         }
-        {direction === 'outbound' ?
-          <HorizontalLineOutsideRightView />
-          :
-          <HorizontalLineOutsideLeftView />
-        }
-        <NextTimeText allowFontScaling={false} key={`${schedule}-${index}-entry-active`} ref={(c) => { this[`${direction}Next`] = c; }}>{time}</NextTimeText>
+        {direction === 'outbound' ? <HorizontalLineOutsideRightView /> : <HorizontalLineOutsideLeftView />}
+        <NextTimeText allowFontScaling={false} key={`${schedule}-${index}-entry-active`} innerRef={(c) => { this[`${direction}Next`] = c; }}>{time}</NextTimeText>
       </TableCellView>
     );
 
@@ -113,17 +103,22 @@ export default class ScheduleInfo extends React.Component {
   getSchedule = () => {
     const days = this.state.scheduleValue;
     return (
-      <TableColScrollView ref={(c) => { this.scheduleScrollView = c; }}>
+      <TableColScrollView innerRef={(c) => { this.scheduleScrollView = c; }}>
         <TableView>
-          <TableColInboundView ref={(c) => { this.inboundWrapper = c; }}>
+          <TableColInboundView innerRef={(c) => { this.inboundWrapper = c; }}>
             {this.getTrainTimes('inbound', days)}
           </TableColInboundView>
-          <TableColOutboundView ref={(c) => { this.outboundWrapper = c; }} onLayout={this.setScheduleAlignment}>
+          <TableColOutboundView innerRef={(c) => { this.outboundWrapper = c; }} onLayout={this.setScheduleAlignment}>
             {this.getTrainTimes('outbound', days)}
           </TableColOutboundView>
         </TableView>
       </TableColScrollView>
     );
+  }
+
+  // We call this when we want to scroll down programmatically
+  performScroll = (y, animated) => {
+    this.scheduleScrollView.scrollTo({ x: 0, y, animated });
   }
 
   scheduleValueHandler = (value) => {
@@ -181,8 +176,8 @@ ScheduleInfo.propTypes = {
       params: PropTypes.shape({
         activeStationIndex: PropTypes.number,
         loading: PropTypes.bool.isRequired,
-        stopCallout: PropTypes.object,
+        stopCallout: PropTypes.object
       })
     })
-  }),
+  })
 };

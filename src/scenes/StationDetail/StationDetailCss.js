@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const FeaturesWrapperScrollView = styled.ScrollView`
-  flex: 1px;
+  flex: 1;
 `;
 
 export const FeaturesContainerView = styled.View`
@@ -16,7 +16,7 @@ export const IconImageView = styled.View`
 `;
 
 export const FeaturesTextItemView = styled.View`
-  flex: 1px;
+  flex: 1;
   alignSelf: center;
 `;
 
@@ -27,7 +27,7 @@ export const FeaturesText = styled.Text`
 `;
 
 export const TabView = styled.View`
-  flex: 1px;
+  flex: 1;
   marginTop: 0px;
   backgroundColor: ${props => props.theme.backgroundColor};
 `;
@@ -40,7 +40,7 @@ export const TimesContainerView = styled.View`
 
 export const NextBlockView = styled.View`
   alignItems: center;
-  flex: 1px;
+  flex: 1;
   marginBottom: 25px;
   backgroundColor: ${props => props.theme.black};
 `;

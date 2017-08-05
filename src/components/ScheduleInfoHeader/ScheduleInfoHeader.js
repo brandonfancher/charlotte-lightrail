@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, SegmentedControlIOS } from 'react-native';
-import { WrapView, TitleText, ScheduleSelectorView } from './ScheduleInfoHeaderCss';
+import { SegmentedControlIOS } from 'react-native';
 import { getScheduleDay } from 'helpers/scheduleCalcs';
 import { deviceProps } from 'helpers/device';
+import { WrapView, TitleText, ScheduleSelectorView } from './ScheduleInfoHeaderCss';
 
 const { deviceScreen } = deviceProps;
 
@@ -12,12 +12,12 @@ export default class ScheduleInfoHeader extends React.Component {
   static propTypes = {
     scheduleIndex: PropTypes.number.isRequired,
     scheduleValueHandler: PropTypes.func.isRequired,
-    stationName: PropTypes.string.isRequired,
+    stationName: PropTypes.string.isRequired
   }
 
   state = {
     scheduleIndex: getScheduleDay().index,
-    scheduleValue: getScheduleDay().day,
+    scheduleValue: getScheduleDay().day
   };
 
   render() {

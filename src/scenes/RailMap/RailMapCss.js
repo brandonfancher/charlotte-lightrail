@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ContainerView = styled.View`
-  flex: 1px;
+  flex: 1;
 `;
 
 export const VisibleView = styled.View`

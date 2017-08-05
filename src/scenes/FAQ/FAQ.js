@@ -1,5 +1,6 @@
 import React from 'react';
-import { Animated, View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+import { Animated, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import { withTheme } from 'styled-components/native';
 import { faqContent } from 'components/FaqContent';
@@ -9,6 +10,10 @@ import {
 } from './FAQCss';
 
 class Faq extends React.Component {
+
+  static propTypes = {
+    theme: PropTypes.object.isRequired
+  }
 
   constructor(props) {
     super(props);
@@ -22,9 +27,26 @@ class Faq extends React.Component {
     // and set initial state.
     this.state = {
       ...arrowAnimationValues,
-      openIndex: 0,
+      openIndex: 0
     };
   }
+
+  toggleArrow = (openIndex) => {
+    const prevOpenIndex = this.state.openIndex;
+    // Change previously open toggle arrow back to point right (whether opening new toggle or closing)
+    Animated.spring(this.state[`arrowBounce${prevOpenIndex}`], { toValue: 45 }).start();
+    if (openIndex !== false) { // If user is not closing a toggle
+      // Change newly open toggle arrow to point down
+      Animated.spring(this.state[`arrowBounce${openIndex}`], { toValue: 135 }).start();
+      this.setState({ openIndex }); // Set our openIndex
+    }
+  }
+
+  renderContent = section => (
+    <AccordionContentView>
+      {section.contents}
+    </AccordionContentView>
+  );
 
   renderHeader = (section, index) => {
     const bounce = this.state[`arrowBounce${index}`];
@@ -45,23 +67,6 @@ class Faq extends React.Component {
         <AnimatedArrowsView style={{ transform }} />
       </AccordionHeaderView>
     );
-  }
-
-  renderContent = section => (
-    <AccordionContentView>
-      {section.contents}
-    </AccordionContentView>
-  );
-
-  toggleArrow = (openIndex) => {
-    const prevOpenIndex = this.state.openIndex;
-    // Change previously open toggle arrow back to point right (whether opening new toggle or closing)
-    Animated.spring(this.state[`arrowBounce${prevOpenIndex}`], { toValue: 45 }).start();
-    if (openIndex !== false) { // If user is not closing a toggle
-      // Change newly open toggle arrow to point down
-      Animated.spring(this.state[`arrowBounce${openIndex}`], { toValue: 135 }).start();
-      this.setState({ openIndex }); // Set our openIndex
-    }
   }
 
   render() {

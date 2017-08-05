@@ -1,7 +1,6 @@
 import moment from 'moment';
 import { blueStops } from './config';
 
-
 // Get day for purposes of determining which train schedule is in force
 // I chose 3 AM as the cutoff. If DST were to impact this, it would shift one
 // hour, and an hour in either direction will not adversely affect the results.

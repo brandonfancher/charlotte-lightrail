@@ -9,12 +9,12 @@ export const getAnnotations = () =>
     title: stop.mapLabel,
     annotationImage: {
       source: {
-        uri: 'blueMarker',
+        uri: 'blueMarker'
       },
       height: 32,
-      width: 32,
+      width: 32
     },
-    id: `marker-${index}`,
+    id: `marker-${index}`
   }));
 
 export const getStopCallouts = () => {
@@ -25,7 +25,7 @@ export const getStopCallouts = () => {
     stopCallouts[`stopCallout${index}`] = {
       durationText: null,
       inbound: nextInbound,
-      outbound: nextOutbound,
+      outbound: nextOutbound
     };
   });
   return stopCallouts;
@@ -64,5 +64,5 @@ export const blueLine = [
   [35.22095914699968, -80.8476438611825],
   [35.22163403004883, -80.84628129887426],
   [35.22437157036239, -80.84209337111913],
-  [35.2273621965736, -80.838079946956244],
+  [35.2273621965736, -80.838079946956244]
 ];

@@ -4,7 +4,7 @@ exports[`<ScheduleInfoHeader /> renders correctly 1`] = `
     Array [
       Object {
         "backgroundColor": "#111113",
-        "flexBasis": 1,
+        "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
         "height": 74,

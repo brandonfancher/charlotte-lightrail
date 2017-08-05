@@ -25,7 +25,7 @@ export const AttributionView = styled.View`
 `;
 
 export const MapboxIconImage = styled.Image`
-  flex: 1px;
+  flex: 1;
   height: 20px;
   width: 50px;
   resizeMode: contain;

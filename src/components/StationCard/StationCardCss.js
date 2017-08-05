@@ -62,7 +62,7 @@ export const RightArrowView = ArrowView.extend`
 export const StationLabelContainerView = styled.View`
   alignItems: center;
   justifyContent: center;
-  flex: 1px;
+  flex: 1;
 `;
 
 export const StationLabelText = styled.Text`
@@ -85,7 +85,7 @@ export const TimesContainerView = styled.View`
 
 export const NextBlockView = styled.View`
   alignItems: center;
-  flex: 1px;
+  flex: 1;
 `;
 
 export const NextTimeWrapView = styled.View`
@@ -97,7 +97,7 @@ export const NextTimeText = styled.Text`
   color: ${props => props.theme.primaryTextColor};
 `;
 
-//left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
+// left: Half device width - half of ((buttonWidth + buttonPadding) * numButtons)
 export const ButtonContainerView = styled.View`
   position: absolute;
   height: 50px;
@@ -106,7 +106,7 @@ export const ButtonContainerView = styled.View`
 `;
 
 export const ButtonsView = styled.View`
-  flex: 1px;
+  flex: 1;
   flexDirection: row;
   alignSelf: center;
 `;

@@ -1,1 +1,1 @@
-export { default } from './ScheduleInfoHeader'
+export { default } from './ScheduleInfoHeader';

@@ -1,31 +1,76 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
   "plugins": [
     "react",
     "react-native",
+    "jest"
   ],
   "globals": {
-    "navigator": true
+    "navigator": true,
+    "__DEV__": true,
+    "fetch": true
   },
   "rules": {
-    "global-require": 0,
-    "no-console": 0,
+    "global-require": 1,
+    "no-console": 1,
     "no-alert": 0,
-    "no-return-assign": 0,
-    "max-len": [0, 100, 2],
-    "no-use-before-define": 0,
+    "no-debugger": 2,
+    "no-return-assign": [1, "always"],
+    "max-len": [1, {
+      "code": 150,
+      "tabWidth": 2
+    }],
+    "no-use-before-define": 2,
     "import/prefer-default-export": 0,
-    "react/jsx-no-bind": 0,
+    "react/jsx-no-bind": [2, {
+      "allowArrowFunctions": true
+    }],
     "react/prefer-stateless-function": 0,
-    "react/jsx-filename-extension": 0,
-    "react/no-unescaped-entities": 0,
+    "react/jsx-filename-extension": [1, {
+      "extensions": [
+        ".js",
+        ".jsx"
+      ]
+    }],
+    "react/no-unescaped-entities": 2,
     "react/forbid-prop-types": 0,
-    "react/sort-comp": 0,
-    "react-native/no-unused-styles": 2,
-    "react-native/split-platform-components": 2,
+    "react/sort-comp": 1,
+    "react-native/no-unused-styles": 1,
+    "react-native/split-platform-components": 0,
     "react-native/no-inline-styles": 0,
-    "react-native/no-color-literals": 2,
-    "comma-dangle": ["error", "always-multiline"],
+    "react-native/no-color-literals": 1,
+    "comma-dangle": ["error", {
+      "arrays": "never",
+      "objects": "never",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }],
+    "no-confusing-arrow": 0,
+    "dot-notation": 0,
+    "new-cap": 0,
+    "import/no-extraneous-dependencies": 1,
+    "import/no-unresolved": 1,
+    "react/no-unused-prop-types": 1
   },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "alias": {
+          "assets": "./src/assets",
+          "helpers": "./src/helpers",
+          "components": "./src/components",
+          "scenes": "./src/scenes",
+          "env": "./env.json"
+        }
+      }
+    }
+  },
+  "env": {
+    "jest/globals": true
+  }
 }
