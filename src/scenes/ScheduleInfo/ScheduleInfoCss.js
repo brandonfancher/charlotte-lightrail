@@ -99,7 +99,10 @@ const TableColView = styled.View`
 
 export const TableColInboundView = TableColView.extend`
   alignItems: flex-end;
-  paddingRight: ${insideColPadding}px;
+  paddingRight: ${insideColPadding + 1}px;
+  borderRightColor: ${props => props.theme.verticalDividerLine};
+  borderRightWidth: 1px;
+  borderStyle: solid;
 `;
 
 export const TableColOutboundView = TableColView.extend`
