@@ -1,15 +1,4 @@
-import { Dimensions, Linking } from 'react-native';
-
-// identify iPhone model based on device width
-const deviceScreen = Dimensions.get('window');
-export const identifyDevice = () => {
-  if (deviceScreen.width === 414) {
-    return 'iPhone 6+';
-  } else if (deviceScreen.width === 320) {
-    return 'iPhone 5';
-  }
-  return 'iPhone 6';
-};
+import { Linking } from 'react-native';
 
 export const startNavigation = (mode, latlng) => {
   const { latitude, longitude } = latlng;

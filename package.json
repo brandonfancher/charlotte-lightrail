@@ -3,19 +3,29 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
     "test": "jest",
-    "ios": "react-native run-ios"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "ios": "react-native run-ios",
+    "eslint": "eslint .",
+    "eslint:ci": "eslint . --format stylish"
+  },
+  "engines": {
+    "node": "^6.9.2"
   },
   "dependencies": {
     "moment": "2.15.2",
+    "prop-types": "15.5.10",
     "react": "15.3.2",
     "react-native": "0.36.1",
-    "react-native-collapsible": "git+https://git@github.com/brandonfancher/react-native-collapsible.git",
+    "react-native-collapsible": "brandonfancher/react-native-collapsible",
     "react-native-mapbox-gl": "5.0.0",
     "react-native-quick-actions": "0.1.5",
     "react-native-user-defaults": "0.1.4",
-    "react-navigation": "^1.0.0-beta.11"
+    "react-navigation": "1.0.0-beta.11",
+    "react-test-renderer": "15.3.2",
+    "styled-components": "2.1.0"
   },
   "jest": {
     "preset": "jest-react-native",
@@ -23,20 +33,27 @@
       "__DEV__": true
     },
     "preprocessorIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation|react-clone-referenced-element)"
+      "node_modules/(?!react-native|react-navigation)"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json"
     ]
   },
   "devDependencies": {
     "babel-jest": "16.0.0",
+    "babel-plugin-module-resolver": "2.7.1",
+    "babel-plugin-transform-inline-environment-variables": "0.1.1",
     "babel-preset-react-native": "1.9.0",
     "eslint": "3.9.1",
     "eslint-config-airbnb": "12.0.0",
+    "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-import": "1.16.0",
+    "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
     "eslint-plugin-react-native": "2.0.0",
     "jest": "16.0.2",
-    "jest-react-native": "16.1.0",
-    "react-test-renderer": "15.3.2"
+    "jest-react-native": "16.1.0"
   }
 }

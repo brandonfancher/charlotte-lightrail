@@ -13,5 +13,5 @@ export const COLORS = {
   accordionBackground: 'rgba(255, 255, 255, 0.15)',
   verticalDividerLine: '#111113',
   transparent: 'transparent',
-  black: '#000000',
+  black: '#000000'
 };

@@ -1,11 +1,10 @@
 import { Linking } from 'react-native';
+import { MAPBOX_API_KEY } from 'env'; // eslint-disable-line
 import schedules from './schedules.json';
 
-export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
+export const mapboxApiKey = process.env.MAPBOX_API_KEY ? process.env.MAPBOX_API_KEY : MAPBOX_API_KEY;
 
-// secrets that we'll want to secure later
-export const googleApiKey = '[GOOGLE_API_KEY]';
-export const mapboxApiKey = '[MAPBOX_API_KEY]';
+export const displayLink = url => Linking.openURL(url).catch(err => console.error('An error occurred', err));
 
 // setting for simulating a disconnected state
 export const SIMULATE_DISCONNECTED = false;
@@ -16,64 +15,52 @@ export const timeInterval = 15000;
 const features = {
   covered: {
     featureDesc: 'Covered waiting area',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png'),
+    icon: require('assets/icons/station-features/covered-waiting-area/ic_nature_people_white_48pt.png')
   },
   tickets: {
     featureDesc: 'Ticket vending machines',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png'),
+    icon: require('assets/icons/station-features/ticket-vending-machine/ic_confirmation_number_white_48pt.png')
   },
   emergency: {
     featureDesc: 'Emergency call box',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png'),
+    icon: require('assets/icons/station-features/emergency-call-box/ic_phone_in_talk_white_48pt.png')
   },
   lighted: {
     featureDesc: 'Lighted station',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png'),
+    icon: require('assets/icons/station-features/lighted-station/ic_lightbulb_outline_white_48pt.png')
   },
   water: {
     featureDesc: 'Water fountain',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png'),
+    icon: require('assets/icons/station-features/water-fountain/ic_local_drink_white_48pt.png')
   },
   seating: {
     featureDesc: 'Seating',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png'),
+    icon: require('assets/icons/station-features/seating/ic_airline_seat_recline_normal_white_48pt.png')
   },
   announce: {
     featureDesc: 'Automatic audio announcements',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png'),
+    icon: require('assets/icons/station-features/audio-annoucements/ic_announcement_white_48pt.png')
   },
   wheelchair: {
     featureDesc: 'Wheelchair accessible platform',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png'),
+    icon: require('assets/icons/station-features/wheelchair/ic_accessible_white_48pt.png')
   },
   art: {
     featureDesc: 'Public art',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/public-art/ic_photo_white_48pt.png'),
+    icon: require('assets/icons/station-features/public-art/ic_photo_white_48pt.png')
   },
   bike: {
     featureDesc: 'Bike racks',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png'),
+    icon: require('assets/icons/station-features/bike-lockers/ic_directions_bike_white_48pt.png')
   },
   elevators: {
     featureDesc: 'Elevators',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png'),
+    icon: require('assets/icons/station-features/elevators/ic_filter_frames_white_48pt.png')
   },
   park: {
     featureDesc: 'Park and Ride',
-    // eslint-disable-next-line
-    icon: require('../assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png'),
-  },
+    icon: require('assets/icons/station-features/park-and-ride/ic_local_parking_white_48pt.png')
+  }
 };
 
 // other config the app relies on
@@ -81,7 +68,7 @@ const features = {
 export const blueStops = [{
   latlng: {
     latitude: 35.107174,
-    longitude: -80.882812,
+    longitude: -80.882812
   },
   description: 'The end of the line.',
   title: 'I-485 Station',
@@ -105,12 +92,12 @@ export const blueStops = [{
     features.wheelchair,
     features.art,
     features.bike,
-    features.elevators,
-  ],
+    features.elevators
+  ]
 }, {
   latlng: {
     latitude: 35.119440,
-    longitude: -80.882333,
+    longitude: -80.882333
   },
   title: 'Sharon Rd. West Station',
   mapLabel: 'Sharon Rd. West',
@@ -132,12 +119,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.135149,
-    longitude: -80.876513,
+    longitude: -80.876513
   },
   title: 'Arrowood Station',
   mapLabel: 'Arrowood',
@@ -159,12 +146,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.152865,
-    longitude: -80.877460,
+    longitude: -80.877460
   },
   title: 'Archdale Station',
   mapLabel: 'Archdale',
@@ -186,12 +173,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.162842,
-    longitude: -80.877519,
+    longitude: -80.877519
   },
   title: 'Tyvola Station',
   mapLabel: 'Tyvola',
@@ -213,12 +200,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.175341,
-    longitude: -80.879281,
+    longitude: -80.879281
   },
   title: 'Woodlawn Station',
   mapLabel: 'Woodlawn',
@@ -240,12 +227,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.190825,
-    longitude: -80.875068,
+    longitude: -80.875068
   },
   title: 'Scaleybark Station',
   mapLabel: 'Scaleybark',
@@ -267,12 +254,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.199883,
-    longitude: -80.869027,
+    longitude: -80.869027
   },
   title: 'New Bern Station',
   mapLabel: 'New Bern',
@@ -293,12 +280,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.212099,
-    longitude: -80.859134,
+    longitude: -80.859134
   },
   title: 'East/West Station',
   mapLabel: 'East/West',
@@ -319,12 +306,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.215771,
-    longitude: -80.855336,
+    longitude: -80.855336
   },
   title: 'Bland Street Station',
   mapLabel: 'Bland Street',
@@ -345,12 +332,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.218808,
-    longitude: -80.850954,
+    longitude: -80.850954
   },
   title: 'Carson Station',
   mapLabel: 'Carson',
@@ -371,12 +358,12 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }, {
   latlng: {
     latitude: 35.221313,
-    longitude: -80.847064,
+    longitude: -80.847064
   },
   title: 'Stonewall Station',
   mapLabel: 'Stonewall',
@@ -398,12 +385,12 @@ export const blueStops = [{
     features.wheelchair,
     features.art,
     features.bike,
-    features.elevators,
-  ],
+    features.elevators
+  ]
 }, {
   latlng: {
     latitude: 35.223630,
-    longitude: -80.843222,
+    longitude: -80.843222
   },
   title: '3rd Street Station',
   mapLabel: '3rd Street',
@@ -425,12 +412,12 @@ export const blueStops = [{
     features.wheelchair,
     features.art,
     features.bike,
-    features.elevators,
-  ],
+    features.elevators
+  ]
 }, {
   latlng: {
     latitude: 35.225298,
-    longitude: -80.840909,
+    longitude: -80.840909
   },
   title: 'Charlotte Transportation Center',
   mapLabel: 'CTC/Arena',
@@ -452,12 +439,12 @@ export const blueStops = [{
     features.wheelchair,
     features.art,
     features.bike,
-    features.elevators,
-  ],
+    features.elevators
+  ]
 }, {
   latlng: {
     latitude: 35.227370,
-    longitude: -80.838119,
+    longitude: -80.838119
   },
   description: 'The other end of the line.',
   title: '7th Street Station',
@@ -479,6 +466,6 @@ export const blueStops = [{
     features.announce,
     features.wheelchair,
     features.art,
-    features.bike,
-  ],
+    features.bike
+  ]
 }];

@@ -1,0 +1,48 @@
+exports[`<ScheduleInfoHeader /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#111113",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "height": 74,
+        "width": 375,
+      },
+      undefined,
+    ]
+  }
+  width={375}>
+  <Text
+    accessible={true}
+    allowFontScaling={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "#ffffff",
+          "fontSize": 16,
+          "marginBottom": 3,
+          "marginTop": 9,
+        },
+        undefined,
+      ]
+    }>
+    Test Station
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "marginBottom": 12,
+          "marginTop": 4,
+          "width": 240,
+        },
+        undefined,
+      ]
+    } />
+</View>
+`;

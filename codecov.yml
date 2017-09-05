@@ -1,0 +1,41 @@
+codecov:
+  branch: development
+
+coverage:
+  precision: 1
+  round: down
+  range: 50...75
+
+  status:
+    # Learn more at http://docs.codecov.io/docs/codecov-yaml
+    project:
+      default:
+        enabled: true
+        if_no_uploads: success
+        if_not_found: success
+
+    patch: false
+    changes: false
+
+  ignore:
+    - ".babelrc"
+    - ".buckconfig"
+    - ".eslintrc"
+    - ".flowconfig"
+    - ".nvmrc"
+    - ".travis.yml"
+    - ".watchmanconfig"
+    - "README.md"
+    - "android/**/*"
+    - "ios/**/*"
+    - "node_modules/**/*"
+    - "yarn.lock"
+    - "package.json"
+    - ".gitignore"
+    - ".git/**/*"
+    - ".node-version"
+
+comment:
+  layout: "header, diff, files"
+  behavior: default
+  # "header, diff, changes, sunburst, suggestions, tree"

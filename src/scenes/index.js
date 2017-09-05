@@ -1,4 +1,4 @@
-export { default as Faq } from './FAQ';
-export { default as RailMap } from './RailMap';
-export { default as ScheduleInfo } from './ScheduleInfo';
-export { default as StationDetail } from './StationDetail';
+export { FAQ } from './FAQ';
+export { RailMap } from './RailMap';
+export { ScheduleInfo } from './ScheduleInfo';
+export { StationDetail } from './StationDetail';
