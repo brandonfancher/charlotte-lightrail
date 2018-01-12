@@ -103,12 +103,12 @@ export default class ScheduleInfo extends React.Component {
   getSchedule = () => {
     const days = this.state.scheduleValue;
     return (
-      <TableColScrollView innerRef={(c) => { this.scheduleScrollView = c; }}>
+      <TableColScrollView innerRef={(c) => { this.scheduleScrollView = c && c.ref; }}>
         <TableView>
-          <TableColInboundView innerRef={(c) => { this.inboundWrapper = c; }}>
+          <TableColInboundView innerRef={(c) => { this.inboundWrapper = c && c.ref; }}>
             {this.getTrainTimes('inbound', days)}
           </TableColInboundView>
-          <TableColOutboundView innerRef={(c) => { this.outboundWrapper = c; }} onLayout={this.setScheduleAlignment}>
+          <TableColOutboundView innerRef={(c) => { this.outboundWrapper = c && c.ref; }} onLayout={this.setScheduleAlignment}>
             {this.getTrainTimes('outbound', days)}
           </TableColOutboundView>
         </TableView>
@@ -118,7 +118,9 @@ export default class ScheduleInfo extends React.Component {
 
   // We call this when we want to scroll down programmatically
   performScroll = (y, animated) => {
-    this.scheduleScrollView.scrollTo({ x: 0, y, animated });
+    if (this.scheduleScrollView) {
+      this.scheduleScrollView.scrollTo({ x: 0, y, animated });
+    }
   }
 
   scheduleValueHandler = (value) => {

@@ -1,3 +1,5 @@
+import React from 'react';
+import { ScrollView, View } from 'react-native';
 import styled from 'styled-components/native';
 import { deviceProps } from 'helpers/device';
 
@@ -82,7 +84,22 @@ export const DescriptionText = styled.Text`
   color: ${props => props.theme.primaryTextColor};
 `;
 
-export const TableColScrollView = styled.ScrollView`
+// Fix to make underlying native component ref available (instead of the unstyled component itself)
+// Without this, innerRef was returning undefined in Release/Production mode.
+// See: https://github.com/styled-components/styled-components/issues/618
+class TableColScrollViewComponent extends React.Component {
+  render() {
+    return <ScrollView ref={(view) => { this.ref = view; }} {...this.props} />;
+  }
+}
+
+class TableColViewComponent extends React.Component { // eslint-disable-line
+  render() {
+    return <View ref={(view) => { this.ref = view; }} {...this.props} />;
+  }
+}
+
+export const TableColScrollView = styled(TableColScrollViewComponent)`
   backgroundColor: ${props => props.theme.backgroundColor};
 `;
 
@@ -92,7 +109,7 @@ export const TableView = styled.View`
   paddingBottom: 10px;
 `;
 
-const TableColView = styled.View`
+const TableColView = styled(TableColViewComponent)`
   flex: 1;
   alignSelf: flex-start;
 `;
