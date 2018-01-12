@@ -1,8 +1,7 @@
 # Charlotte Light Rail
 
 ## Branches
-* `production`: Production branch, tagged with version numbers.
-* `master`: The source of current dev truth. Staging.
+* `master`: The production branch, tagged by release.
 * `development`: When you fork this project, you should branch off of this branch and work your magic. (Then send us a PR)
 * `android`: Working React Native project on Android! Running, but still some work to do. You may want to work off this one as well.
 * `v1.0`: First production version on iOS.
