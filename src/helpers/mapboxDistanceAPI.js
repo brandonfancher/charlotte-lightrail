@@ -8,7 +8,7 @@ export const mapboxDistanceAPI = {
     const endpoint = `directions-matrix/v1/mapbox/${mode}`;
     const coordinatesString = coordinates.map(coordinate => coordinate.toString());
     const coordinatesQuery = coordinatesString.join(';');
-    const url = `https://api.mapbox.com/${endpoint}/${coordinatesQuery}?access_token=${mapboxApiKey}`;
+    const url = `https://api.mapbox.com/${endpoint}/${coordinatesQuery}?sources=0&access_token=${mapboxApiKey}`;
     return fetch(url).then(res => res.json());
   }
 };
