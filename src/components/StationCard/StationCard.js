@@ -33,7 +33,7 @@ export default class StationCard extends React.Component {
 
   renderDistanceText = () => {
     const { stationIndex, stationDistances, mode } = this.props;
-    if (stationDistances) {
+    if (stationDistances && stationDistances[stationIndex].duration) {
       return `${stationDistances[stationIndex].durationText} ${mode === 'driving' ? 'drive' : 'walk'}`;
     }
     return null;

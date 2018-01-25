@@ -15,6 +15,7 @@
     "node": "^6.9.2"
   },
   "dependencies": {
+    "geolib": "^2.0.24",
     "moment": "2.15.2",
     "prop-types": "15.5.10",
     "react": "15.3.2",

@@ -223,27 +223,29 @@ export default class RailMap extends React.Component {
       .map(stop => [stop.latlng.longitude, stop.latlng.latitude]);
 
     mapboxDistanceAPI.getDistance(origin, destinations, mode)
-      .then((res) => {
-        const stationDistances = res.durations[0]
-          .slice(1) // get rid of first item, which is the distance of current location to itself (0)
-          .map((duration, index) => ({ index, duration, durationText: distanceTimeConverter(duration) })); // this index is used to map to blueStops index
+      .then((durations) => {
+        console.log(durations);
+        const stationDistances = durations
+          .map((duration, index) => ({
+            index, // this index is used to map to blueStops index
+            duration,
+            durationText: duration ? distanceTimeConverter(duration) : ''
+          }));
 
-        const nearestStation = stationDistances.reduce((prev, curr) => {
-          if (prev.duration < curr.duration) {
-            return prev;
-          }
-          return curr;
-        });
-        const nearestIndex = nearestStation.index;
+        const nearestStationIndex = stationDistances
+          .filter(item => item.duration)
+          .sort((a, b) => a.duration > b.duration)[0]
+          .index;
 
         // set station marker colors
-        this.setNearestMarkerColor(nearestIndex);
+        this.setNearestMarkerColor(nearestStationIndex);
 
+        // REVIEW: Parts of updatedStationDistances might be superfluous. Refactor as necessary.
         const updatedStationDistances = {};
         stationDistances.forEach((stop, index) => {
           updatedStationDistances[`stopCallout${index}`] = {
             ...this.state[`stopCallout${index}`],
-            durationText: distanceTimeConverter(stationDistances[index].duration),
+            durationText: stationDistances[index].duration ? distanceTimeConverter(stationDistances[index].duration) : '',
             inbound: getNextTrainTime('inbound', index),
             outbound: getNextTrainTime('outbound', index)
           };
@@ -253,13 +255,13 @@ export default class RailMap extends React.Component {
           ...updatedStationDistances,
           connected: true,
           loading: false,
-          nearestStationIndex: nearestIndex,
+          nearestStationIndex,
           stationDistances
         });
 
         // Show nearest station callout. We pass stationDistances because sometimes showCallout() gets
         // called before the setState above happens, and showCallout depends on stationDistances.
-        this.showCallout(nearestIndex, stationDistances);
+        this.showCallout(nearestStationIndex, stationDistances);
       })
       .catch((err) => {
         this.setState({ error: 'mapboxDistanceAPI' });
