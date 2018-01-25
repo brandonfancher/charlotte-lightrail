@@ -20,6 +20,7 @@
     "no-alert": 0,
     "no-debugger": 2,
     "no-return-assign": [1, "always"],
+    "no-plusplus": 0,
     "max-len": [1, {
       "code": 150,
       "tabWidth": 2
