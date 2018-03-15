@@ -677,8 +677,8 @@ export const blueStops = [{
   ]
 }, {
   latlng: {
-    latitude: 35.286842,
-    longitude: -80.760829
+    latitude: 35.300998,
+    longitude: -80.752977
   },
   title: 'McCullough Station',
   mapLabel: 'McCullough',
