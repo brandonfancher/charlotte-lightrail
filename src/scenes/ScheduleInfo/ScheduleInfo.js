@@ -151,13 +151,13 @@ export default class ScheduleInfo extends React.Component {
                 <Text allowFontScaling={false}>
                   <GrayText allowFontScaling={false}>I-485</GrayText>
                   <GrayText allowFontScaling={false}> ➔ </GrayText>
-                  <GrayText allowFontScaling={false}>Uptown</GrayText>
+                  <GrayText allowFontScaling={false}>UNCC</GrayText>
                 </Text>
               </TableColHeadView>
               <TableColHeadView>
                 <BoldWhiteText allowFontScaling={false}>Outbound</BoldWhiteText>
                 <Text allowFontScaling={false}>
-                  <GrayText allowFontScaling={false}>Uptown</GrayText>
+                  <GrayText allowFontScaling={false}>UNCC</GrayText>
                   <GrayText allowFontScaling={false}> ➔ </GrayText>
                   <GrayText allowFontScaling={false}>I-485</GrayText>
                 </Text>
