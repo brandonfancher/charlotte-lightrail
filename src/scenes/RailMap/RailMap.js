@@ -418,6 +418,18 @@ export default class RailMap extends React.Component {
           stopCallout12={this.state.stopCallout12}
           stopCallout13={this.state.stopCallout13}
           stopCallout14={this.state.stopCallout14}
+          stopCallout15={this.state.stopCallout15}
+          stopCallout16={this.state.stopCallout16}
+          stopCallout17={this.state.stopCallout17}
+          stopCallout18={this.state.stopCallout18}
+          stopCallout19={this.state.stopCallout19}
+          stopCallout20={this.state.stopCallout20}
+          stopCallout21={this.state.stopCallout21}
+          stopCallout22={this.state.stopCallout22}
+          stopCallout23={this.state.stopCallout23}
+          stopCallout24={this.state.stopCallout24}
+          stopCallout25={this.state.stopCallout25}
+          stopCallout26={this.state.stopCallout26}
           navigation={navigation}
         />
       </ContainerView>
