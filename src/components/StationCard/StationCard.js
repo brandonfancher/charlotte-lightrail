@@ -78,7 +78,7 @@ export default class StationCard extends React.Component {
           </InfoContainerView>
           <TimesContainerView>
             <NextBlockView>
-              <SmallGrayText allowFontScaling={false}>Next Inbound</SmallGrayText>
+              <SmallGrayText allowFontScaling={false}>Northbound</SmallGrayText>
               <NextTimeWrapView>
                 <NextTimeText allowFontScaling={false}>{stopCallout.inbound.time}</NextTimeText>
               </NextTimeWrapView>
@@ -86,7 +86,7 @@ export default class StationCard extends React.Component {
             </NextBlockView>
 
             <NextBlockView>
-              <SmallGrayText allowFontScaling={false}>Next Outbound</SmallGrayText>
+              <SmallGrayText allowFontScaling={false}>Southbound</SmallGrayText>
               <NextTimeWrapView>
                 <NextTimeText allowFontScaling={false}>{stopCallout.outbound.time}</NextTimeText>
               </NextTimeWrapView>
